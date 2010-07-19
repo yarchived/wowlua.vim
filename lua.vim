@@ -100,8 +100,8 @@ elseif lua_version > 5 || (lua_version == 5 && lua_subversion >= 1)
   syn match  luaSpecial contained "\\[\\abfnrtv\'\"]\|\\\d\{,3}"
   syn region luaString2 matchgroup=luaString start="\[\z(=*\)\[" end="\]\z1\]" contains=@Spell
 endif
-syn region luaString  start=+'+ end=+'+ skip=+\\\\\|\\'+ contains=luaWoweven,luaSpecial,@Spell
-syn region luaString  start=+"+ end=+"+ skip=+\\\\\|\\"+ contains=luaWoweven,luaSpecial,@Spell
+syn region luaString  start=+'+ end=+'+ skip=+\\\\\|\\'+ contains=luaWoWEvent,luaSpecial,@Spell
+syn region luaString  start=+"+ end=+"+ skip=+\\\\\|\\"+ contains=luaWoWEvent,luaSpecial,@Spell
 
 " integer number
 syn match luaNumber "\<\d\+\>"
@@ -3545,9 +3545,9 @@ if version >= 508 || !exists("did_lua_syntax_inits")
   HiLink luaError		Error
   HiLink luaSpecial		SpecialChar
   HiLink luaFunc		Identifier
-  HiLink luaWowapi		Identifier
-  HiLink luaWoweven		SpecialChar
-  HiLink luaWowidg		Identifier
+  HiLink luaWoWAPI		Identifier
+  HiLink luaWoWEvent            SpecialChar
+  HiLink luaWoWWidget		Identifier
 
   delcommand HiLink
 endif
