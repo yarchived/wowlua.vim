@@ -1,35 +1,46 @@
 --[[
   Orig by http://www.wowwiki.com/User:Mikk/Scripts
 
-  Up to date for WoW 2.4. Produces some extras but that gets filtered out by later scripts.
 ]]
-if(not GlobFuncEdit) then
-    GlobFuncEdit = CreateFrame("Editbox")
+local window = CreateFrame('EditBox', nil, UIParent)
+window:SetHeight(150)
+window:SetWidth(500)
+window:SetPoint('CENTER', UIParent, 0, 100)
+window:SetFontObject(GameFontHighlightSmall)
+window:SetMultiLine(true)
+window:SetScript('OnEscapePressed', window.Hide)
+
+function window.show(str)
+    window:SetText(str)
+    window:Show()
+    window:SetFocus()
+    window:HighlightText(0, 9999999)
 end
-GlobFuncEdit:SetFontObject(GameFontHighlightSmall)
-GlobFuncEdit:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -10, -10)
-GlobFuncEdit:SetPoint("TOPLEFT", UIParent, "TOPRIGHT", -250, -10)
-GlobFuncEdit:SetHeight("500")
-GlobFuncEdit:SetMultiLine(true)
-GlobFuncEdit:SetScript("OnEscapePressed", function(self) self:Hide() end)
+
+
+
 
 local function funcaddr(func)
-  return tonumber(strsub(tostring(func), 10), 16)
+    if(type(func) == 'string') then
+        func = _G[func]
+    end
+
+    return tonumber(strsub(tostring(func), 10), 16)
 end
 
 local refpoint={}
-local function point(funcname)
-  refpoint[funcname]=funcaddr(_G[funcname])
+local function setref(funcname)
+  refpoint[funcname]=funcaddr(funcname)
 end
 
-point("DeclineGroup")
-point("FlagTutorial")
-point("ConvertToRaid")
-point("FlagTutorial")
-point("ShowLFG")
-point("asin")
-point("pairs")
-point("AcceptQuest")
+setref("DeclineGroup")
+setref("FlagTutorial")
+setref("ConvertToRaid")
+setref("FlagTutorial")
+setref("ShowLFG")
+setref("asin")
+setref("pairs")
+setref("AcceptQuest")
 
 local res = {}
 for k,v in pairs(_G) do
@@ -43,15 +54,44 @@ for k,v in pairs(_G) do
   	end
     end
 end
+
 table.sort(res)
+
 for k,v in pairs(refpoint) do
   table.insert(res, 1, format("# %-15s %10u (0x%08x)", k, v, v))
 end
-table.insert(res, "# END")
-local str = table.concat(res, "\n")
-DEFAULT_CHAT_FRAME:AddMessage("GlobFuncScan: Found " .. #res .. " functions. Total output length is " .. strlen(str) .. " bytes.")
-GlobFuncEdit:SetText(str)
 
-GlobFuncEdit:Show()
-GlobFuncEdit:SetFocus(true)
-GlobFuncEdit:HighlightText(0, 999999)
+local str = table.concat(res, "\n")
+
+
+--[[
+--  api done here
+--  so begins the widgets
+--]]
+
+-- wipe table first
+for k,v in pairs(res) do
+    res[k] = nil
+end
+
+local widgets = {
+    Font = function() end,
+    Frame = 'CreateFrame',
+    Button = 'CreateFrame',
+    Slider = 'CreateFrame',
+}
+
+
+
+
+
+
+-- cmd / funcs
+SLASH_WOWLUA1 = '/wowlua'
+SlashCmdList.WOWLUA = function()
+    window.show(str)
+end
+
+print'wowlua.vim is running, you should disable it when you are done'
+
+
