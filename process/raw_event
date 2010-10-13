@@ -1,4 +1,4 @@
-
+Event 	Description
 ACHIEVEMENT_EARNED	Fires when the player earns an achievement
 ACTIONBAR_HIDEGRID	Fires when an item, spell or other entity that can be placed into an action bar slot is removed from the cursor
 ACTIONBAR_PAGE_CHANGED	Fires when the main action bar changes pages
@@ -604,3 +604,4 @@ WOW_MOUSE_NOT_FOUND	This event fires when a man buttoned WoW mouse is not found,
 ZONE_CHANGED	Fires when the player moves between subzones or other named areas
 ZONE_CHANGED_INDOORS	Fires when the player moves between areas and the "indoors/outdoors" status may have changed
 ZONE_CHANGED_NEW_AREA	Fires when the player moves between major zones or enters/exits an instance
+
