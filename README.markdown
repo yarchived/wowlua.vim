@@ -1,7 +1,7 @@
 WTF is this?
 ============
 
-This is a syntax file for [Vim editor](http://www.vim.org/). If you write [World of Warcraft](http://www.worldofwarcraft.com/) addons and you favorit editor is Vim, this is what you need.
+Lua syntax file with [World of Warcraft](http://www.worldofwarcraft.com/) apis for Vim editor
 
 How to use?
 ===========
