@@ -8,6 +8,7 @@ SYNOPSIS
 DESCRIPTION
     args:
         nppp    - generate syntax file for notepad++ editor
+        novim   - don't generate vim syntax file
 
 LICENSE
     Copyright (C) 2010 yaroot (yaroot@gmail.com)
@@ -38,10 +39,6 @@ local function isEnabled(what)
 
     return false
 end
---}}}
-
---{{{
-local apis = {}
 
 local function open(path, mode)
     local f = io.open(path, mode or 'r')
@@ -62,100 +59,99 @@ local function findDuplicate(t, s)
             return true
         end
     end
+
+    return false
 end
---}}}}
 
---{{{
-local function parse(raw, re, type_str)
-    local rawstrings = {}
+local function parse(filename, re)
+    local res = {}
 
-    -- get the api out
-    local raw_file = open(raw)
-    for line in raw_file:lines() do
+    local file = open(filename)
+    for line in file:lines() do
         if(valid(line)) then
             local str = line:match(re)
-            if(valid(str) and not findDuplicate(rawstrings, str)) then
-                table.insert(rawstrings, str)
+            if(valid(str) and not findDuplicate(res, str)) then
+                table.insert(res, str)
             end
         end
     end
-    raw_file:close() -- close file
+    file:close()
 
-    table.sort(rawstrings)
-
-    -- add them together
-    for i, v in ipairs(rawstrings) do
-        table.insert(apis, string.format('syn keyword %s %s', type_str, v))
-    end
-
-    table.insert(apis, '') -- make a empty line
+    table.sort(res)
+    return res
 end
 --}}}
 
---{{{ go go rock
-table.insert(apis, '\n')
-parse('raw_api', '^([a-z,A-Z_]+)', 'luaWoWAPI')
-parse('raw_event', '^([A-Z_]+)', 'luaWoWEvent')
-parse('raw_widget', ':(%w+)%(', 'luaWoWWidget')
---}}}
+--{{{
+local function main(argv)
+    local apis = {
+         api = parse('raw_api', '^([a-z,A-Z_]+)'),
+         event = parse('raw_event', '^([A-Z_]+)'),
+         widget = parse('raw_widget', ':(%w+)%('),
+    }
 
---{{{ write to the file
-local file = open('chunk.vim', 'w')
-for i, v in ipairs(apis) do
-   file:write(v)
-   file:write'\n'
-end
-file:flush()
-file:close()
---}}}
+    if(not isEnabled'novim') then
 
---{{{ notepad++
-if(isEnabled'nppp') then
-    -- god I hate xml
-    local file = open('chunk.xml', 'w')
-    local type1, type2 = {}, {}
+        local function fmt(t1, t2, tt)
+            t2 = t2 or {}
 
-    local function toRaw(str)
-        local ind, word = str:match'([a-zA-Z_]+) ([a-zA-Z_]+)$'
-        if(valid(ind) and valid(word)) then
-            return ind, word
-        end
-    end
 
-    local function doWriteFile(t, f)
-        for i, v in ipairs(t) do
-            if(i~=1) then f:write(' ') end
-            f:write(v)
-        end
-    end
-
-    for i, v in ipairs(apis) do
-        local ind, word = toRaw(v)
-        if(ind) then
-            if(ind == 'luaWoWEvent') then
-                table.insert(type2, word)
-            else
-                table.insert(type1, word)
+            for i, v in ipairs(t1) do
+                table.insert(t2, string.format('syn keyword %s %s', tt, v))
             end
+            table.insert(t2, '')
+
+            return t2
         end
+
+        local tmp = fmt(apis.api, nil, 'luaWoWAPI')
+                    fmt(apis.event, tmp, 'luaWoWEvent')
+                    fmt(apis.widget, tmp, 'luaWoWWidget')
+
+        local file = open('chunk.vim', 'w')
+
+        for i, v in ipairs(tmp) do
+           file:write(v)
+           file:write'\n'
+        end
+
+        file:flush()
+        file:close()
     end
 
-    file:write[==[
+    if(isEnabled'nppp') then
+        local function joinString(t)
+            local s
+            for i, v in ipairs(t) do
+                s = s and (s..' '..v) or v
+            end
+
+            return s
+        end
+
+
+        local file = open('chunk.xml', 'w')
+
+        file:write[==[
 <Language name="lua" ext="lua" commentLine="--" commentStart="--[[" commentEnd="]]">
     <Keywords name="instre1">and arg break do else elseif end false for function if in ipairs local nil not or repeat return then true until while</Keywords>
     <Keywords name="instre2">_G _ERRORMESSAGE _VERSION abs acos asin assert atan atan2 byte ceil char collectgarbage concat cos date debugbreak debugdump debuginfo debugload debugprint debugprofilestart debugprofilestop debugstack debugtimestamp deg difftime dofile dump error exp find floor foreach foreachi format frexp gcinfo geterrorhandler getfenv getglobal getmetatable getn gfind gmatch gsub hooksecurefunc insert ipairs issecure issecurevariable ldexp len loadfile loadlib loadstring log log10 lower max message min mod newproxy next out pairs pcall pow print rad random randomseed rawequal rawget rawset remove rep require securecall select seterrorhandler setfenv setglobal setmetatable sin sort sqrt strbyte strchar strconcat strfind strjoin strlen strlower strmatch strrep strreplace strrev strsplit strsub strtrim strupper sub tan time tinsert tonumber tostring tremove type unpack xpcall</Keywords>
 ]==]
 
-    file:write'    <Keywords name="type1">'
-    doWriteFile(type1, file)
-    file:write'</Keywords>\n'
+        file:write'    <Keywords name="type1">'
+        file:write(joinString(apis.api) .. ' ' .. joinString(apis.widget))
+        file:write'</Keywords>\n'
 
-    file:write'    <Keywords name="type2">'
-    doWriteFile(type2, file)
-    file:write'</Keywords>\n</Language>\n'
+        file:write'    <Keywords name="type2">'
+        file:write(joinString(apis.event))
+        file:write'</Keywords>\n</Language>\n'
 
-    file:flush()
-    file:close()
+        file:flush()
+        file:close()
+    end
+
 end
+
+main(argv)
 --}}}
 
