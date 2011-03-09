@@ -48,7 +48,7 @@ AppendToFile	This is a Blizzard internal function
 
 ApplyBarberShopStyle	Purchases the selected barber shop style changes
 ArchaeologyGetIconInfo	This function is not yet documented
-ArchaeologyMapUpdateAll	This function is not yet documented
+ArchaeologyMapUpdateAll	Returns the number of digsites in the current zone
 ArcheologyGetVisibleBlobID	This function is not yet documented
 ArenaTeamDisband	Disbands an arena team
 ArenaTeamInviteByName	Invites a character to one of the player's arena teams
@@ -69,6 +69,9 @@ ArenaTeamUninviteByName	Removes a member from an arena team
     confirmation
 
 ArenaTeam_GetTeamSizeID	Converts an arena team size to the appropriate numeric arena team identifier
+
+    framexml
+
 AscendStop	Stops movement initiated by [[docs/api/JumpOrAscendStart|`JumpOrAscendStart`]]
 
     protected
@@ -85,15 +88,15 @@ AutoEquipCursorItem	Equips the item on the cursor
 AutoLootMailItem	Automatically takes any attached items and money from a mail
 AutoStoreGuildBankItem	Withdraws the item(s) from a slot in the guild bank, automatically adding to the player's bags
 BNAcceptFriendInvite	This function is not yet documented
-BNConnected	This function is not yet documented
-BNCreateConversation	This function is not yet documented
+BNConnected	Returns whether or not the player is connected to Battle.net
+BNCreateConversation	Create a conversation between you and two friends
 BNDeclineFriendInvite	This function is not yet documented
-BNFeaturesEnabled	This function is not yet documented
+BNFeaturesEnabled	Returns whether or not RealID services are disabled
 BNFeaturesEnabledAndConnected	This function is not yet documented
 BNGetBlockedInfo	This function is not yet documented
 BNGetBlockedToonInfo	This function is not yet documented
-BNGetConversationInfo	This function is not yet documented
-BNGetConversationMemberInfo	This function is not yet documented
+BNGetConversationInfo	Returns information about an existing battle.net conversation
+BNGetConversationMemberInfo	Returns information about a member of a battle.net conversation
 BNGetCustomMessageTable	This function is not yet documented
 BNGetFOFInfo	This function is not yet documented
 BNGetFriendInfo	Returns information about a RealID friend by index
@@ -102,11 +105,11 @@ BNGetFriendInviteInfo	This function is not yet documented
 BNGetFriendToonInfo	Returns information about a particular online toon tied to a RealID friend
 BNGetInfo	Returns information about the player's RealID settings
 BNGetMatureLanguageFilter	Returns boolean for the Mature Language Filter option's state.
-BNGetMaxNumConversations	This function is not yet documented
-BNGetMaxPlayersInConversation	This function is not yet documented
+BNGetMaxNumConversations	Returns the maximum number of simultanious RealID conversations you can be a part of
+BNGetMaxPlayersInConversation	Returns the maximum number of realID friends you can have in one conversation
 BNGetNumBlocked	This function is not yet documented
 BNGetNumBlockedToons	This function is not yet documented
-BNGetNumConversationMembers	This function is not yet documented
+BNGetNumConversationMembers	Returns the number of members in a battle.net conversation
 BNGetNumFOF	This function is not yet documented
 BNGetNumFriendInvites	This function is not yet documented
 BNGetNumFriendToons	Returns the number of online toons for a friend
@@ -115,10 +118,10 @@ BNGetSelectedBlock	This function is not yet documented
 BNGetSelectedFriend	Returns the index of the selected user on your friend's list
 BNGetSelectedToonBlock	This function is not yet documented
 BNGetToonInfo	Returns information about the active toon tied to a RealID friend
-BNInviteToConversation	This function is not yet documented
+BNInviteToConversation	Invite a friend into an existing conversation
 BNIsBlocked	This function is not yet documented
 BNIsFriend	This function is not yet documented
-BNIsSelf	This function is not yet documented
+BNIsSelf	Returns whether or not the presence ID is the one of the player
 BNIsToonBlocked	This function is not yet documented
 BNLeaveConversation	This function is not yet documented
 BNListConversation	This function is not yet documented
@@ -141,7 +144,7 @@ BNSetSelectedBlock	This function is not yet documented
 BNSetSelectedFriend	This function is not yet documented
 BNSetSelectedToonBlock	This function is not yet documented
 BNSetToonBlocked	This function is not yet documented
-BNTokenCombineGivenAndSurname	This function is not yet documented
+BNTokenCombineGivenAndSurname	Returns a combined link for the surname and given name for a RealID
 BankButtonIDToInvSlotID	Returns the [[docs/api_types#inventoryID|`inventoryID`]] corresponding to a bank item or bag slot
 BarberShopReset	Resets barber shop options to the currently worn styles
 BattlefieldMgrEntryInviteResponse	This function is not yet documented
@@ -253,7 +256,7 @@ CalendarGetMinHistoryDate	Returns the earliest date for which information about 
 CalendarGetMonth	Returns information about a calendar month
 CalendarGetMonthNames	Returns a list of localized month names
 CalendarGetNumDayEvents	Returns the number of calendar events on a given day
-CalendarGetNumGuildEvents	This function is not yet documented
+CalendarGetNumGuildEvents	Returns the number of guild events in your calendar
 CalendarGetNumPendingInvites	Returns the number of calendar invitations to which the player has yet to respond
 CalendarGetRaidInfo	Returns information about a raid lockout or scheduled raid reset event
 CalendarGetWeekdayNames	Returns a list of localized weekday names
@@ -280,7 +283,7 @@ CameraOrSelectOrMoveStop	Ends action initiated by [[docs/api/CameraOrSelectOrMov
 CameraZoomIn	Zooms the camera in by a specified distance
 CameraZoomOut	Zooms the camera out by a specified distance
 CanAlterSkin	Lets you check if the player can change their skin color
-CanBeRaidTarget	This function is not yet documented
+CanBeRaidTarget	Returns whether a unit can be marked with a raid symbol or not
 CanCancelAuction	Returns whether one of the player's auctions can be canceled
 CanChangePlayerDifficulty	This function is not yet documented
 CanComplainChat	Returns whether a chat message can be reported as spam
@@ -300,6 +303,7 @@ CanGuildInvite	Returns whether the player is allowed to invite new members to hi
 CanGuildPromote	Returns whether the player is allowed to promote other guild members
 CanGuildRemove	Returns whether the player is allowed to remove members from his or her guild
 CanHearthAndResurrectFromArea	Returns whether the player is in a world PvP zone offering an exit option
+CanInitiateWarGame	This function is not yet documented
 CanInspect	Returns whether a unit can be inspected
 CanItemBeSocketedToArtifact	This function is not yet documented
 CanJoinBattlefieldAsGroup	Returns whether the battleground for which the player is queueing supports joining as a group
@@ -328,13 +332,17 @@ CancelAuction	Cancels an auction created by the player
     hardware
 
 CancelBarberShop	Exits a barber shop session
-CancelDuel	Cancels a proposed duel, or declines an offered duel
+CancelDuel	Cancels an ongoing duel, or declines an offered duel
 CancelItemTempEnchantment	Cancels a temporary weapon enchant
+
+    protected
+
 CancelLogout	Cancels a pending logout or quit
 
     protected
 
 CancelPendingEquip	Cancels equipping a bind-on-equip item
+CancelPreloadingMovie	This function is not yet documented
 CancelSell	This function is not yet documented
 CancelShapeshiftForm	Cancels the current shapeshift form
 
@@ -344,6 +352,9 @@ CancelSummon	Declines an offered summons
 CancelTrade	Cancels a trade in progress
 CancelTradeAccept	Cancels the player's acceptance of a trade
 CancelUnitBuff	Cancels a buff on the player
+
+    protected
+
 CannotBeResurrected	This function is not yet documented
 CastGlyph	This function is not yet documented
 CastGlyphByID	This function is not yet documented
@@ -391,14 +402,17 @@ ChannelVoiceOn	Enables voice chat in a channel
 ChatFrame_AddMessageEventFilter	Adds a function to filter or alter messages to the chat display system
 
     blizzardui
+    framexml
 
 ChatFrame_GetMessageEventFilters	Returns the list of filters registered for a chat event
 
     blizzardui
+    framexml
 
 ChatFrame_RemoveMessageEventFilter	Removes a previously set chat message filter
 
     blizzardui
+    framexml
 
 CheckBinderDist	Returns whether the player is in range of an NPC that can set the Hearthstone location
 CheckInbox	Requests information on the player's mailbox contents from the server
@@ -410,6 +424,7 @@ CheckSpiritHealerDist	Returns whether the player is in range of a spirit healer
 CheckTalentMasterDist	Returns whether the player is in range of an NPC that can reset talents
 ClearAchievementComparisonUnit	Disables comparing achievements/statistics with another player
 ClearAllLFGDungeons	Removes the player from all LFD queues.
+ClearAutoAcceptQuestSound	This function is not yet documented
 ClearChannelWatch	This function is deprecated and should no longer be used
 
     deprecated
@@ -467,7 +482,7 @@ CloseTrainer	Ends interaction with a trainer
 CollapseAllFactionHeaders	Collapses all headers and sub-headers in the Reputation UI
 CollapseChannelHeader	Collapses a group header in the chat channel listing
 CollapseFactionHeader	Collapses a given faction header or sub-header in the Reputation UI
-CollapseGuildTradeSkillHeader	This function is not yet documented
+CollapseGuildTradeSkillHeader	Collapses the corresponding profession in the guild window
 CollapseQuestHeader	Collapses a header in the quest log
 CollapseTradeSkillSubClass	Collapses a group header in the trade skill listing
 CombatLogAddFilter	Adds a filter to the combat log system
@@ -525,6 +540,7 @@ CommentatorGetNumPlayers	This is a Blizzard internal function
 
     internal
 
+CommentatorGetPartyInfo	This function is not yet documented
 CommentatorGetPlayerInfo	This is a Blizzard internal function
 
     internal
@@ -601,7 +617,10 @@ CommentatorStartSkirmishMatch	This is a Blizzard internal function
 
     internal
 
-CommentatorStartWargame	This function is not yet documented
+CommentatorStartWargame	This is a Blizzard internal function
+
+    internal
+
 CommentatorToggleMode	This is a Blizzard internal function
 
     internal
@@ -650,7 +669,7 @@ ConsoleAddMessage	Prints text to the debug console
 ConsoleExec	Runs a console command
 ContainerIDToInventoryID	Returns the [[docs/api_types#inventoryID|`inventoryID`]] corresponding to a given [[docs/api_types#containerID|`containerID`]]
 ContainerRefundItemPurchase	Sells an item purchased with alternate currency back to a vendor
-ConvertToParty	This function is not yet documented
+ConvertToParty	Converts a raid to a party
 ConvertToRaid	Converts a party to a raid
 CreateArenaTeam	This function is not yet documented
 CreateFont	Creates a new Font object
@@ -758,12 +777,15 @@ EquipmentManagerIgnoreSlotForSave	Adds an equipment slot to the list of those ig
 EquipmentManagerIsSlotIgnoredForSave	Returns whether the contents of an equipment slot will be included when saving sets
 EquipmentManagerUnignoreSlotForSave	Removes an equipment slot from the list of those ignored when saving sets
 EquipmentManager_UnpackLocation	Unpacks an inventory location bitfield into usable components
+
+    framexml
+
 EquipmentSetContainsLockedItems	Returns whether an equipment set contains locked items
 ExpandAllFactionHeaders	Expands all headers and sub-headers in the Reputation UI
 ExpandChannelHeader	Expands a group header in the chat channel listing
 ExpandCurrencyList	Expands or collapses a list header in the Currency UI
 ExpandFactionHeader	Expands a given faction header or sub-header in the Reputation UI
-ExpandGuildTradeSkillHeader	This function is not yet documented
+ExpandGuildTradeSkillHeader	Expands the corresponding profession in the guild window
 ExpandQuestHeader	Expands a quest header in the quest log
 ExpandTradeSkillSubClass	Expands a group header in the trade skill listing
 FactionToggleAtWar	Toggles "at war" status for a faction
@@ -838,7 +860,7 @@ GetAddOnInfo	Returns information about an addon
 GetAddOnMemoryUsage	Returns the amount of memory used by an addon
 GetAddOnMetadata	Returns the value of certain fields in an addon's TOC file
 GetAllowLowLevelRaid	This function is not yet documented
-GetArchaeologyInfo	This function is not yet documented
+GetArchaeologyInfo	Returns information about Archeology
 GetArchaeologyRaceInfo	This function is not yet documented
 GetAreaSpiritHealerTime	Returns the time remaining until a nearby battleground spirit healer resurrects all players in its area
 GetArenaTeam	Returns information about one of the player's arena teams
@@ -877,7 +899,7 @@ GetAvailableLevel	Returns the level of a quest available from the current Quest 
 GetAvailableLocales	This function is not yet documented
 GetAvailableQuestInfo	Returns the flags of an available quest during an NPC dialog
 GetAvailableTitle	Returns the name of a quest available from the current Quest NPC
-GetAverageItemLevel	This function is not yet documented
+GetAverageItemLevel	Returns the players average item level as displayed in the character pane.
 GetBackgroundLoadingStatus	This function is not yet documented
 GetBackpackCurrencyInfo	Returns information about a currency marked for watching on the Backpack UI
 GetBagName	Returns the name of one of the player's bags
@@ -955,7 +977,7 @@ GetComparisonStatistic	Returns the comparison unit's data for a statistic
 GetContainerFreeSlots	Returns a list of open slots in a container
 GetContainerItemCooldown	Returns cooldown information about an item in the player's bags
 GetContainerItemDurability	Returns durability status for an item in the player's bags
-GetContainerItemEquipmentSetInfo	This function is not yet documented
+GetContainerItemEquipmentSetInfo	Returns whether an item in the bags is a part of a saved item set.
 GetContainerItemGems	Returns the gems socketed in an item in the player's bags
 GetContainerItemID	Returns the item ID of an item in the player's bags
 GetContainerItemInfo	Returns information about an item in the player's bags
@@ -971,7 +993,7 @@ GetCorpseRecoveryDelay	Returns the amount of time left until the player can reco
 GetCritChance	Returns the player's melee critical strike chance
 GetCritChanceFromAgility	Returns additional critical strike chance provided by Agility
 GetCriteriaSpell	This function is not yet documented
-GetCurrencyInfo	This function is not yet documented
+GetCurrencyInfo	Returns information about a currency by ID
 GetCurrencyListInfo	Returns information about a currency type (or headers in the Currency UI)
 GetCurrencyListSize	Returns the number of list entries to show in the Currency UI
 GetCurrentArenaSeason	Returns a number identifying the current arena season
@@ -1032,9 +1054,9 @@ GetFactionInfo	Returns information about a faction or header listing
 GetFactionInfoByID	Returns information about a faction or header listing
 GetFileStreamingStatus	This function is not yet documented
 GetFirstTradeSkill	Returns the index of the first non-header in the trade skill listing
-GetFlyoutID	This function is not yet documented
-GetFlyoutInfo	This function is not yet documented
-GetFlyoutSlotInfo	This function is not yet documented
+GetFlyoutID	Returns the internal flyoutID for a given flyout index
+GetFlyoutInfo	Returns information about a flyout slot
+GetFlyoutSlotInfo	Returns information about a flyout ability slot
 GetFrameCPUUsage	Returns information about CPU usage by a frame's script handlers
 GetFramerate	Returns the number of frames per second rendered by the client
 GetFramesRegisteredForEvent	Returns all frames registered for a given event
@@ -1086,7 +1108,7 @@ GetGuildFactionGroup	This function is not yet documented
 GetGuildFactionInfo	This function is not yet documented
 GetGuildInfo	Returns a unit's guild affiliation
 GetGuildInfoText	Returns guild information text
-GetGuildLevel	This function is not yet documented
+GetGuildLevel	Returns the guild level as displayed in the guild pane
 GetGuildLevelEnabled	This function is not yet documented
 GetGuildLogoInfo	This function is not yet documented
 GetGuildMemberRecipes	This function is not yet documented
@@ -1098,10 +1120,10 @@ GetGuildPerkInfo	This function is not yet documented
 GetGuildRecipeInfoPostQuery	This function is not yet documented
 GetGuildRecipeMember	This function is not yet documented
 GetGuildRewardInfo	This function is not yet documented
-GetGuildRosterContribution	This function is not yet documented
+GetGuildRosterContribution	Returns weekly and total guild exp of a player
 GetGuildRosterInfo	Returns information about the selected player in your guild roster.
 GetGuildRosterLargestAchievementPoints	This function is not yet documented
-GetGuildRosterLargestContribution	This function is not yet documented
+GetGuildRosterLargestContribution	Return the weekly and total largest contibution
 GetGuildRosterLastOnline	Returns the amount of time since a guild member was last online
 GetGuildRosterMOTD	Returns the Message of the Day for the player's guild
 GetGuildRosterSelection	Returns the index of the selected member in the guild roster
@@ -1133,7 +1155,7 @@ GetInventoryItemCount	Returns the number of items stacked in an inventory slot
 GetInventoryItemDurability	Returns the current durability level of an equipped item
 GetInventoryItemGems	Returns the gems socketed in an equipped item
 GetInventoryItemID	Returns the item ID of an equipped item
-GetInventoryItemLink	Returns an item link for an equipped item
+GetInventoryItemLink	Returns an item link for an item in the unit's inventory
 GetInventoryItemQuality	Returns the quality level of an equipped item
 GetInventoryItemTexture	Returns the icon texture for an equipped item
 GetInventoryItemsForSlot	Returns a list of items that can be equipped in a given inventory slot
@@ -1157,16 +1179,19 @@ GetLFDChoiceOrder	This function is not yet documented
 GetLFDLockInfo	This function is not yet documented
 GetLFDLockPlayerCount	This function is not yet documented
 GetLFGBootProposal	This function is not yet documented
-GetLFGCompletionReward	This function is not yet documented
+GetLFGCompletionReward	Returns the various rewards for a completed LFG dungeon
 GetLFGCompletionRewardItem	This function is not yet documented
 GetLFGDeserterExpiration	This function is not yet documented
-GetLFGDungeonInfo	This function is not yet documented
+GetLFGDungeonInfo	Retrieves specific LFD information, not limited by player level and all dungeons can be looked up.
 GetLFGDungeonRewardInfo	This function is not yet documented
 GetLFGDungeonRewardLink	This function is not yet documented
 GetLFGDungeonRewards	This function is not yet documented
 GetLFGInfoLocal	This function is not yet documented
 GetLFGInfoServer	This function is not yet documented
 GetLFGMode	Provides information about the LFG status of the player.
+
+    framexml
+
 GetLFGProposal	This function is not yet documented
 GetLFGProposalEncounter	This function is not yet documented
 GetLFGProposalMember	This function is not yet documented
@@ -1217,13 +1242,17 @@ GetMapDebugObjectInfo	This is a Blizzard internal function
 
 GetMapInfo	Returns information about the current world map texture
 GetMapLandmarkInfo	Returns information about a map landmark
+GetMapNameByID	This function is not yet documented
 GetMapOverlayInfo	Returns information about a world map overlay
 GetMapZones	Returns the map zones for a given continent
 GetMasterLootCandidate	Returns information about a given loot candidate
-GetMastery	This function is not yet documented
+GetMastery	Returns the mastery value of your character
 GetMaxArenaCurrency	Returns the maximum amount of arena points the player can accrue
 GetMaxCombatRatingBonus	Returns the maximum possible percentage bonus for a given combat rating
 GetMaxDailyQuests	Returns the maximum number of daily quests that can be completed each day.
+GetMaxPlayerLevel	Returns the maximum level attainable by a player
+GetMaxSpellStartRecoveryOffset	This function is not yet documented
+GetMeleeHaste	This function is not yet documented
 GetMerchantItemCostInfo	Returns information about alternate currencies required to purchase an item from a vendor
 GetMerchantItemCostItem	Returns information about currency items required to purchase an item from a vendor
 GetMerchantItemInfo	Returns information about an item available for purchase from a vendor
@@ -1251,6 +1280,7 @@ GetMonitorName	Returns the system name of a selected monitor
 GetMouseButtonClicked	Returns which mouse button triggered the current script
 GetMouseButtonName	Returns the name for a mouse button specified by number
 GetMouseFocus	Returns the frame that is currently under the mouse, and has mouse input enabled.
+GetMovieDownloadProgress	This function is not yet documented
 GetMovieResolution	Returns the horizontal resolution available for displaying movie content
 GetMultiCastBarOffset	This function is not yet documented
 GetMultiCastTotemSpells	This function is not yet documented
@@ -1263,13 +1293,13 @@ GetNewSocketLink	Returns a hyperlink for a gem added to a socket
 GetNextAchievement	Returns the next achievement for an achievement which is part of a series
 GetNextCompleatedTutorial	This function is not yet documented
 GetNextPetTalentLevel	This function is not yet documented
-GetNextTalentLevel	This function is not yet documented
+GetNextTalentLevel	Returns the level at which the player gets the next talent point
 GetNumActiveQuests	Returns the number of quests which can be turned in to the current Quest NPC
 GetNumAddOns	Returns the number of addons in the addon listing
-GetNumArchaeologyRaces	This function is not yet documented
+GetNumArchaeologyRaces	Return the amount of different races (branches) in Archeology
 GetNumArenaOpponents	Returns the number of enemy players in an arena match
 GetNumArenaTeamMembers	Returns the number of members in an arena team
-GetNumArtifactsByRace	This function is not yet documented
+GetNumArtifactsByRace	Return the amount of artifacts the player has acquired from the provided race
 GetNumAuctionItems	Returns the number of auction items in a listing
 GetNumAutoQuestPopUps	This function is not yet documented
 GetNumAvailableQuests	Returns the number quests available from the current Quest NPC
@@ -1291,14 +1321,14 @@ GetNumDisplayChannels	Returns the number of entries in the channel list display
 GetNumDungeonMapLevels	Returns the number of map images for the world map's current zone
 GetNumEquipmentSets	Returns the number of saved equipment sets
 GetNumFactions	Returns the number of entries in the reputation UI
-GetNumFlyouts	This function is not yet documented
+GetNumFlyouts	Provides the number of flyout actions in the UI
 GetNumFrames	Returns the number of existing Frame objects (and derivatives)
-GetNumFriends	Returns the number of characters on the player's friends list
+GetNumFriends	Returns the number of characters and online characters on the player's friends list
 GetNumGlyphSockets	Currently unused
 
     deprecated
 
-GetNumGlyphs	This function is not yet documented
+GetNumGlyphs	Returns the total amount of glyphs for the player's class
 GetNumGossipActiveQuests	Returns the number of quests which can be turned in to the current Gossip NPC
 GetNumGossipAvailableQuests	Returns the number of quests available from the current Gossip NPC
 GetNumGossipOptions	Returns the number of non-quest dialog options for the current Gossip NPC
@@ -1307,10 +1337,10 @@ GetNumGuildBankTabs	Returns the number of purchased tabs in the guild bank
 GetNumGuildBankTransactions	Returns the number of entries in a guild bank tab's transaction log
 GetNumGuildEvents	Returns the number of entries in the guild event log
 GetNumGuildMembers	Returns the number of members in the guild roster
-GetNumGuildNews	This function is not yet documented
-GetNumGuildPerks	This function is not yet documented
-GetNumGuildRewards	This function is not yet documented
-GetNumGuildTradeSkill	This function is not yet documented
+GetNumGuildNews	Returns the total amount of guild news (filtered)
+GetNumGuildPerks	Returns the total amount of guild perks (including unavailable ones)
+GetNumGuildRewards	Return the total amount of guild rewards (including unavailable ones)
+GetNumGuildTradeSkill	Returns the number of people and headers currently visible in the profession view of your guild window
 GetNumIgnores	Returns the number of characters on the player's ignore list
 GetNumLanguages	Returns the number of languages the player character can speak
 GetNumLootItems	Returns the number of items available to be looted
@@ -1358,7 +1388,7 @@ GetNumStationeries	Returns the number of available stationery types
     internal
 
 GetNumTalentGroups	Returns the number of talent specs a character can switch among
-GetNumTalentPoints	This function is not yet documented
+GetNumTalentPoints	Returns the total number of talent points a character has currently
 GetNumTalentTabs	Returns the number of talent tabs for the player, pet, or inspect target
 GetNumTalents	Returns the number of options in a talent tab
 GetNumTitles	Returns the number of available player titles
@@ -1373,6 +1403,7 @@ GetNumWorldPVPAreas	This function is not yet documented
 GetNumWorldStateUI	Returns the number of world state UI elements
 GetObjectiveText	Returns a summary of objectives for the quest offered by a questgiver
 GetOptOutOfLoot	Returns whether the player has opted out of loot rolls
+GetOutdoorPVPWaitTime	Returns the world PvP wait time for the currently selected zone, nil otherwise. Authors looking for information regarding specific world PvP zones should consider using [[docs/api/GetWorldPVPAreaInfo|GetWorldPVPAreaInfo()]] instead.
 GetOwnerAuctionItems	Requests data from the server for the list of auctions created by the player
 
     server
@@ -1406,6 +1437,7 @@ GetPetExperience	Returns information about experience points for the player's pe
 GetPetFoodTypes	Returns a list of the food types the player's pet will eat
 GetPetHappiness	Returns information about the player's pet's happiness
 GetPetIcon	Returns an icon representing the current pet
+GetPetMeleeHaste	This function is not yet documented
 GetPetSpellBonusDamage	This function is not yet documented
 GetPetTalentTree	Returns the name of the talent tree used by the player's current pet
 GetPetTimeRemaining	Returns the time remaining before a temporary pet is automatically dismissed
@@ -1413,7 +1445,7 @@ GetPetitionInfo	Returns information about the currently open petition
 GetPetitionNameInfo	Returns the name of a character who has signed the currently offered petition
 GetPlayerFacing	Returns the player's orientation (heading)
 GetPlayerInfoByGUID	Returns information about a player character identified by globally unique identifier
-GetPlayerMapPosition	Returns the position of the player's corpse on the world map
+GetPlayerMapPosition	Returns the position of a unit in the player's party or raid on the world map
 GetPlayerTradeCurrency	This function is not yet documented
 GetPlayerTradeMoney	Returns the amount of money offered for trade by the player
 GetPossessInfo	Returns information about special actions available while the player possesses another unit
@@ -1426,9 +1458,9 @@ GetPreviewTalentPointsSpent	This function is deprecated and should no longer be 
 
 GetPreviousAchievement	Returns the previous achievement for an achievement which is part of a series
 GetPreviousArenaSeason	Returns a number identifying the previous arena season
-GetPrimaryTalentTree	This function is not yet documented
-GetProfessionInfo	This function is not yet documented
-GetProfessions	This function is not yet documented
+GetPrimaryTalentTree	Returns the index of a character's primary talent tree.
+GetProfessionInfo	Returns details on a profession from its index including name, icon, and skill level
+GetProfessions	Returns indices of all of the current character's professions
 GetProgressText	Returns the quest progress text presented by a questgiver
 GetPromotionRank	This function is not yet documented
 GetQuestBackgroundMaterial	Returns background display style information for a questgiver dialog
@@ -1436,6 +1468,7 @@ GetQuestCurrencyInfo	This function is not yet documented
 GetQuestDifficultyColor	Returns a table of color values indicating the difficulty of a quest's level as compared to the player's
 
     blizzardui
+    framexml
 
 GetQuestGreenRange	Returns the level range in which a quest below the player's level still rewards XP
 GetQuestID	Returns the internal ID of a quest featured in the currently active NPC dialogue (available after a QUEST_DETAIL event)
@@ -1462,7 +1495,7 @@ GetQuestLogRewardCurrencyInfo	This function is not yet documented
 GetQuestLogRewardFactionInfo	This function is not yet documented
 GetQuestLogRewardInfo	Returns information about item rewards for the selected quest in the quest log
 GetQuestLogRewardMoney	Returns the money reward for the selected quest in the quest log
-GetQuestLogRewardSkillPoints	This function is not yet documented
+GetQuestLogRewardSkillPoints	Returns skill point reward info for the selected quest in the quest log
 GetQuestLogRewardSpell	Returns information about the spell reward for the selected quest in the quest log
 GetQuestLogRewardTalents	Returns the talent point reward for the selected quest in the quest log
 GetQuestLogRewardTitle	Returns the title reward for the selected quest in the quest log
@@ -1493,6 +1526,7 @@ GetRaidTargetIndex	Returns the index of the raid target marker on a unit
 GetRandomBGHonorCurrencyBonuses	This function is not yet documented
 GetRandomDungeonBestChoice	This function is not yet documented
 GetRangedCritChance	Returns the player's ranged critical strike chance
+GetRangedHaste	This function is not yet documented
 GetRatedBattleGroundInfo	This function is not yet documented
 GetReadyCheckStatus	Returns a unit's status during a ready check
 GetReadyCheckTimeLeft	Returns the amount of time left on the current ready check
@@ -1500,7 +1534,7 @@ GetRealNumPartyMembers	Returns the number of members in the player's non-battleg
 GetRealNumRaidMembers	Returns the number of members in the player's non-battleground raid
 GetRealZoneText	Returns the "official" name of the zone or instance in which the player is located
 GetRealmName	Returns the name of the player's realm (server name)
-GetReforgeItemInfo	This function is not yet documented
+GetReforgeItemInfo	Returns information about the item currently in the 'reforge' slot.
 GetReforgeItemStats	This function is not yet documented
 GetReforgeOptionInfo	This function is not yet documented
 GetRefreshRates	Returns a list of available screen refresh rates
@@ -1531,7 +1565,7 @@ GetScreenHeight	Returns the height of the screen for UI layout purposes
 GetScreenResolutions	Returns a list of available screen resolutions
 GetScreenWidth	Returns the width of the screen for UI layout purposes
 GetScriptCPUUsage	Returns the total CPU time used by the scripting system
-GetSelectedArtifactInfo	This function is not yet documented
+GetSelectedArtifactInfo	Returns information about the currently selected artifact
 GetSelectedAuctionItem	Returns the index of the currently selected item in an auction listing
 GetSelectedDisplayChannel	Returns the selected channel in the channel list display
 GetSelectedFaction	Returns which faction entry is selected in the reputation UI
@@ -1582,7 +1616,7 @@ GetStationeryInfo	Returns information about a stationery type
 
     internal
 
-GetStatistic	Returns data for a statistic
+GetStatistic	Returns data for a statistic that can be shown on the statistics tab of the achievements window
 GetStatisticsCategoryList	Returns a list of all statistic categories
 GetSubZoneText	Returns the name of the minor area in which the player is located
 GetSuggestedGroupNum	Returns the suggested group size for attempting the quest currently offered by a questgiver
@@ -1668,6 +1702,7 @@ GetUnitMaxHealthModifier	Returns the maximum health modifier for the player's pe
 GetUnitName	Returns a string summarizing a unit's name and server
 
     blizzardui
+    framexml
 
 GetUnitPitch	Returns the player's current pitch (slope or angle of movement)
 GetUnitPowerModifier	Returns the mana modifier for the player's pet
@@ -1676,7 +1711,7 @@ GetUnspentTalentPoints	Returns the number of unused talent points
 GetVehicleUIIndicator	This function is not yet documented
 GetVehicleUIIndicatorSeat	This function is not yet documented
 GetVideoCaps	Returns information about graphics capabilities of the current system
-GetVideoOptions	This function is not yet documented
+GetVideoOptions	Returns video options for different video quality levels
 GetVoiceCurrentSessionID	Returns an identifier for the active voice session
 GetVoiceSessionInfo	Returns information about a voice session
 GetVoiceSessionMemberInfoBySessionID	Returns information about a member of a voice channel
@@ -1685,8 +1720,7 @@ GetWarGameQueueStatus	This function is not yet documented
 GetWatchedFactionInfo	Returns information about the "watched" faction (displayed on the XP bar in the default UI)
 GetWeaponEnchantInfo	Returns information about temporary enchantments on the player's weapons
 GetWhoInfo	Returns information about a character in the Who system query results
-GetWintergraspWaitTime	Returns the amount of time remaining until the next PvP event in the Wintergrasp zone
-GetWorldPVPAreaInfo	This function is not yet documented
+GetWorldPVPAreaInfo	Returns information about a given world PvP zone
 GetWorldPVPQueueStatus	Returns information on the players queue for a world PvP zone
 GetWorldStateUIInfo	Returns information about a world state UI element
 GetXPExhaustion	Returns the amount of rested bonus experience available
@@ -1734,6 +1768,7 @@ GuildSetMOTD	Sets the guild Message of the Day
 GuildUIEnabled	This function is not yet documented
 GuildUninvite	Removes a character from the player's guild
 HasAction	Returns whether an action slot contains an action
+HasAlternateForm	This function is not yet documented
 HasCompletedAnyAchievement	This function is not yet documented
 HasDebugZoneMap	This is a Blizzard internal function
 
@@ -1759,7 +1794,7 @@ InitWorldMapPing	Initializes the frame used to display the character location "p
 
     internal
 
-InitiateRolePoll	This function is not yet documented
+InitiateRolePoll	Initiates a raid-wide role check. Every raid member is required to set his own role in a popup role window.
 InitiateTrade	Offers to trade with a given unit
 InteractUnit	Interacts with (as with right-clicking on) a unit
 
@@ -1768,10 +1803,12 @@ InteractUnit	Interacts with (as with right-clicking on) a unit
 InterfaceOptionsFrame_OpenToCategory	Opens the Interface Options window and displays a given panel within it
 
     blizzardui
+    framexml
 
 InterfaceOptions_AddCategory	Registers a panel to be displayed in the Interface Options window
 
     blizzardui
+    framexml
 
 InviteUnit	Invites a character to the player's party or raid
 IsAchievementEligible	This function is not yet documented
@@ -1795,6 +1832,8 @@ IsAutoRepeatSpell	Returns whether a spell is an automatically repeating spell
 IsAvailableQuestTrivial	Returns whether a quest available from the current Quest NPC is trivial at the player's level
 IsBNLogin	This function is not yet documented
 IsCemeterySelectionAvailable	This function is not yet documented
+IsChatAFK	Returns whether the player's status is Away
+IsChatDND	Returns whether the player's status is Busy
 IsConsumableAction	Returns whether using an action consumes an item
 IsConsumableItem	Returns whether an item is consumable
 IsConsumableSpell	Returns whether casting a spell consumes a reagent item
@@ -1821,7 +1860,10 @@ IsFalling	Returns whether the player is currently falling
 IsFishingLoot	Returns whether the currently displayed loot came from fishing
 IsFlyableArea	Returns whether flight is allowed on the continent where the player is currently located
 IsFlying	Returns whether the player is currently flying
-IsGMClient	This function is not yet documented
+IsGMClient	This is a Blizzard internal function
+
+    internal
+
 IsGlyphFlagSet	This function is not yet documented
 IsGuildLeader	Returns whether or player is leader of his or her guild
 IsHarmfulItem	Returns whether an item can be used against hostile units
@@ -1833,6 +1875,7 @@ IsIgnoredOrMuted	Returns whether a unit can be heard due to ignored/muted status
 IsInActiveWorldPVP	This function is not yet documented
 IsInArenaTeam	Returns whether the player is on an arena team
 IsInAuthenticatedRank	This function is not yet documented
+IsInFakeRaid	This function is not yet documented
 IsInGuild	Returns whether the player is in a guild
 IsInInstance	Returns whether the player is in an instance (and its type if applicable)
 IsInLFGDungeon	This function is not yet documented
@@ -1852,6 +1895,8 @@ IsModifierKeyDown	Returns whether a modifier key is held down
 IsMounted	Returns whether the player is mounted
 IsMouseButtonDown	Returns whether a given mouse button is held down
 IsMouselooking	Returns whether mouselook mode is active
+IsMovieLocal	This function is not yet documented
+IsMoviePlayable	This function is not yet documented
 IsMuted	Returns whether a character has been muted by the player
 IsOutOfBounds	Returns whether the player is currently outside the bounds of the world
 IsOutdoors	Returns whether the player is currently outdoors
@@ -1866,6 +1911,7 @@ IsQuestCompletable	Returns whether the player can complete the quest presented b
 IsQuestLogSpecialItemInRange	Returns whether the player's target is in range for using an item associated with a current quest
 IsQuestWatched	Returns whether a quest from the quest log is listed in the objectives tracker
 IsRaidLeader	Returns whether the player is the raid leader
+IsRaidMarkerActive	This function is not yet documented
 IsRaidOfficer	Returns whether the player is a raid assistant
 IsRatedBattleground	This function is not yet documented
 IsRealPartyLeader	Returns whether the player is the leader of a non-battleground party
@@ -1885,6 +1931,7 @@ IsStackableAction	Returns whether an action uses stackable items
 IsStealthed	Returns whether the player is currently stealthed
 IsStereoVideoAvailable	Returns whether the current system supports stereoscopic 3D display
 IsSubZonePVPPOI	Returns whether the current area has PvP (or other) objectives to be displayed
+IsSubmerged	This function is not yet documented
 IsSwimming	Returns whether the player is currently swimming
 IsThreatWarningEnabled	Returns whether the default Aggro Warning UI should currently be shown
 IsTitleKnown	Returns whether the player has earned the ability to display a title
@@ -1931,7 +1978,7 @@ JoinChannelByName	This function is deprecated and should no longer be used
 
     deprecated
 
-JoinLFG	This function is not yet documented
+JoinLFG	Joins the player to the LFG system
 JoinPermanentChannel	Joins a channel, saving associated chat window settings
 JoinRatedBattlefield	This function is not yet documented
 JoinTemporaryChannel	Joins a channel, but does not save associated chat window settings
@@ -1993,7 +2040,7 @@ LoggingCombat	Enables or disables saving combat log data to a file
 Logout	Attempts to log out and return to the character selection screen
 LootSlot	Attempts to pick up an item available as loot
 LootSlotIsCoin	Returns whether a loot slot contains money
-LootSlotIsCurrency	This function is not yet documented
+LootSlotIsCurrency	Returns whether a loot slot contains a currency
 LootSlotIsItem	Returns whether a loot slot contains an item
 MakeMinigameMove	This is a Blizzard internal function
 
@@ -2182,6 +2229,7 @@ PetFollow	Instructs the pet to follow the player
     protected
 
 PetHasActionBar	Returns whether the player's current pet has an action bar
+PetMoveTo	This function is not yet documented
 PetPassiveMode	Enables passive mode for the player's pet
 
     protected
@@ -2246,6 +2294,7 @@ PlaceGlyphInSocket	Applies the glyph currently awaiting a target to a socket
     confirmation
 
 PlaceRaidMarker	This function is not yet documented
+PlayAutoAcceptQuestSound	This function is not yet documented
 PlayDance	This is a Blizzard internal function
 
     internal
@@ -2255,7 +2304,7 @@ PlaySound	Plays one of WoW's built-in sound effects
 PlaySoundFile	Plays an audio file at a given path
 PlaySoundKitID	This function is not yet documented
 PlayerCanTeleport	Returns whether the player can accept a summons
-PlayerHasHearthstone	This function is not yet documented
+PlayerHasHearthstone	Returns whether the player has a hearthstone in their bag
 PlayerIsPVPInactive	Returns whether a battleground participant is inactive (and eligible for reporting as AFK)
 PortGraveyard	This function is not yet documented
 PositionMiniWorldMapArrowFrame	This is a Blizzard internal function
@@ -2266,6 +2315,7 @@ PositionWorldMapArrowFrame	This is a Blizzard internal function
 
     internal
 
+PreloadMovie	This function is not yet documented
 PrevView	Moves the camera to the previous predefined setting
 ProcessMapClick	Possibly changes the WorldMap based on a mouse click
 ProcessQuestLogRewardFactions	This function is not yet documented
@@ -2300,7 +2350,10 @@ QueryGuildEventLog	Requests guild event log information from the server
 QueryGuildMembersForRecipe	This function is not yet documented
 QueryGuildNews	This function is not yet documented
 QueryGuildRecipes	This function is not yet documented
-QueryGuildXP	This function is not yet documented
+QueryGuildXP	Queries the server to update the guild experience information
+
+    server
+
 QueryQuestsCompleted	Queries the server for the player's completed quest information
 
     server
@@ -2380,7 +2433,10 @@ ReportSuggestion	This function is deprecated and should no longer be used
 
     deprecated
 
-RequestArtifactCompletionHistory	This function is not yet documented
+RequestArtifactCompletionHistory	Queries the server for the player's artifact completion history
+
+    server
+
 RequestBattlefieldPositions	Requests information from the server about team member positions in the current battleground
 
     server
@@ -2426,7 +2482,7 @@ ResetPerformanceValues	This is a Blizzard internal function
 ResetPreviewTalentPoints	Reverts changes made within a specific tab in the Talent UI's preview mode
 ResetTutorials	Enables contextual tutorial display and clears the list of already displayed tutorials
 ResetView	Resets a saved camera setting to default values
-ResistancePercent	This function is not yet documented
+ResistancePercent	Returns the % value of spell resistance depending on resistance value and player level
 RespondInstanceLock	Allows leaving a recently entered instance to which the player would otherwise be saved
 RespondMailLockSendItem	This function is not yet documented
 RestartGx	Restart the client's graphic subsystem
@@ -2465,6 +2521,7 @@ SearchLFGSort	This function is not yet documented
 SecondsToTime	Returns a description of an amount of time in appropriate units
 
     blizzardui
+    framexml
 
 SecureCmdOptionParse	Returns the action (and target, if applicable) for a secure macro command
 SelectActiveQuest	Selects a quest which can be turned in to the current Quest NPC
@@ -2495,6 +2552,7 @@ SendWho	Requests a list of characters meeting given search criteria from the ser
     server
 
 SetAbandonQuest	Begins the process of abandoning a quest in the player's quest log
+SetAchievementComparisonPortrait	This function is not yet documented
 SetAchievementComparisonUnit	Enables comparing achievements/statistics with another player
 SetActionBarToggles	Configures display of additional ActionBars in the default UI
 SetActiveTalentGroup	Switches the player's active talent specialization
@@ -2509,6 +2567,7 @@ SetArenaTeamRosterShowOffline	Enables or disables the inclusion of offline membe
 SetAuctionsTabShowing	This function is not yet documented
 SetAutoDeclineGuildInvites	This function is not yet documented
 SetBagPortraitTexture	Sets a Texture object to display the icon of one of the player's bags
+SetBarberShopAlternateFormFrame	This function is not yet documented
 SetBattlefieldScoreFaction	Filters the battleground scoreboard by faction/team
 SetBinding	Binds a key combination to a binding command
 SetBindingClick	Binds a key combination to "click" a Button object
@@ -2524,7 +2583,7 @@ SetChannelWatch	This is a Blizzard internal function
 
     internal
 
-SetChatColorNameByClass	This function is not yet documented
+SetChatColorNameByClass	Sets whether the player names should be colored by class for a given chat type
 SetChatWindowAlpha	Saves a chat window's background opacity setting
 SetChatWindowColor	Saves a chat window's background color setting
 SetChatWindowDocked	Saves whether a chat window should be docked with the main chat window
@@ -2572,7 +2631,7 @@ SetGuildTradeSkillItemNameFilter	This function is not yet documented
 SetInventoryPortraitTexture	Sets a Texture object to display the icon of an equipped item
 SetLFGBootVote	This function is not yet documented
 SetLFGComment	Associates a brief text comment with the player's listing in the LFG system
-SetLFGDungeon	This function is not yet documented
+SetLFGDungeon	Sets a flag indicating that the player would like to join a given dungeon/queue
 SetLFGDungeonEnabled	This function is not yet documented
 SetLFGHeaderCollapsed	This function is not yet documented
 SetLFGRoles	Sets group roles for which to advertise the player in the LFG system
@@ -2693,7 +2752,7 @@ SortBGList	This function is not yet documented
 SortBattlefieldScoreData	Sorts the battleground scoreboard
 SortGuildRoster	Sorts the guild roster
 SortGuildTradeSkill	This function is not yet documented
-SortQuestWatches	This function is not yet documented
+SortQuestWatches	Sorts the quests listed in the watch frame based on the set criteria
 SortWho	Sorts the Who system query results list
 Sound_ChatSystem_GetInputDriverNameByIndex	Returns the name of the given chat system sound input driver
 Sound_ChatSystem_GetNumInputDrivers	Returns the number of chat system sound input drivers
@@ -2707,6 +2766,7 @@ Sound_GameSystem_RestartSoundSystem	Restarts the game's sound systems
 SpellCanTargetGlyph	Returns whether the spell currently awaiting a target requires a glyph slot to be chosen
 SpellCanTargetItem	Returns whether the spell currently awaiting a target requires an item to be chosen
 SpellCanTargetUnit	Returns whether the spell currently awaiting a target can target a given unit
+SpellCancelQueuedSpell	This function is not yet documented
 SpellHasRange	Returns whether an item has a range limitation for its use
 SpellIsTargeting	Returns whether a spell is currently awaiting a target
 SpellStopCasting	Stops casting or targeting the spell in progress
@@ -2747,12 +2807,33 @@ StopMacro	Stops execution of a running macro
 StopMusic	Stops currently playing in-game music
 StopTradeSkillRepeat	Cancels repetition of a trade skill recipe
 Stopwatch_Clear	This function is not yet documented
+
+    framexml
+
 Stopwatch_FinishCountdown	This function is not yet documented
+
+    framexml
+
 Stopwatch_IsPlaying	This function is not yet documented
+
+    framexml
+
 Stopwatch_Pause	This function is not yet documented
+
+    framexml
+
 Stopwatch_Play	This function is not yet documented
+
+    framexml
+
 Stopwatch_StartCountdown	This function is not yet documented
+
+    framexml
+
 Stopwatch_Toggle	Toggles visibility of the StopwatchFrame
+
+    framexml
+
 StrafeLeftStart	Begins moving the player character sideways to his or her left
 
     protected
@@ -2910,7 +2991,7 @@ ToggleTris	This is a Blizzard internal function
 
 TradeSkillOnlyShowMakeable	Filters the trade skill listing by whether the player currently has enough reagents for each recipe
 TradeSkillOnlyShowSkillUps	Filters the trade skill listing by whether the player can gain skill ranks from each recipe
-Transform	This function is not yet documented
+Transform	Switches between human and worgen form
 TriggerTutorial	This function is not yet documented
 TurnInGuildCharter	Turns in a completed guild charter
 TurnLeftStart	Begins turning the player character to the left
@@ -2949,8 +3030,6 @@ UnitArmor	Returns the player's or pet's armor value
 UnitAttackBothHands	Returns information about the player's or pet's weapon skill
 UnitAttackPower	Returns the player's or pet's melee attack power
 UnitAttackSpeed	Returns information about the player's or pet's melee attack speed
-UnitAttackerListCount	This function is not yet documented
-UnitAttackerListInfo	This function is not yet documented
 UnitAura	Returns information about buffs/debuffs on a unit
 UnitBuff	Returns information about a buff on a unit
 UnitCanAssist	Returns whether one unit can assist another
@@ -2973,9 +3052,10 @@ UnitFactionGroup	Returns a unit's primary faction allegiance
 UnitGUID	Returns a unit's globally unique identifier
 UnitGetAvailableRoles	This function is not yet documented
 UnitGetGuildLevel	This function is not yet documented
-UnitGetGuildXP	This function is not yet documented
+UnitGetGuildXP	Returns information about a unit's guild experience
 UnitGetIncomingHeals	This function is not yet documented
 UnitGroupRolesAssigned	Returns information about a unit's role in a LFD party
+UnitHPPerStamina	This function is not yet documented
 UnitHasLFGDeserter	This function is not yet documented
 UnitHasLFGRandomCooldown	This function is not yet documented
 UnitHasRelicSlot	Returns whether a unit has a relic slot instead of a ranged weapon slot
@@ -3049,8 +3129,9 @@ UnitRangedDamage	Returns information about the player's or pet's ranged attack d
 UnitReaction	Returns the reaction of one unit with regards to another as a number
 UnitResistance	Returns information about the player's or pet's magic resistance
 UnitSelectionColor	Returns a color indicating hostility and related status of a unit
-UnitSetRole	This function is not yet documented
+UnitSetRole	Sets a unit's role in the group or raid
 UnitSex	Returns the gender of the given unit or player
+UnitSpellHaste	This function is not yet documented
 UnitStat	Returns information about a basic character statistic for the player or pet
 UnitSwitchToVehicleSeat	Moves the player to another seat within his current vehicle
 UnitTargetsVehicleInRaidUI	Returns whether attempts to target a unit should target its vehicle
@@ -3086,6 +3167,7 @@ UseContainerItem	Activate (as with right-clicking) an item in one of the player'
     protected
 
 UseEquipmentSet	Equips the items in an equipment set
+UseHearthstone	This function is not yet documented
 UseInventoryItem	Activate (as with right-clicking) an equipped item
 
     protected
@@ -3461,4 +3543,3 @@ unpack	Returns the list of elements in a table
 wipe	Removes all entries from a table
 xpcall	Executes a function in protected mode with a custom error handler
 
-    luaapi

@@ -1,4 +1,3 @@
-
 Alpha
 
     change = Alpha:GetChange() - Returns the animation's amount of alpha (opacity) change
@@ -117,8 +116,8 @@ ArchaeologyDigSiteFrame
     texture = ArchaeologyDigSiteFrame:CreateTexture(["name" [, "layer" [, "inherits" [, sublevel]]]]) - Creates a new [[docs/widgets/Texture|`Texture`]] as a child of the frame
     region = ArchaeologyDigSiteFrame:CreateTitleRegion() - Creates a title region for dragging the frame
     ArchaeologyDigSiteFrame:DisableDrawLayer("layer") - Prevents display of all child objects of the frame on a specified graphics layer
-    ArchaeologyDigSiteFrame:DrawBlob() - This function is not yet documented
-    ArchaeologyDigSiteFrame:DrawNone() - This function is not yet documented
+    ArchaeologyDigSiteFrame:DrawBlob(blobId, draw) - Draws a blob onto the frame
+    ArchaeologyDigSiteFrame:DrawNone() - Removes all drawn blobs on the frame
     ArchaeologyDigSiteFrame:EnableDrawLayer("layer") - Allows display of all child objects of the frame on a specified graphics layer
     ArchaeologyDigSiteFrame:EnableJoystick(enable) - Enables or disables joystick interactivity
     ArchaeologyDigSiteFrame:EnableKeyboard(enable) - Enables or disables keyboard interactivity for the frame
@@ -217,7 +216,7 @@ ArchaeologyDigSiteFrame
     ArchaeologyDigSiteFrame:SetMergeThreshold() - This function is not yet documented
     ArchaeologyDigSiteFrame:SetMinResize(minWidth, minHeight) - Sets the minimum size of the frame for user resizing
     ArchaeologyDigSiteFrame:SetMovable(enable) - Sets whether the frame can be moved by the user
-    ArchaeologyDigSiteFrame:SetNumSplinePoints() - This function is not yet documented
+    ArchaeologyDigSiteFrame:SetNumSplinePoints(points) - Sets the number of points used in the blob polygon
     ArchaeologyDigSiteFrame:SetParent(frame) or ArchaeologyDigSiteFrame:SetParent("name") - Makes another frame the parent of this region
     ArchaeologyDigSiteFrame:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]]]) - Sets an anchor point for the region
     ArchaeologyDigSiteFrame:SetPropagateKeyboardInput() - This function is not yet documented
@@ -907,6 +906,7 @@ DressUpModel
     visible = DressUpModel:IsVisible() - Returns whether the region is visible
     DressUpModel:Lower() - Reduces the frame's frame level below all other frames in its strata
     DressUpModel:Raise() - Increases the frame's frame level above all other frames in its strata
+    DressUpModel:RefreshCamera() - This function is not yet documented
     DressUpModel:RefreshUnit() - Updates the model's appearance to match that of its unit
     DressUpModel:RegisterAllEvents() - Registers the frame for all events
     DressUpModel:RegisterEvent("event") - Registers the frame for an [[docs/events|event]]
@@ -918,6 +918,7 @@ DressUpModel
     DressUpModel:SetBackdrop(backdrop) - Sets a backdrop graphic for the frame
     DressUpModel:SetBackdropBorderColor(red, green, blue [, alpha]) - Sets a shading color for the frame's border graphic
     DressUpModel:SetBackdropColor(red, green, blue [, alpha]) - Sets a shading color for the frame's background graphic
+    DressUpModel:SetBarberShopAlternateForm() - This function is not yet documented
     DressUpModel:SetCamDistanceScale() - This function is not yet documented
     DressUpModel:SetCamera(index) - Sets the view angle on the model to a pre-defined camera location
     DressUpModel:SetClampRectInsets(left, right, top, bottom) - Sets offsets from the frame's edges used when limiting user movement or resizing of the frame
@@ -1110,7 +1111,7 @@ EditBox
     EditBox:SetID(id) - Sets a numeric identifier for the frame
     EditBox:SetIndentedWordWrap(indent) - Sets whether long lines of text are indented when wrapping
     EditBox:SetJustifyH("justify") - Sets the font instance's horizontal text alignment style
-    EditBox:SetJustifyV("justify") - Sets the font instance's horizontal text alignment style
+    EditBox:SetJustifyV("justify") - Sets the font instance's vertical text alignment style
     EditBox:SetMaxBytes(maxBytes) - Sets the maximum number of bytes of text allowed in the edit box
     EditBox:SetMaxLetters(maxLetters) - Sets the maximum number of text characters allowed in the edit box
     EditBox:SetMaxResize(maxWidth, maxHeight) - Sets the maximum size of the frame for user resizing
@@ -1166,7 +1167,7 @@ Font
     Font:SetFontObject(object) or Font:SetFontObject("name") - Sets the `Font` object from which the font instance's properties are inherited
     Font:SetIndentedWordWrap() - This function is not yet documented
     Font:SetJustifyH("justify") - Sets the font instance's horizontal text alignment style
-    Font:SetJustifyV("justify") - Sets the font instance's horizontal text alignment style
+    Font:SetJustifyV("justify") - Sets the font instance's vertical text alignment style
     Font:SetShadowColor(shadowR, shadowG, shadowB, shadowAlpha) - Sets the color of the font's text shadow
     Font:SetShadowOffset(xOffset, yOffset) - Sets the offset of the font instance's text shadow from its text
     Font:SetSpacing(spacing) - Sets the font instance's amount of spacing between lines
@@ -1188,7 +1189,7 @@ FontInstance
     isValid = FontInstance:SetFont("filename", fontHeight, "flags") - Sets the font instance's basic font properties
     FontInstance:SetFontObject(object) or FontInstance:SetFontObject("name") - Sets the `Font` object from which the font instance's properties are inherited
     FontInstance:SetJustifyH("justify") - Sets the font instance's horizontal text alignment style
-    FontInstance:SetJustifyV("justify") - Sets the font instance's horizontal text alignment style
+    FontInstance:SetJustifyV("justify") - Sets the font instance's vertical text alignment style
     FontInstance:SetShadowColor(shadowR, shadowG, shadowB, shadowAlpha) - Sets the color of the font's text shadow
     FontInstance:SetShadowOffset(xOffset, yOffset) - Sets the offset of the font instance's text shadow from its text
     FontInstance:SetSpacing(spacing) - Sets the font instance's amount of spacing between lines
@@ -1205,7 +1206,7 @@ FontString
     ... = FontString:GetAnimationGroups() - Returns a list of animation groups belonging to the region
     bottom = FontString:GetBottom() - Returns the distance from the bottom of the screen to the bottom of the region
     x, y = FontString:GetCenter() - Returns the screen coordinates of the region's center
-    layer = FontString:GetDrawLayer() - Returns the layer at which the region's graphics are drawn relative to others in its frame
+    layer, sublayer = FontString:GetDrawLayer() - Returns the layer at which the region's graphics are drawn relative to others in its frame
     FontString:GetFieldSize() - This function is not yet documented
     filename, fontHeight, flags = FontString:GetFont() - Returns the font instance's basic font properties
     font = FontString:GetFontObject() - Returns the `Font` object from which the font instance's properties are inherited
@@ -1231,6 +1232,7 @@ FontString
     textR, textG, textB, textAlpha = FontString:GetTextColor() - Returns the font instance's default text color
     top = FontString:GetTop() - Returns the distance from the bottom of the screen to the top of the region
     width = FontString:GetWidth() - Returns the width of the region
+    FontString:GetWrappedWidth() - This function is not yet documented
     FontString:Hide() - Hides the region
     isDragging = FontString:IsDragging() - Returns whether the region is currently being dragged
     isOver = FontString:IsMouseOver([topOffset [, leftOffset [, bottomOffset [, rightOffset]]]]) - Returns whether the mouse cursor is over the given region
@@ -1242,14 +1244,14 @@ FontString
     FontString:SetAllPoints([region]) or FontString:SetAllPoints(["name"]) - Sets all anchor points of the region to match those of another region
     FontString:SetAlpha(alpha) - Sets the opacity of the region relative to its parent
     FontString:SetAlphaGradient(start, length) - Creates an opacity gradient over the text in the font string
-    FontString:SetDrawLayer("layer") - Sets the layer at which the region's graphics are drawn relative to others in its frame
+    FontString:SetDrawLayer("layer", sublayer) - Sets the layer at which the region's graphics are drawn relative to others in its frame
     isValid = FontString:SetFont("filename", fontHeight, "flags") - Sets the font instance's basic font properties
     FontString:SetFontObject(object) or FontString:SetFontObject("name") - Sets the `Font` object from which the font instance's properties are inherited
     FontString:SetFormattedText("formatString", ...) - Sets the text displayed in the font string using format specifiers
     FontString:SetHeight(height) - Sets the region's height
     FontString:SetIndentedWordWrap() - This function is not yet documented
     FontString:SetJustifyH("justify") - Sets the font instance's horizontal text alignment style
-    FontString:SetJustifyV("justify") - Sets the font instance's horizontal text alignment style
+    FontString:SetJustifyV("justify") - Sets the font instance's vertical text alignment style
     FontString:SetNonSpaceWrap(enable) - Sets whether long lines of text will wrap within or between words
     FontString:SetParent(frame) or FontString:SetParent("name") - Makes another frame the parent of this region
     FontString:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]]]) - Sets an anchor point for the region
@@ -1502,6 +1504,7 @@ GameTooltip
     GameTooltip:SetBuybackItem(index) - Fills the tooltip with information about item recently sold to a vendor and available to be repurchased
     GameTooltip:SetClampRectInsets(left, right, top, bottom) - Sets offsets from the frame's edges used when limiting user movement or resizing of the frame
     GameTooltip:SetClampedToScreen(enable) - Sets whether the frame's boundaries should be limited to those of the screen
+    GameTooltip:SetCurrencyByID() - This function is not yet documented
     GameTooltip:SetCurrencyToken(index) - Fills the tooltip with information about a special currency type
     GameTooltip:SetDepth(depth) - Sets the 3D depth of the frame (for stereoscopic 3D configurations)
     GameTooltip:SetDontSavePosition() - This function is not yet documented
@@ -1511,6 +1514,7 @@ GameTooltip
     GameTooltip:SetFrameStack(includeHidden) - Fills the tooltip with a list of frames under the mouse cursor
     GameTooltip:SetFrameStrata("strata") - Sets the general layering strata of the frame
     GameTooltip:SetGlyph(socket, talentGroup) - Fills the tooltip with information about one of the player's glyphs
+    GameTooltip:SetGlyphByID() - This function is not yet documented
     GameTooltip:SetGuildBankItem(tab, slot) - Fills the tooltip with information about an item in the guild bank
     GameTooltip:SetHeight(height) - Sets the region's height
     GameTooltip:SetHitRectInsets(left, right, top, bottom) - Sets the insets from the frame's edges which determine its mouse-interactable area
@@ -1588,7 +1592,7 @@ LayeredRegion
     ... = LayeredRegion:GetAnimationGroups() - Returns a list of animation groups belonging to the region
     bottom = LayeredRegion:GetBottom() - Returns the distance from the bottom of the screen to the bottom of the region
     x, y = LayeredRegion:GetCenter() - Returns the screen coordinates of the region's center
-    layer = LayeredRegion:GetDrawLayer() - Returns the layer at which the region's graphics are drawn relative to others in its frame
+    layer, sublayer = LayeredRegion:GetDrawLayer() - Returns the layer at which the region's graphics are drawn relative to others in its frame
     height = LayeredRegion:GetHeight() - Returns the height of the region
     left = LayeredRegion:GetLeft() - Returns the distance from the left edge of the screen to the left edge of the region
     name = LayeredRegion:GetName() - Returns the widget object's name
@@ -1610,7 +1614,7 @@ LayeredRegion
     visible = LayeredRegion:IsVisible() - Returns whether the region is visible
     LayeredRegion:SetAllPoints([region]) or LayeredRegion:SetAllPoints(["name"]) - Sets all anchor points of the region to match those of another region
     LayeredRegion:SetAlpha(alpha) - Sets the opacity of the region relative to its parent
-    LayeredRegion:SetDrawLayer("layer") - Sets the layer at which the region's graphics are drawn relative to others in its frame
+    LayeredRegion:SetDrawLayer("layer", sublayer) - Sets the layer at which the region's graphics are drawn relative to others in its frame
     LayeredRegion:SetHeight(height) - Sets the region's height
     LayeredRegion:SetParent(frame) or LayeredRegion:SetParent("name") - Makes another frame the parent of this region
     LayeredRegion:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]]]) - Sets an anchor point for the region
@@ -1740,7 +1744,7 @@ MessageFrame
     MessageFrame:SetIndentedWordWrap(indent) - Sets whether long lines of text are indented when wrapping
     MessageFrame:SetInsertMode("position") - Sets the position at which new messages are added to the frame
     MessageFrame:SetJustifyH("justify") - Sets the font instance's horizontal text alignment style
-    MessageFrame:SetJustifyV("justify") - Sets the font instance's horizontal text alignment style
+    MessageFrame:SetJustifyV("justify") - Sets the font instance's vertical text alignment style
     MessageFrame:SetMaxResize(maxWidth, maxHeight) - Sets the maximum size of the frame for user resizing
     MessageFrame:SetMinResize(minWidth, minHeight) - Sets the minimum size of the frame for user resizing
     MessageFrame:SetMovable(enable) - Sets whether the frame can be moved by the user
@@ -2264,6 +2268,7 @@ PlayerModel
     visible = PlayerModel:IsVisible() - Returns whether the region is visible
     PlayerModel:Lower() - Reduces the frame's frame level below all other frames in its strata
     PlayerModel:Raise() - Increases the frame's frame level above all other frames in its strata
+    PlayerModel:RefreshCamera() - This function is not yet documented
     PlayerModel:RefreshUnit() - Updates the model's appearance to match that of its unit
     PlayerModel:RegisterAllEvents() - Registers the frame for all events
     PlayerModel:RegisterEvent("event") - Registers the frame for an [[docs/events|event]]
@@ -2275,6 +2280,7 @@ PlayerModel
     PlayerModel:SetBackdrop(backdrop) - Sets a backdrop graphic for the frame
     PlayerModel:SetBackdropBorderColor(red, green, blue [, alpha]) - Sets a shading color for the frame's border graphic
     PlayerModel:SetBackdropColor(red, green, blue [, alpha]) - Sets a shading color for the frame's background graphic
+    PlayerModel:SetBarberShopAlternateForm() - This function is not yet documented
     PlayerModel:SetCamDistanceScale() - This function is not yet documented
     PlayerModel:SetCamera(index) - Sets the view angle on the model to a pre-defined camera location
     PlayerModel:SetClampRectInsets(left, right, top, bottom) - Sets offsets from the frame's edges used when limiting user movement or resizing of the frame
@@ -2846,7 +2852,7 @@ ScrollingMessageFrame
     ScrollingMessageFrame:SetIndentedWordWrap(indent) - Sets whether long lines of text are indented when wrapping
     ScrollingMessageFrame:SetInsertMode("position") - Sets the position at which new messages are added to the frame
     ScrollingMessageFrame:SetJustifyH("justify") - Sets the font instance's horizontal text alignment style
-    ScrollingMessageFrame:SetJustifyV("justify") - Sets the font instance's horizontal text alignment style
+    ScrollingMessageFrame:SetJustifyV("justify") - Sets the font instance's vertical text alignment style
     ScrollingMessageFrame:SetMaxLines(maxLines) - Sets the maximum number of messages to be kept in the frame
     ScrollingMessageFrame:SetMaxResize(maxWidth, maxHeight) - Sets the maximum size of the frame for user resizing
     ScrollingMessageFrame:SetMinResize(minWidth, minHeight) - Sets the minimum size of the frame for user resizing
@@ -3381,6 +3387,7 @@ TabardModel
     visible = TabardModel:IsVisible() - Returns whether the region is visible
     TabardModel:Lower() - Reduces the frame's frame level below all other frames in its strata
     TabardModel:Raise() - Increases the frame's frame level above all other frames in its strata
+    TabardModel:RefreshCamera() - This function is not yet documented
     TabardModel:RefreshUnit() - Updates the model's appearance to match that of its unit
     TabardModel:RegisterAllEvents() - Registers the frame for all events
     TabardModel:RegisterEvent("event") - Registers the frame for an [[docs/events|event]]
@@ -3393,6 +3400,7 @@ TabardModel
     TabardModel:SetBackdrop(backdrop) - Sets a backdrop graphic for the frame
     TabardModel:SetBackdropBorderColor(red, green, blue [, alpha]) - Sets a shading color for the frame's border graphic
     TabardModel:SetBackdropColor(red, green, blue [, alpha]) - Sets a shading color for the frame's background graphic
+    TabardModel:SetBarberShopAlternateForm() - This function is not yet documented
     TabardModel:SetCamDistanceScale() - This function is not yet documented
     TabardModel:SetCamera(index) - Sets the view angle on the model to a pre-defined camera location
     TabardModel:SetClampRectInsets(left, right, top, bottom) - Sets offsets from the frame's edges used when limiting user movement or resizing of the frame
@@ -3451,7 +3459,7 @@ Texture
     mode = Texture:GetBlendMode() - Returns the blend mode of the texture
     bottom = Texture:GetBottom() - Returns the distance from the bottom of the screen to the bottom of the region
     x, y = Texture:GetCenter() - Returns the screen coordinates of the region's center
-    layer = Texture:GetDrawLayer() - Returns the layer at which the region's graphics are drawn relative to others in its frame
+    layer, sublayer = Texture:GetDrawLayer() - Returns the layer at which the region's graphics are drawn relative to others in its frame
     height = Texture:GetHeight() - Returns the height of the region
     Texture:GetHorizTile() - This function is not yet documented
     left = Texture:GetLeft() - Returns the distance from the left edge of the screen to the left edge of the region
@@ -3482,7 +3490,7 @@ Texture
     Texture:SetAlpha(alpha) - Sets the opacity of the region relative to its parent
     Texture:SetBlendMode("mode") - Sets the blend mode of the texture
     supported = Texture:SetDesaturated(desaturate) - Sets whether the texture image should be displayed with zero saturation (i.e. converted to grayscale)
-    Texture:SetDrawLayer("layer") - Sets the layer at which the region's graphics are drawn relative to others in its frame
+    Texture:SetDrawLayer("layer", sublayer) - Sets the layer at which the region's graphics are drawn relative to others in its frame
     Texture:SetGradient("orientation", startR, startG, startB, endR, endG, endB) - Sets a gradient color shading for the texture
     Texture:SetGradientAlpha("orientation", startR, startG, startB, startAlpha, endR, endG, endB, endAlpha) - Sets a gradient color shading for the texture (including opacity in the gradient)
     Texture:SetHeight(height) - Sets the region's height

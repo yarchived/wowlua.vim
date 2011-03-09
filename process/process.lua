@@ -1,3 +1,4 @@
+#!/usr/bin/env lua
 --[[
 NAME
     wowlua.vim - generate vim syntax file for wow lua apis
