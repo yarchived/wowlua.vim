@@ -264,6 +264,8 @@ GUILDBANK_UPDATE_TABS	Fires when information about guild bank tabs becomes avail
 GUILDBANK_UPDATE_TEXT	Fires when text associated with a guild bank tab becomes available
 GUILDBANK_UPDATE_WITHDRAWMONEY	Fires when the amount of money the player can withdraw from the guild bank changes
 GUILDTABARD_UPDATE	Fires when the player's guild tabard design changes.
+GUILD_CHALLENGE_COMPLETED	This event is not yet documented
+GUILD_CHALLENGE_UPDATED	This event is not yet documented
 GUILD_EVENT_LOG_UPDATE	Fires when information for the guild event log becomes available
 GUILD_INVITE_CANCEL	Fires when an invitation to join a guild is no longer available
 GUILD_INVITE_REQUEST	Fires when the player is invited to join a guild
@@ -328,6 +330,12 @@ LFG_ROLE_CHECK_UPDATE	This event is not yet documented
 LFG_ROLE_UPDATE	This event is not yet documented
 LFG_UPDATE	Fires when information about the player's LFG system settings changes or becomes available
 LFG_UPDATE_RANDOM_INFO	This event is not yet documented
+LF_GUILD_BROWSE_UPDATED	This event is not yet documented
+LF_GUILD_MEMBERSHIP_LIST_CHANGED	This event is not yet documented
+LF_GUILD_MEMBERSHIP_LIST_UPDATED	This event is not yet documented
+LF_GUILD_POST_UPDATED	This event is not yet documented
+LF_GUILD_RECRUITS_UPDATED	This event is not yet documented
+LF_GUILD_RECRUIT_LIST_CHANGED	This event is not yet documented
 LOCALPLAYER_PET_RENAMED	Fires when the player's pet is renamed
 LOGOUT_CANCEL	Fires when the logout countdown is aborted
 LOOT_BIND_CONFIRM	Fires when the player attempts to loot a Bind on Pickup item
@@ -478,7 +486,7 @@ RECEIVED_ACHIEVEMENT_MEMBER_LIST	Fires when the list of players that earned an a
 REPLACE_ENCHANT	Fires when the player attempts to enchant an item which is already enchanted
 REQUEST_CEMETERY_LIST_RESPONSE	This event is not yet documented
 RESURRECT_REQUEST	Fires when another character offers to resurrect the player
-ROLE_CHANGED_INFORM	This event is not yet documented
+ROLE_CHANGED_INFORM	Fires when a party/raid member's role is changed manually
 ROLE_POLL_BEGIN	This event is not yet documented
 RUNE_POWER_UPDATE	Fires when the availability of one of the player's rune resources changes
 RUNE_TYPE_UPDATE	Fires when the type of one of the player's rune resources changes
@@ -496,11 +504,13 @@ SPELL_ACTIVATION_OVERLAY_GLOW_SHOW	Fires when a reactive spell becomes active
 SPELL_ACTIVATION_OVERLAY_HIDE	This event is not yet documented
 SPELL_ACTIVATION_OVERLAY_SHOW	Fires when the player receives a reactive buff that should appear on the screen overlay
 SPELL_FLYOUT_UPDATE	This event is not yet documented
+SPELL_PUSHED_TO_ACTIONBAR	This event is not yet documented
 SPELL_UPDATE_COOLDOWN	Fires when the cooldown on one of the player's spells begins or ends
 SPELL_UPDATE_USABLE	Fires when a spell becomes usable or unusable
 START_AUTOREPEAT_SPELL	Fires when the player casts a spell which automatically repeats
 START_LOOT_ROLL	Fires when an item becomes available for group loot rolling
 START_MINIGAME	Unused
+START_TIMER	This event is not yet documented
 STOP_AUTOREPEAT_SPELL	Fires when the player stops repetition of an automatically repeating spell
 STREAMING_ICON	Fires when the game starts or stops downloading or patching content that is not yet ready
 SYNCHRONIZE_SETTINGS	Fires when game options are manually synchronized with those saved on the server
@@ -573,7 +583,7 @@ UNIT_POWER	Fires when a unit's power level changes.
 UNIT_POWER_BAR_HIDE	This event is not yet documented
 UNIT_POWER_BAR_SHOW	This event is not yet documented
 UNIT_QUEST_LOG_CHANGED	Fires when a unit's quests change (accepted/objective progress/abandoned/completed)
-UNIT_RANGEDDAMAGE	Fires when a unit's ranged attack damage changes
+UNIT_RANGEDDAMAGE	Fires when a unit's ranged attack damage changes. Also fires when a unit's ranged attack speed changes.
 UNIT_RANGED_ATTACK_POWER	Fires when a unit's ranged attack power changes
 UNIT_RESISTANCES	Fires when a unit's magic resistances change
 UNIT_SPELLCAST_CHANNEL_START	Fires when a unit starts channeling a spell
@@ -589,6 +599,7 @@ UNIT_SPELLCAST_SENT	Fires when a request to cast a spell (on behalf of the playe
 UNIT_SPELLCAST_START	Fires when a unit begins casting a spell
 UNIT_SPELLCAST_STOP	Fires when a unit stops or cancels casting a spell
 UNIT_SPELLCAST_SUCCEEDED	Fires when a unit's spell cast succeeds
+UNIT_SPELL_HASTE	This event is not yet documented
 UNIT_STATS	Fires when a unit's primary attributes change
 UNIT_TARGET	Fires when a unit's target changes
 UNIT_TARGETABLE_CHANGED	Fires when the targetable status of a unit changes
