@@ -1002,6 +1002,7 @@ strata = EditBox:GetFrameStrata() - Returns the general layering strata of the f
 height = EditBox:GetHeight() - Returns the height of the region
 count = EditBox:GetHistoryLines() - Returns the maximum number of history lines stored by the edit box
 left, right, top, bottom = EditBox:GetHitRectInsets() - Returns the insets from the frame's edges which determine its mouse-interactable area
+EditBox:GetHyperlinksEnabled() - This function is not yet documented
 id = EditBox:GetID() - Returns the frame's numeric identifier
 indent = EditBox:GetIndentedWordWrap() - Returns whether long lines of text are indented when wrapping
 language = EditBox:GetInputLanguage() - Returns the currently selected keyboard input language (character set / input method)
@@ -1097,6 +1098,7 @@ EditBox:SetFrameStrata("strata") - Sets the general layering strata of the frame
 EditBox:SetHeight(height) - Sets the region's height
 EditBox:SetHistoryLines(count) - Sets the maximum number of history lines stored by the edit box
 EditBox:SetHitRectInsets(left, right, top, bottom) - Sets the insets from the frame's edges which determine its mouse-interactable area
+EditBox:SetHyperlinksEnabled() - This function is not yet documented
 EditBox:SetID(id) - Sets a numeric identifier for the frame
 EditBox:SetIndentedWordWrap(indent) - Sets whether long lines of text are indented when wrapping
 EditBox:SetJustifyH("justify") - Sets the font instance's horizontal text alignment style
@@ -1226,7 +1228,7 @@ isOver = FontString:IsMouseOver([topOffset [, leftOffset [, bottomOffset [, righ
 isType = FontString:IsObjectType("type") - Returns whether the object belongs to a given widget type
 isProtected, explicit = FontString:IsProtected() - Returns whether the region is protected
 shown = FontString:IsShown() - Returns whether the region is shown
-FontString:IsTruncated() - This function is not yet documented
+FontString:IsTruncated() - Returns true if the text is truncated
 visible = FontString:IsVisible() - Returns whether the region is visible
 FontString:SetAllPoints([region]) or FontString:SetAllPoints(["name"]) - Sets all anchor points of the region to match those of another region
 FontString:SetAlpha(alpha) - Sets the opacity of the region relative to its parent
@@ -1511,6 +1513,7 @@ GameTooltip:SetInboxItem(mailID, attachmentIndex) - Fills the tooltip with infor
 GameTooltip:SetInstanceLockEncountersComplete() - This function is not yet documented
 hasItem, hasCooldown, repairCost = GameTooltip:SetInventoryItem("unit", slot [, nameOnly]) - Fills the tooltip with information about an equipped item
 GameTooltip:SetInventoryItemByID() - This function is not yet documented
+GameTooltip:SetItemByID() - This function is not yet documented
 GameTooltip:SetLFGCompletionReward() - This function is not yet documented
 GameTooltip:SetLFGDungeonReward() - This function is not yet documented
 GameTooltip:SetLFGDungeonShortageReward() - This function is not yet documented

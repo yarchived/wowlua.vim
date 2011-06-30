@@ -182,6 +182,7 @@ CHAT_SERVER_DISCONNECTED	This event is not yet documented
 CHAT_SERVER_RECONNECTED	This event is not yet documented
 CINEMATIC_START	Fires when an in-game-engine cinematic begins to play
 CINEMATIC_STOP	Fires when an in-game-engine cinematic stops playing
+CLEAR_BOSS_EMOTES	This event is not yet documented
 CLOSE_INBOX_ITEM	Fires when the mail message being viewed is no longer available
 CLOSE_TABARD_FRAME	Fires when the player ends interaction with a tabard designer
 CLOSE_WORLD_MAP	Fires when the world map should be hidden in response to external conditions
@@ -195,9 +196,11 @@ COMMENTATOR_PARTY_INFO_REQUEST	This event is not yet documented
 COMMENTATOR_PLAYER_UPDATE	This is a Blizzard internal function
 COMMENTATOR_SKIRMISH_MODE_REQUEST	This is a Blizzard internal function
 COMMENTATOR_SKIRMISH_QUEUE_REQUEST	This is a Blizzard internal function
+COMPACT_UNIT_FRAME_PROFILES_LOADED	This event is not yet documented
 COMPANION_LEARNED	Fires when the player learns to summon a new mount or non-combat pet
 COMPANION_UNLEARNED	Fires when the player unlearns a mount or a companion
 COMPANION_UPDATE	Fires when new information about the player's mounts and non-combat pets is available
+CONFIRM_BEFORE_USE	This event is not yet documented
 CONFIRM_BINDER	Fires when the player attempts to set a new Hearthstone location
 CONFIRM_DISENCHANT_ROLL	Fires when the player attempts to roll disenchant for an item which Binds on Pickup
 CONFIRM_LOOT_ROLL	Fires when the player attempts to roll for a loot item which Binds on Pickup
@@ -223,6 +226,8 @@ DUEL_INBOUNDS	Fires when the player reenters the duel area after leaving its bou
 DUEL_OUTOFBOUNDS	Fires when the player begins to move outside the boundaries of a duel area
 DUEL_REQUESTED	Fires when the player is challenged to a duel
 ECLIPSE_DIRECTION_CHANGE	This event is not yet documented
+EJ_DIFFICULTY_UPDATE	This event is not yet documented
+EJ_LOOT_DATA_RECIEVED	This event is not yet documented
 ENABLE_DECLINE_GUILD_INVITE	This event is not yet documented
 ENABLE_LOW_LEVEL_RAID	This event is not yet documented
 ENABLE_TAXI_BENCHMARK	Fires when taxi benchmarking mode is enabled
@@ -284,6 +289,7 @@ GUILD_TRADESKILL_UPDATE	This event is not yet documented
 GUILD_XP_UPDATE	Fires when the Guild XP is updated
 IGNORELIST_UPDATE	Fires when the content of the player's ignore list becomes available or changes
 IGR_BILLING_NAG_DIALOG	Fires when a message should be shown about the player's paid-per-hour game time expiring soon
+INCOMING_RESURRECT_CHANGED	This event is not yet documented
 INSPECT_ACHIEVEMENT_READY	Fires after the player attempts to compare achievements with another character, indicating that achievement information for the other unit has become available
 INSPECT_HONOR_UPDATE	Fires when information about the inspected unit's PvP activities becomes available
 INSPECT_READY	Fires when inspect information not readily available is now ready
@@ -319,9 +325,9 @@ LFG_LOCK_INFO_RECEIVED	This event is not yet documented
 LFG_OFFER_CONTINUE	This event is not yet documented
 LFG_OPEN_FROM_GOSSIP	This event is not yet documented
 LFG_PROPOSAL_FAILED	This event is not yet documented
-LFG_PROPOSAL_SHOW	This event is not yet documented
-LFG_PROPOSAL_SUCCEEDED	This event is not yet documented
-LFG_PROPOSAL_UPDATE	This event is not yet documented
+LFG_PROPOSAL_SHOW	Fires when the LFD system has found a possible group
+LFG_PROPOSAL_SUCCEEDED	Fires when an LFD group was successfully formed
+LFG_PROPOSAL_UPDATE	Fires when a potential group member accepts or declines the LFD offer
 LFG_QUEUE_STATUS_UPDATE	This event is not yet documented
 LFG_ROLE_CHECK_HIDE	This event is not yet documented
 LFG_ROLE_CHECK_ROLE_CHOSEN	This event is not yet documented
@@ -460,6 +466,7 @@ PREVIEW_TALENT_PRIMARY_TREE_CHANGED	This event is not yet documented
 PVPQUEUE_ANYWHERE_SHOW	Fires when the player begins interacting with the UI feature allowing battleground queueing from any location
 PVPQUEUE_ANYWHERE_UPDATE_AVAILABLE	Fires when information for the any-battleground queueing UI changes or becomes available
 PVP_RATED_STATS_UPDATE	This event is not yet documented
+PVP_REWARDS_UPDATE	This event is not yet documented
 PVP_TYPES_ENABLED	This event is not yet documented
 QUEST_ACCEPTED	Fires when a new quest is added to the player's quest log (which is what happens after a player accepts a quest).
 QUEST_ACCEPT_CONFIRM	Fires when certain kinds of quests (e.g. NPC escort quests) are started by another member of the player's group
@@ -474,6 +481,8 @@ QUEST_POI_UPDATE	This event is not yet documented
 QUEST_PROGRESS	Fires when interacting with a questgiver about an active quest
 QUEST_QUERY_COMPLETE	Fires when quest completion information is available from the server
 QUEST_WATCH_UPDATE	Fires when the player's status regarding a quest's objectives changes, for instance picking up a required object or killing a mob for that quest. All forms of (quest objective) progress changes will trigger this event.
+RAID_BOSS_EMOTE	This event is not yet documented
+RAID_BOSS_WHISPER	This event is not yet documented
 RAID_INSTANCE_WELCOME	Fires when the player enters an instance that has a reset timer
 RAID_ROSTER_UPDATE	Fires when the raid roster changes
 RAID_TARGET_UPDATE	Fires when raid target icons are assigned or cleared
@@ -485,6 +494,7 @@ RECEIVED_ACHIEVEMENT_LIST	This event is not yet documented
 RECEIVED_ACHIEVEMENT_MEMBER_LIST	Fires when the list of players that earned an achievement is received
 REPLACE_ENCHANT	Fires when the player attempts to enchant an item which is already enchanted
 REQUEST_CEMETERY_LIST_RESPONSE	This event is not yet documented
+RESTRICTED_ACCOUNT_WARNING	This event is not yet documented
 RESURRECT_REQUEST	Fires when another character offers to resurrect the player
 ROLE_CHANGED_INFORM	Fires when a party/raid member's role is changed manually
 ROLE_POLL_BEGIN	This event is not yet documented
@@ -504,13 +514,13 @@ SPELL_ACTIVATION_OVERLAY_GLOW_SHOW	Fires when a reactive spell becomes active
 SPELL_ACTIVATION_OVERLAY_HIDE	This event is not yet documented
 SPELL_ACTIVATION_OVERLAY_SHOW	Fires when the player receives a reactive buff that should appear on the screen overlay
 SPELL_FLYOUT_UPDATE	This event is not yet documented
-SPELL_PUSHED_TO_ACTIONBAR	This event is not yet documented
+SPELL_PUSHED_TO_ACTIONBAR	When you learn a spell and it's placed on the actionbar, this event fires and tells the IconIntroAnimation frame to animate the icon and place it on the actionbar slot.
 SPELL_UPDATE_COOLDOWN	Fires when the cooldown on one of the player's spells begins or ends
 SPELL_UPDATE_USABLE	Fires when a spell becomes usable or unusable
 START_AUTOREPEAT_SPELL	Fires when the player casts a spell which automatically repeats
 START_LOOT_ROLL	Fires when an item becomes available for group loot rolling
 START_MINIGAME	Unused
-START_TIMER	This event is not yet documented
+START_TIMER	Tells TimerFrame what timebar to create, informs about the current time left and the original value it started to countdown from.
 STOP_AUTOREPEAT_SPELL	Fires when the player stops repetition of an automatically repeating spell
 STREAMING_ICON	Fires when the game starts or stops downloading or patching content that is not yet ready
 SYNCHRONIZE_SETTINGS	Fires when game options are manually synchronized with those saved on the server
