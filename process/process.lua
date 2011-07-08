@@ -83,9 +83,28 @@ local function main()
         end
     end
 
+    print'\n\n'
     print[[---------------------------------------------------------]]
+    print'\n\n'
 
-    do -- nppp
+    do
+        local dump_words = function(tbl)
+            for _, wrd in next, tbl do
+                print(wrd)
+            end
+            print'\n'
+        end
+
+        dump_words(apis.apis)
+        dump_words(apis.event)
+        dump_words(apis.widget)
+    end
+
+    print'\n\n'
+    print[[---------------------------------------------------------]]
+    print'\n\n'
+
+    do
         local function joinString(t)
             local s
             for i, v in ipairs(t) do
