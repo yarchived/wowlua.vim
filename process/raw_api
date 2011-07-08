@@ -2312,7 +2312,7 @@ UnitResistance	Returns information about the player's or pet's magic resistance
 UnitSelectionColor	Returns a color indicating hostility and related status of a unit
 UnitSetRole	Sets a unit's role in the group or raid
 UnitSex	Returns the gender of the given unit or player
-UnitSpellHaste	This function is not yet documented
+UnitSpellHaste	Returns the unit's spell haste as a percentage
 UnitStat	Returns information about a basic character statistic for the player or pet
 UnitSwitchToVehicleSeat	Moves the player to another seat within his current vehicle
 UnitTargetsVehicleInRaidUI	Returns whether attempts to target a unit should target its vehicle

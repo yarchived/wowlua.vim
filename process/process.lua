@@ -88,14 +88,14 @@ local function main()
     print'\n\n'
 
     do
-        local dump_words = function(tbl)
-            for _, wrd in next, tbl do
+        local dump_words = function(list)
+            for _, wrd in next, list do
                 print(wrd)
             end
             print'\n'
         end
 
-        dump_words(apis.apis)
+        dump_words(apis.api)
         dump_words(apis.event)
         dump_words(apis.widget)
     end
