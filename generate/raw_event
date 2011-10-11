@@ -466,7 +466,7 @@ PREVIEW_TALENT_PRIMARY_TREE_CHANGED	This event is not yet documented
 PVPQUEUE_ANYWHERE_SHOW	Fires when the player begins interacting with the UI feature allowing battleground queueing from any location
 PVPQUEUE_ANYWHERE_UPDATE_AVAILABLE	Fires when information for the any-battleground queueing UI changes or becomes available
 PVP_RATED_STATS_UPDATE	This event is not yet documented
-PVP_REWARDS_UPDATE	This event is not yet documented
+PVP_REWARDS_UPDATE	Fires when information about Conquest Points cap changes or becomes available
 PVP_TYPES_ENABLED	This event is not yet documented
 QUEST_ACCEPTED	Fires when a new quest is added to the player's quest log (which is what happens after a player accepts a quest).
 QUEST_ACCEPT_CONFIRM	Fires when certain kinds of quests (e.g. NPC escort quests) are started by another member of the player's group

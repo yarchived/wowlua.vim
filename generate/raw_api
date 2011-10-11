@@ -351,7 +351,7 @@ CloseMerchant	Ends interaction with a vendor
 ClosePetStables	Ends use of the Pet Stables UI/API
 ClosePetition	Ends interaction with a petition
 CloseQuest	Ends interaction with a questgiver
-CloseReforge	This function is not yet documented
+CloseReforge	Closes the reforge window.
 CloseResearch	This function is not yet documented
 CloseSocketInfo	Ends interaction with the Item Socketing UI, discarding any changes made
 CloseTabardCreation	Ends interaction with the guild tabard creator
@@ -487,17 +487,17 @@ EJ_ClearSearch	This function is not yet documented
 EJ_GetAvailableClasses	This function is not yet documented
 EJ_GetCreatureInfo	This function is not yet documented
 EJ_GetCurrentInstance	This function is not yet documented
-EJ_GetEncounterInfo	This function is not yet documented
+EJ_GetEncounterInfo	Displays encounter journal information for the encounter.
 EJ_GetEncounterInfoByIndex	This function is not yet documented
 EJ_GetInstanceByIndex	This function is not yet documented
-EJ_GetInstanceInfo	This function is not yet documented
+EJ_GetInstanceInfo	Returns information about an instance used by the Dungeon Journal.
 EJ_GetLootInfo	This function is not yet documented
 EJ_GetLootInfoByIndex	This function is not yet documented
 EJ_GetMapEncounter	This function is not yet documented
 EJ_GetNumLoot	This function is not yet documented
 EJ_GetNumSearchResults	This function is not yet documented
 EJ_GetSearchResult	This function is not yet documented
-EJ_GetSectionInfo	This function is not yet documented
+EJ_GetSectionInfo	Returns information regarding a "section" of the encounter journal. A "section" is a phase, unit or ability of an encounter.
 EJ_GetSectionPath	This function is not yet documented
 EJ_GetTierInfo	This function is not yet documented
 EJ_HandleLinkPath	This function is not yet documented
@@ -507,7 +507,7 @@ EJ_SelectInstance	This function is not yet documented
 EJ_SelectTier	This function is not yet documented
 EJ_SetClassLootFilter	This function is not yet documented
 EJ_SetDifficulty	This function is not yet documented
-EJ_SetDifficultyByMask	This function is not yet documented
+EJ_SetDifficultyByMask	Sets the current Encounter Journal difficulty according to a bitmask
 EJ_SetSearch	This function is not yet documented
 EditMacro	Changes the name, icon, and/or body of a macronocombat
 EjectPassengerFromSeat	Ejects the occupant of a seat in the player's vehicle
@@ -639,7 +639,7 @@ GetBattlefieldScore	Returns basic scoreboard information for a battleground/aren
 GetBattlefieldStatData	Returns battleground-specific scoreboard information for a battleground participant
 GetBattlefieldStatInfo	Returns information about a battleground-specific scoreboard column
 GetBattlefieldStatus	Returns information about an active or queued battleground/arena instance
-GetBattlefieldTeamInfo	Returns info about teams and their ratings in a rated arena match.
+GetBattlefieldTeamInfo	Returns info about teams and their rating and MMR in a rated arena match
 GetBattlefieldTimeWaited	Returns the amount of time elapsed since the player joined the queue for a battleground/arena
 GetBattlefieldVehicleInfo	Returns information about special vehicles in the current zone
 GetBattlefieldWinner	Returns the winner of the current battleground or arena match
@@ -910,7 +910,7 @@ GetLFGMode	Provides information about the LFG status of the player.framexml
 GetLFGProposal	Returns info about the currently pending LFD operationreview
 GetLFGProposalEncounter	This function is not yet documented
 GetLFGProposalMember	This function is not yet documented
-GetLFGQueueStats	This function is not yet documented
+GetLFGQueueStats	Returns information about a LFD queue when you are in the queue
 GetLFGQueuedList	This function is not yet documented
 GetLFGRandomCooldownExpiration	This function is not yet documented
 GetLFGRandomDungeonInfo	This function is not yet documented
@@ -923,7 +923,7 @@ GetLFGTypes	Returns a list of LFG query types
 GetLFRChoiceOrder	This function is not yet documented
 GetLanguageByIndex	Returns the localized name of a player character language
 GetLastQueueStatusIndex	This function is not yet documented
-GetLatestCompletedAchievements	Returns a list of the player's most recently earned achievements
+GetLatestCompletedAchievements	Returns a list of the player's/player guild's most recently earned achievements
 GetLatestCompletedComparisonAchievements	Returns a list of the comparison unit's most recently earned achievements
 GetLatestThreeSenders	Returns the names of the last three senders of new mail
 GetLatestUpdatedComparisonStats	Returns a list of the comparison unit's latest updated statisticsdeprecated
@@ -1115,7 +1115,7 @@ GetPVPDesired	Returns whether the player has manually enabled PvP status
 GetPVPLifetimeStats	Returns the player's lifetime total of honorable kills and highest rank achieved
 GetPVPRankInfo	Returns information about a given PvP rank index
 GetPVPRankProgress	This function is deprecated and should no longer be useddeprecated
-GetPVPRewards	This function is not yet documented
+GetPVPRewards	Returns information about Conquest Point cap.
 GetPVPSessionStats	Returns the number of kills and honor points scored by the player since logging in
 GetPVPTimer	Returns the amount of time until the player's PVP flag expires
 GetPVPYesterdayStats	Returns the number of kills and honor points scored by the player on the previous day
@@ -1176,8 +1176,8 @@ GetQuestLogIsAutoComplete	This function is not yet documented
 GetQuestLogItemDrop	This function is not yet documented
 GetQuestLogItemLink	Returns a hyperlink for an item related to the selected quest in the quest log
 GetQuestLogLeaderBoard	Returns information about objectives for a quest in the quest log
-GetQuestLogPortraitGiver	This function is not yet documented
-GetQuestLogPortraitTurnIn	This function is not yet documented
+GetQuestLogPortraitGiver	Returns quest-related NPC info for portrait display
+GetQuestLogPortraitTurnIn	Returns quest-related NPC info for portrait display
 GetQuestLogPushable	Return whether the selected quest in the quest log can be shared to party members
 GetQuestLogQuestText	Returns the description and objective text for the selected quest in the quest log
 GetQuestLogRequiredMoney	Returns the amount of money required for the selected quest in the quest log
@@ -1198,8 +1198,8 @@ GetQuestLogTimeLeft	Returns time remaining for the selected quest in the quest l
 GetQuestLogTitle	Returns information about an entry in the player's quest log
 GetQuestMoneyToGet	Returns the amount of money required to complete the quest presented by a questgiver
 GetQuestPOILeaderBoard	This function is not yet documented
-GetQuestPortraitGiver	This function is not yet documented
-GetQuestPortraitTurnIn	This function is not yet documented
+GetQuestPortraitGiver	Returns quest-related NPC info for portrait display
+GetQuestPortraitTurnIn	Returns quest-related NPC info for portrait display
 GetQuestResetTime	Returns the amount of time remaining until the daily quest period resets
 GetQuestReward	Finishes turning in a quest to a questgiver, selecting an item reward if applicable
 GetQuestSortIndex	This function is not yet documented
@@ -1218,7 +1218,7 @@ GetRaidRosterInfo	Returns information about a member of the player's raid
 GetRaidRosterSelection	Returns the index of the selected unit in the raid roster
 GetRaidTargetIndex	Returns the index of the raid target marker on a unit
 GetRandomBGHonorCurrencyBonuses	This function is not yet documented
-GetRandomDungeonBestChoice	This function is not yet documented
+GetRandomDungeonBestChoice	Returns the dungeonID of the random dungeon group that provides the best loot for the player.
 GetRangedCritChance	Returns the player's ranged critical strike chance
 GetRangedHaste	Returns information about the player's ranged haste
 GetRatedBattleGroundInfo	This function is not yet documented
@@ -1236,7 +1236,7 @@ GetReforgeItemInfo	Returns information about the item currently in the 'reforge'
 GetReforgeItemStats	This function is not yet documented
 GetReforgeOptionInfo	This function is not yet documented
 GetRefreshRates	Returns a list of available screen refresh rates
-GetRegisteredAddonMessagePrefixes	This function is not yet documented
+GetRegisteredAddonMessagePrefixes	Returns a table containing all addon message prefixes that have been registered
 GetReleaseTimeRemaining	Returns the amount of time remaining until the player's spirit is automatically released when dead
 GetRepairAllCost	Returns the cost to repair all of the player's damaged items
 GetResSicknessDuration	Returns the duration of resurrection sickness at the player's current level
@@ -1460,7 +1460,7 @@ HearthAndResurrectFromArea	Instantly exits the current world PvP zone, returning
 HideRepairCursor	Returns the cursor to normal mode after use of [[docs/events/ShowRepairCursor|`ShowRepairCursor()`]]
 InCinematic	Returns whether an in-game cinematic is playing
 InCombatLockdown	Returns whether the user interface is protected due to combat
-InGuildParty	This function is not yet documented
+InGuildParty	Returns whether or not player is in a guild party.
 InRepairMode	Returns whether the item repair cursor mode is currently active
 InboxItemCanDelete	Returns whether a message in the player's inbox can be deleted
 InitWorldMapPing	Initializes the frame used to display the character location "ping" on the World Mapinternal
@@ -1476,7 +1476,7 @@ IsActiveBattlefieldArena	Returns whether the player is currently in an arena mat
 IsActiveQuestTrivial	Returns whether a quest which can be turned in to the current Quest NPC is trivial at the player's level
 IsAddOnLoadOnDemand	Returns whether an addon can be loaded without restarting the UI
 IsAddOnLoaded	Returns whether an addon is currently loaded
-IsAddonMessagePrefixRegistered	This function is not yet documented
+IsAddonMessagePrefixRegistered	Returns whether or not the client has registered to receive messages with a given addon prefix
 IsAltKeyDown	Returns whether an Alt key on the keyboard is held down.
 IsArenaTeamCaptain	Returns whether the player is the captain of an arena team
 IsArtifactCompletionHistoryAvailable	This function is not yet documented
@@ -1568,7 +1568,7 @@ IsQuestWatched	Returns whether a quest from the quest log is listed in the objec
 IsRaidLeader	Returns whether the player is the raid leader
 IsRaidMarkerActive	This function is not yet documented
 IsRaidOfficer	Returns whether the player is a raid assistant
-IsRatedBattleground	This function is not yet documented
+IsRatedBattleground	Returns whether or not the player is in a rated battleground
 IsRatedMap	This function is not yet documented
 IsRealPartyLeader	Returns whether the player is the leader of a non-battleground party
 IsRealRaidLeader	Returns whether the player is the leader of a non-battleground raid
@@ -1824,7 +1824,7 @@ ReadFile	This is a Blizzard internal functioninternal
 ReforgeItem	This function is not yet documented
 RefreshLFGList	This function is not yet documented
 RefreshWorldMap	This function is not yet documented
-RegisterAddonMessagePrefix	This function is not yet documented
+RegisterAddonMessagePrefix	Registers to receive addon messages with a given prefix
 RegisterCVar	Registers a configuration variable to be saved
 RegisterForSave	Enables a global variable for automatic saving upon logout & UI reloadinternalprotected
 RegisterForSavePerCharacter	Enables a global variable for automatic saving (on a per-character basis) upon logout & UI reloadinternalprotected
@@ -1862,7 +1862,7 @@ RequestInspectHonorData	Requests PvP honor and arena data from the server for th
 RequestLFDPartyLockInfo	This function is not yet documented
 RequestLFDPlayerLockInfo	Requests instance lockout and Call to Arms dungeon reward information.server
 RequestPVPOptionsEnabled	This function is not yet documentedserver
-RequestPVPRewards	This function is not yet documented
+RequestPVPRewards	Requests informations about Conquest Point cap from the serverserver
 RequestRaidInfo	Requests information about saved instances from the serverserver
 RequestRatedArenaInfo	This function is not yet documented
 RequestRatedBattlegroundInfo	This function is not yet documented
@@ -1987,7 +1987,7 @@ SetGuildBankTabPermissions	Changes guild bank tab permissions for the guild rank
 SetGuildBankText	Sets the info text for a guild bank tab
 SetGuildBankWithdrawGoldLimit	This function is not yet documented
 SetGuildInfoText	Sets the guild information text.
-SetGuildMemberRank	This function is not yet documented
+SetGuildMemberRank	Promotes/demotes a given guild member to the specified rank
 SetGuildNewsFilter	This function is not yet documented
 SetGuildRecruitmentComment	This function is not yet documented
 SetGuildRecruitmentSettings	This function is not yet documented
@@ -2218,7 +2218,7 @@ UnitAlternatePowerTextureInfo	This function is not yet documented
 UnitArmor	Returns the player's or pet's armor value
 UnitAttackBothHands	Returns information about the player's or pet's weapon skill
 UnitAttackPower	Returns the player's or pet's melee attack power
-UnitAttackSpeed	Returns information about the player's or pet's melee attack speed
+UnitAttackSpeed	Returns information about the unit's melee attack speed
 UnitAura	Returns information about buffs/debuffs on a unit
 UnitBuff	Returns information about a buff on a unit
 UnitCanAssist	Returns whether one unit can assist another
@@ -2382,9 +2382,14 @@ WarGameRespond	This is a Blizzard internal functioninternal
 WithdrawGuildBankMoney	Attempts to withdraw money from the guild bankconfirmation
 ZoomOut	Sets the world map to show the area containing its current area
 abs	Returns the absolute value of a numberluaapi
+acos	Alternative to math.acos, using degrees instead of radiansframexml
+asin	Alternative to math.asin, using degrees instead of radiansframexml
 assert	Causes a Lua error if a condition is failedluaapi
+atan	Alternative to math.atan, using degrees instead of radiansframexml
+atan2	This function is not yet documentedframexml
 ceil	Returns the smallest integer larger than or equal to a numberluaapi
 collectgarbage	Interface to the Lua garbage collectorluaapi
+cos	Alternative to math.cos, using degrees instead of radiansframexml
 date	Returns a formatted date/time string for a date (or the current date)luaapi
 debugbreak	This is a Blizzard internal functioninternal
 debugdump	This is a Blizzard internal functioninternal
@@ -2410,8 +2415,10 @@ frexp	Returns the normalized fraction and base-2 exponent for a numberluaapi
 gcinfo	Returns the total Lua memory usagedeprecatedluaapi
 geterrorhandler	Returns the current error handler function
 getfenv	Returns the environment for a function (or the global environment)luaapi
+getglobal	Returns the value of a global variableframexml
 getmetatable	Returns an object's metatableluaapi
 getn	This function is deprecated and should no longer be useddeprecatedluaapi
+getprinthandler	Returns the function currently used for `print()` outputframexml
 gmatch	Returns an iterator function for finding pattern matches in a stringluaapi
 gsub	Returns a string in which occurrences of a pattern are replacedluaapi
 hooksecurefunc	Add a function to be called after execution of a secure function
@@ -2423,12 +2430,14 @@ loadstring	Loads and compiles Lua source codeluaapi
 log	Returns the natural logarithm of a numberluaapi
 log10	Returns the base-10 logarithm of a numberluaapi
 max	Returns the greatest of a list of numbersluaapi
+message	Shows a message box containing the given textreviewframexml
 min	Returns the least of a list of numbersluaapi
 mod	Returns the remainder from division of two numbersluaapi
 newproxy	Creates a zero-length userdata with an optional metatable.luaapi
 next	Returns the next key/value pair in a tableluaapi
 pairs	Returns an iterator function for a tableluaapi
 pcall	Executes a function in protected modeluaapi
+print	Outputs a list of values (in the main chat window by default)framexml
 rad	Converts an angle specified in degrees to radiansluaapi
 random	Generates a pseudo-random numberluaapi
 rawequal	Returns whether two values are equal without invoking any metamethodsluaapi
@@ -2439,7 +2448,10 @@ securecall	Calls a function without tainting the execution path
 select	Returns one or more values from a list (`...`), or the number of values in a listluaapi
 seterrorhandler	Changes the error handler to a specified function
 setfenv	Sets the environment to be used by a functionluaapi
+setglobal	Sets a global variable to a specified valueframexml
 setmetatable	Sets the metatable for a tableluaapi
+setprinthandler	Sets a new function to be used for `print()` outputframexml
+sin	Alternative to math.sin, using degrees instead of radiansframexml
 sort	Sorts a tableluaapi
 sqrt	Returns the square root of a numberluaapi
 strbyte	Returns the numeric code for one or more characters in a stringluaapi
@@ -2457,10 +2469,14 @@ strsplit	Splits a string based on another seperator string
 strsub	Returns a substring of a stringluaapi
 strtrim	Trims leading and trailing characters (whitespace by default) from a string
 strupper	Returns a copy of a string with all lowercase letters converted to uppercaseluaapi
+tContains	This function is not yet documentedframexml
+tDelete	This function is not yet documentedframexml
+tan	Alternative to math.tan, using degrees instead of radiansframexml
 time	Returns the numeric time value for a described date/time (or the current time)luaapi
 tinsert	Inserts a value into a tableluaapi
 tonumber	Returns the numeric value of a stringluaapi
 tostring	Returns a string representation of a valueluaapi
+tostringall	Alternative to `tostring()` for bulk conversion of valuesframexml
 tremove	Removes an element from a tableluaapi
 type	Returns a string describing the data type of a valueluaapi
 unpack	Returns the list of elements in a tableluaapi

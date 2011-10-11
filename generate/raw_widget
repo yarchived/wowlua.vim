@@ -933,7 +933,7 @@ DressUpModel:SetMovable(enable) - Sets whether the frame can be moved by the use
 DressUpModel:SetParent(frame) or DressUpModel:SetParent("name") - Makes another frame the parent of this region
 DressUpModel:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]]]) - Sets an anchor point for the region
 DressUpModel:SetPortraitZoom() - This function is not yet documented
-DressUpModel:SetPosition(x, y, z) - Returns the position of the 3D model within the frame
+DressUpModel:SetPosition(x, y, z) - Sets the position of the 3D model within the frame
 DressUpModel:SetPropagateKeyboardInput() - This function is not yet documented
 DressUpModel:SetResizable(enable) - Sets whether the frame can be resized by the user
 DressUpModel:SetRotation(facing) - Sets the model's current rotation by animating the model
@@ -2016,7 +2016,7 @@ Model:SetModelScale(scale) - Sets the scale factor determining the size at which
 Model:SetMovable(enable) - Sets whether the frame can be moved by the user
 Model:SetParent(frame) or Model:SetParent("name") - Makes another frame the parent of this region
 Model:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]]]) - Sets an anchor point for the region
-Model:SetPosition(x, y, z) - Returns the position of the 3D model within the frame
+Model:SetPosition(x, y, z) - Sets the position of the 3D model within the frame
 Model:SetPropagateKeyboardInput() - This function is not yet documented
 Model:SetResizable(enable) - Sets whether the frame can be resized by the user
 Model:SetScale(scale) - Sets the frame's scale factor
@@ -2332,7 +2332,7 @@ PlayerModel:SetMovable(enable) - Sets whether the frame can be moved by the user
 PlayerModel:SetParent(frame) or PlayerModel:SetParent("name") - Makes another frame the parent of this region
 PlayerModel:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]]]) - Sets an anchor point for the region
 PlayerModel:SetPortraitZoom() - This function is not yet documented
-PlayerModel:SetPosition(x, y, z) - Returns the position of the 3D model within the frame
+PlayerModel:SetPosition(x, y, z) - Sets the position of the 3D model within the frame
 PlayerModel:SetPropagateKeyboardInput() - This function is not yet documented
 PlayerModel:SetResizable(enable) - Sets whether the frame can be resized by the user
 PlayerModel:SetRotation(facing) - Sets the model's current rotation by animating the model
@@ -3437,7 +3437,7 @@ TabardModel:SetMovable(enable) - Sets whether the frame can be moved by the user
 TabardModel:SetParent(frame) or TabardModel:SetParent("name") - Makes another frame the parent of this region
 TabardModel:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]]]) - Sets an anchor point for the region
 TabardModel:SetPortraitZoom() - This function is not yet documented
-TabardModel:SetPosition(x, y, z) - Returns the position of the 3D model within the frame
+TabardModel:SetPosition(x, y, z) - Sets the position of the 3D model within the frame
 TabardModel:SetPropagateKeyboardInput() - This function is not yet documented
 TabardModel:SetResizable(enable) - Sets whether the frame can be resized by the user
 TabardModel:SetRotation(facing) - Sets the model's current rotation by animating the model
