@@ -911,6 +911,7 @@ DressUpModel:SetCamera(index) - Sets the view angle on the model to a pre-define
 DressUpModel:SetClampRectInsets(left, right, top, bottom) - Sets offsets from the frame's edges used when limiting user movement or resizing of the frame
 DressUpModel:SetClampedToScreen(enable) - Sets whether the frame's boundaries should be limited to those of the screen
 DressUpModel:SetCreature(creature) - Sets the model to display the 3D model of a specific creature
+DressUpModel:SetCustomRace() - This function is not yet documented
 DressUpModel:SetDepth(depth) - Sets the 3D depth of the frame (for stereoscopic 3D configurations)
 DressUpModel:SetDisplayInfo() - This function is not yet documented
 DressUpModel:SetDontSavePosition() - This function is not yet documented
@@ -953,6 +954,7 @@ DressUpModel:StopAnimating() - Stops any active animations involving the region 
 DressUpModel:StopMovingOrSizing() - Ends movement or resizing of the frame initiated with [[docs/widgets/Frame/StartMoving|`:StartMoving()`]] or [[docs/widgets/Frame/StartSizing|`:StartSizing()`]]
 DressUpModel:TryOn(itemID) or DressUpModel:TryOn("itemName") or DressUpModel:TryOn("itemLink") - Updates the model to reflect the character's appearance after equipping a specific item
 DressUpModel:Undress() - Updates the model to reflect the character's appearance without any equipped items
+DressUpModel:UndressSlot() - This function is not yet documented
 DressUpModel:UnregisterAllEvents() - Unregisters the frame from any [[docs/events|events]] for which it is registered
 DressUpModel:UnregisterEvent("event") - Unregisters the frame for an event
 EditBox
@@ -1492,7 +1494,7 @@ hasCooldown, repairCost = GameTooltip:SetBagItem(container, slot) - Fills the to
 GameTooltip:SetBuybackItem(index) - Fills the tooltip with information about item recently sold to a vendor and available to be repurchased
 GameTooltip:SetClampRectInsets(left, right, top, bottom) - Sets offsets from the frame's edges used when limiting user movement or resizing of the frame
 GameTooltip:SetClampedToScreen(enable) - Sets whether the frame's boundaries should be limited to those of the screen
-GameTooltip:SetCurrencyByID() - This function is not yet documented
+GameTooltip:SetCurrencyByID(currencyID) - Fills the tooltip with information about a specified currency
 GameTooltip:SetCurrencyToken(index) - Fills the tooltip with information about a special currency type
 GameTooltip:SetDepth(depth) - Sets the 3D depth of the frame (for stereoscopic 3D configurations)
 GameTooltip:SetDontSavePosition() - This function is not yet documented
@@ -1525,6 +1527,7 @@ GameTooltip:SetMerchantCostItem(index, currency) - Fills the tooltip with inform
 GameTooltip:SetMerchantItem(merchantIndex) - Fills the tooltip with information about an item available for purchase from a vendor
 GameTooltip:SetMinResize(minWidth, minHeight) - Sets the minimum size of the frame for user resizing
 GameTooltip:SetMinimumWidth(width) - Sets the minimum width of the tooltip
+GameTooltip:SetMissingLootItem() - This function is not yet documented
 GameTooltip:SetMovable(enable) - Sets whether the frame can be moved by the user
 GameTooltip:SetOwner(frame [, "anchorType" [, xOffset [, yOffset]]]) - Sets the frame to which the tooltip refers and is anchored
 GameTooltip:SetPadding(padding) - Sets the amount of space between tooltip's text and its right-side edge
@@ -1559,11 +1562,15 @@ GameTooltip:SetTradePlayerItem(index) - Fills the tooltip with information about
 GameTooltip:SetTradeSkillItem(skillIndex [, reagentIndex]) - Fills the tooltip with information about an item created by a trade skill recipe or a reagent in the recipe
 GameTooltip:SetTradeTargetItem(index) - Fills the tooltip with information about an item offered for trade by the target
 GameTooltip:SetTrainerService(index) - Fills the tooltip with information about a trainer service
+GameTooltip:SetTransmogrifyItem() - This function is not yet documented
 GameTooltip:SetUnit("unit") - Fills the tooltip with information about a unit
 GameTooltip:SetUnitAura("unit", index [, "filter"]) - Fills the tooltip with information about a buff or debuff on a unit
 GameTooltip:SetUnitBuff("unit", index [, "filter"]) - Fills the tooltip with information about a buff on a unit
 GameTooltip:SetUnitDebuff("unit", index [, "filter"]) - Fills the tooltip with information about a debuff on a unit
 GameTooltip:SetUserPlaced(enable) - Flags the frame for automatic saving and restoration of position and dimensions
+GameTooltip:SetVoidDepositItem() - This function is not yet documented
+GameTooltip:SetVoidItem() - This function is not yet documented
+GameTooltip:SetVoidWithdrawalItem() - This function is not yet documented
 GameTooltip:SetWidth(width) - Sets the region's width
 GameTooltip:Show() - Shows the region
 GameTooltip:StartMoving() - Begins repositioning the frame via mouse movement
@@ -1847,6 +1854,13 @@ Minimap:RegisterEvent("event") - Registers the frame for an [[docs/events|event]
 Minimap:RegisterForDrag(...) - Registers the frame for dragging
 Minimap:SetAllPoints([region]) or Minimap:SetAllPoints(["name"]) - Sets all anchor points of the region to match those of another region
 Minimap:SetAlpha(alpha) - Sets the opacity of the region relative to its parent
+Minimap:SetArchBlobInsideAlpha() - This function is not yet documented
+Minimap:SetArchBlobInsideTexture() - This function is not yet documented
+Minimap:SetArchBlobOutsideAlpha() - This function is not yet documented
+Minimap:SetArchBlobOutsideTexture() - This function is not yet documented
+Minimap:SetArchBlobRingAlpha() - This function is not yet documented
+Minimap:SetArchBlobRingScalar() - This function is not yet documented
+Minimap:SetArchBlobRingTexture() - This function is not yet documented
 Minimap:SetAttribute("name", value) - Sets a secure frame attribute
 Minimap:SetBackdrop(backdrop) - Sets a backdrop graphic for the frame
 Minimap:SetBackdropBorderColor(red, green, blue [, alpha]) - Sets a shading color for the frame's border graphic
@@ -1875,6 +1889,13 @@ Minimap:SetPlayerTextureHeight(height) - Sets the height of the texture used to 
 Minimap:SetPlayerTextureWidth(width) - Sets the width of the texture used to represent the player on the minimap
 Minimap:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]]]) - Sets an anchor point for the region
 Minimap:SetPropagateKeyboardInput() - This function is not yet documented
+Minimap:SetQuestBlobInsideAlpha() - This function is not yet documented
+Minimap:SetQuestBlobInsideTexture() - This function is not yet documented
+Minimap:SetQuestBlobOutsideAlpha() - This function is not yet documented
+Minimap:SetQuestBlobOutsideTexture() - This function is not yet documented
+Minimap:SetQuestBlobRingAlpha() - This function is not yet documented
+Minimap:SetQuestBlobRingScalar() - This function is not yet documented
+Minimap:SetQuestBlobRingTexture() - This function is not yet documented
 Minimap:SetResizable(enable) - Sets whether the frame can be resized by the user
 Minimap:SetScale(scale) - Sets the frame's scale factor
 Minimap:SetScript("scriptType", handler) - Sets the widget's handler function for a script
@@ -2310,6 +2331,7 @@ PlayerModel:SetCamera(index) - Sets the view angle on the model to a pre-defined
 PlayerModel:SetClampRectInsets(left, right, top, bottom) - Sets offsets from the frame's edges used when limiting user movement or resizing of the frame
 PlayerModel:SetClampedToScreen(enable) - Sets whether the frame's boundaries should be limited to those of the screen
 PlayerModel:SetCreature(creature) - Sets the model to display the 3D model of a specific creature
+PlayerModel:SetCustomRace() - This function is not yet documented
 PlayerModel:SetDepth(depth) - Sets the 3D depth of the frame (for stereoscopic 3D configurations)
 PlayerModel:SetDisplayInfo() - This function is not yet documented
 PlayerModel:SetDontSavePosition() - This function is not yet documented
@@ -2838,6 +2860,7 @@ ScrollingMessageFrame:RegisterAllEvents() - Registers the frame for all events
 ScrollingMessageFrame:RegisterEvent("event") - Registers the frame for an [[docs/events|event]]
 ScrollingMessageFrame:RegisterForDrag(...) - Registers the frame for dragging
 ScrollingMessageFrame:RemoveMessagesByAccessID() - This function is not yet documented
+ScrollingMessageFrame:RemoveMessagesByExtraData() - This function is not yet documented
 ScrollingMessageFrame:ScrollDown() - Scrolls the message frame's contents down by two lines
 ScrollingMessageFrame:ScrollToBottom() - Scrolls to the bottom of the message frame's contents
 ScrollingMessageFrame:ScrollToTop() - Scrolls to the top of the message frame's contents
@@ -3218,6 +3241,7 @@ point, relativeTo, relativePoint, xOffset, yOffset = StatusBar:GetPoint(index) -
 StatusBar:GetPropagateKeyboardInput() - This function is not yet documented
 left, bottom, width, height = StatusBar:GetRect() - Returns the position and dimensions of the region
 ... = StatusBar:GetRegions() - Returns a list of non-Frame child regions belonging to the frame
+StatusBar:GetReverseFill() - This function is not yet documented
 right = StatusBar:GetRight() - Returns the distance from the left edge of the screen to the right edge of the region
 rotate = StatusBar:GetRotatesTexture() - Returns whether the status bar's texture is rotated to match its orientation
 scale = StatusBar:GetScale() - Returns the frame's scale factor
@@ -3279,6 +3303,7 @@ StatusBar:SetParent(frame) or StatusBar:SetParent("name") - Makes another frame 
 StatusBar:SetPoint("point" [, relativeTo [, "relativePoint" [, xOffset [, yOffset]]]]) - Sets an anchor point for the region
 StatusBar:SetPropagateKeyboardInput() - This function is not yet documented
 StatusBar:SetResizable(enable) - Sets whether the frame can be resized by the user
+StatusBar:SetReverseFill() - This function is not yet documented
 StatusBar:SetRotatesTexture(rotate) - Sets whether the status bar's texture is rotated to match its orientation
 StatusBar:SetScale(scale) - Sets the frame's scale factor
 StatusBar:SetScript("scriptType", handler) - Sets the widget's handler function for a script
@@ -3415,6 +3440,7 @@ TabardModel:SetCamera(index) - Sets the view angle on the model to a pre-defined
 TabardModel:SetClampRectInsets(left, right, top, bottom) - Sets offsets from the frame's edges used when limiting user movement or resizing of the frame
 TabardModel:SetClampedToScreen(enable) - Sets whether the frame's boundaries should be limited to those of the screen
 TabardModel:SetCreature(creature) - Sets the model to display the 3D model of a specific creature
+TabardModel:SetCustomRace() - This function is not yet documented
 TabardModel:SetDepth(depth) - Sets the 3D depth of the frame (for stereoscopic 3D configurations)
 TabardModel:SetDisplayInfo() - This function is not yet documented
 TabardModel:SetDontSavePosition() - This function is not yet documented

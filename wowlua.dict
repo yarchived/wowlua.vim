@@ -29,6 +29,7 @@ AddTrackedAchievement
 AddTradeMoney
 AppendToFile
 ApplyBarberShopStyle
+ApplyTransmogrifications
 ArchaeologyGetIconInfo
 ArchaeologyMapUpdateAll
 ArcheologyGetVisibleBlobID
@@ -92,6 +93,7 @@ BNRequestFOFInfo
 BNSendConversationMessage
 BNSendFriendInvite
 BNSendFriendInviteByID
+BNSendSoR
 BNSendWhisper
 BNSetAFK
 BNSetBlocked
@@ -253,8 +255,10 @@ CanMapChangeDifficulty
 CanMerchantRepair
 CanPartyLFGBackfill
 CanQueueForWintergrasp
+CanReplaceGuildMaster
 CanResetTutorials
 CanSendAuctionQuery
+CanSendSoRByText
 CanShowAchievementUI
 CanShowResetInstances
 CanSignPetition
@@ -262,7 +266,10 @@ CanSolveArtifact
 CanSummonFriend
 CanSwitchVehicleSeat
 CanSwitchVehicleSeats
+CanTransmogrifyItemWithItem
+CanUpgradeExpansion
 CanUseEquipmentSets
+CanUseVoidStorage
 CanViewGuildRecipes
 CanViewOfficerNote
 CanWithdrawGuildBankMoney
@@ -320,6 +327,7 @@ ClearAchievementComparisonUnit
 ClearAllLFGDungeons
 ClearAllTracking
 ClearAutoAcceptQuestSound
+ClearBattlemaster
 ClearChannelWatch
 ClearCursor
 ClearFocus
@@ -330,13 +338,19 @@ ClearPartyAssignment
 ClearRaidMarker
 ClearSendMail
 ClearTarget
+ClearTransmogrifySlot
 ClearTutorials
+ClearVoidTransferDepositSlot
 ClickAuctionSellItemButton
 ClickLandmark
 ClickSendMailItemButton
 ClickSocketButton
 ClickTargetTradeButton
 ClickTradeButton
+ClickTransmogrifySlot
+ClickVoidStorageSlot
+ClickVoidTransferDepositSlot
+ClickVoidTransferWithdrawalSlot
 CloseArenaTeamRoster
 CloseAuctionHouse
 CloseBankFrame
@@ -359,6 +373,8 @@ CloseTaxiMap
 CloseTrade
 CloseTradeSkill
 CloseTrainer
+CloseTransmogrifyFrame
+CloseVoidStorageFrame
 CollapseAllFactionHeaders
 CollapseChannelHeader
 CollapseFactionHeader
@@ -485,8 +501,10 @@ DropItemOnUnit
 DungeonUsesTerrainMap
 EJ_ClearSearch
 EJ_GetAvailableClasses
+EJ_GetClassFilter
 EJ_GetCreatureInfo
 EJ_GetCurrentInstance
+EJ_GetDifficulty
 EJ_GetEncounterInfo
 EJ_GetEncounterInfoByIndex
 EJ_GetInstanceByIndex
@@ -502,12 +520,12 @@ EJ_GetSectionPath
 EJ_GetTierInfo
 EJ_HandleLinkPath
 EJ_InstanceIsRaid
+EJ_IsValidInstanceDifficulty
 EJ_SelectEncounter
 EJ_SelectInstance
 EJ_SelectTier
 EJ_SetClassLootFilter
 EJ_SetDifficulty
-EJ_SetDifficultyByMask
 EJ_SetSearch
 EditMacro
 EjectPassengerFromSeat
@@ -527,6 +545,7 @@ EquipmentManagerIsSlotIgnoredForSave
 EquipmentManagerUnignoreSlotForSave
 EquipmentManager_UnpackLocation
 EquipmentSetContainsLockedItems
+ExecuteVoidTransfer
 ExpandAllFactionHeaders
 ExpandChannelHeader
 ExpandCurrencyList
@@ -590,6 +609,7 @@ GetAddOnMemoryUsage
 GetAddOnMetadata
 GetAddOnOptionalDependencies
 GetAllowLowLevelRaid
+GetAlternatePowerInfoByID
 GetArchaeologyInfo
 GetArchaeologyRaceInfo
 GetAreaSpiritHealerTime
@@ -644,6 +664,7 @@ GetBattlefieldTimeWaited
 GetBattlefieldVehicleInfo
 GetBattlefieldWinner
 GetBattlegroundInfo
+GetBestRFChoice
 GetBidderAuctionItems
 GetBillingTimeRested
 GetBindLocation
@@ -723,6 +744,7 @@ GetCurrentLevelSpells
 GetCurrentMapAreaID
 GetCurrentMapContinent
 GetCurrentMapDungeonLevel
+GetCurrentMapLevelRange
 GetCurrentMapZone
 GetCurrentMultisampleFormat
 GetCurrentRaidDifficulty
@@ -743,6 +765,7 @@ GetDefaultRaidDifficulty
 GetDefaultVideoOptions
 GetDemotionRank
 GetDestinationReforgeStats
+GetDetailColumnString
 GetDistanceSqToQuest
 GetDodgeChance
 GetDownloadedPercentage
@@ -762,6 +785,7 @@ GetExpansionLevel
 GetExpertise
 GetExpertisePercent
 GetExtendedItemInfo
+GetExtraBarOffset
 GetFacialHairCustomization
 GetFactionInfo
 GetFactionInfoByID
@@ -832,6 +856,7 @@ GetGuildRecipeInfoPostQuery
 GetGuildRecipeMember
 GetGuildRecruitmentComment
 GetGuildRecruitmentSettings
+GetGuildRenameRequired
 GetGuildRewardInfo
 GetGuildRosterContribution
 GetGuildRosterInfo
@@ -884,10 +909,10 @@ GetItemQualityColor
 GetItemSpell
 GetItemStatDelta
 GetItemStats
+GetItemTransmogrifyInfo
 GetItemUniqueness
 GetLFDChoiceCollapseState
 GetLFDChoiceEnabledState
-GetLFDChoiceInfo
 GetLFDChoiceLockedState
 GetLFDChoiceOrder
 GetLFDLockInfo
@@ -896,7 +921,9 @@ GetLFGBootProposal
 GetLFGCompletionReward
 GetLFGCompletionRewardItem
 GetLFGDeserterExpiration
+GetLFGDungeonEncounterInfo
 GetLFGDungeonInfo
+GetLFGDungeonNumEncounters
 GetLFGDungeonRewardCapBarInfo
 GetLFGDungeonRewardCapInfo
 GetLFGDungeonRewardInfo
@@ -939,11 +966,11 @@ GetLootSlotInfo
 GetLootSlotLink
 GetLootThreshold
 GetMacroBody
-GetMacroIconInfo
+GetMacroIcons
 GetMacroIndexByName
 GetMacroInfo
 GetMacroItem
-GetMacroItemIconInfo
+GetMacroItemIcons
 GetMacroSpell
 GetMajorTalentTreeBonuses
 GetManaRegen
@@ -958,8 +985,10 @@ GetMasterLootCandidate
 GetMastery
 GetMaxAnimFramerate
 GetMaxArenaCurrency
+GetMaxBattlefieldID
 GetMaxCombatRatingBonus
 GetMaxDailyQuests
+GetMaxMultisampleFormatOnCvar
 GetMaxNumCUFProfiles
 GetMaxPlayerLevel
 GetMaxSpellStartRecoveryOffset
@@ -977,6 +1006,8 @@ GetMinimapZoneText
 GetMinorTalentTreeBonuses
 GetMirrorTimerInfo
 GetMirrorTimerProgress
+GetMissingLootItemInfo
+GetMissingLootItemLink
 GetModifiedClick
 GetModifiedClickAction
 GetMoney
@@ -1053,13 +1084,12 @@ GetNumGuildTradeSkill
 GetNumIgnores
 GetNumLanguages
 GetNumLootItems
-GetNumMacroIcons
-GetNumMacroItemIcons
 GetNumMacros
 GetNumMapDebugObjects
 GetNumMapLandmarks
 GetNumMapOverlays
 GetNumMembersInRank
+GetNumMissingLootItems
 GetNumModifiedClickActions
 GetNumMutes
 GetNumNamePlateMotionTypes
@@ -1078,6 +1108,7 @@ GetNumQuestLogRewardFactions
 GetNumQuestLogRewards
 GetNumQuestRewards
 GetNumQuestWatches
+GetNumRFDungeons
 GetNumRaidMembers
 GetNumRaidProfiles
 GetNumRandomDungeons
@@ -1101,6 +1132,8 @@ GetNumTradeSkills
 GetNumTrainerServices
 GetNumVoiceSessionMembersBySessionID
 GetNumVoiceSessions
+GetNumVoidTransferDeposit
+GetNumVoidTransferWithdrawal
 GetNumWarGameTypes
 GetNumWhoResults
 GetNumWorldPVPAreas
@@ -1110,6 +1143,7 @@ GetOSLocale
 GetObjectiveText
 GetOptOutOfLoot
 GetOutdoorPVPWaitTime
+GetOverrideSpellPowerByAP
 GetOwnerAuctionItems
 GetPVPDesired
 GetPVPLifetimeStats
@@ -1123,6 +1157,7 @@ GetPackageInfo
 GetParryChance
 GetPartyAssignment
 GetPartyLFGBackfillInfo
+GetPartyLFGID
 GetPartyLeaderIndex
 GetPartyMember
 GetPersonalRatedArenaInfo
@@ -1209,6 +1244,7 @@ GetQuestTimers
 GetQuestWatchIndex
 GetQuestWorldMapAreaID
 GetQuestsCompleted
+GetRFDungeonInfo
 GetRaidDifficulty
 GetRaidProfileFlattenedOptions
 GetRaidProfileName
@@ -1284,6 +1320,7 @@ GetShapeshiftForm
 GetShapeshiftFormCooldown
 GetShapeshiftFormID
 GetShapeshiftFormInfo
+GetSheathState
 GetShieldBlock
 GetSocketItemBoundTradeable
 GetSocketItemInfo
@@ -1292,6 +1329,7 @@ GetSocketTypes
 GetSourceReforgeStats
 GetSpellAutocast
 GetSpellAvailableLevel
+GetSpellBaseCooldown
 GetSpellBonusDamage
 GetSpellBonusHealing
 GetSpellBookItemInfo
@@ -1386,6 +1424,8 @@ GetTrainerServiceSkillReq
 GetTrainerServiceStepIndex
 GetTrainerServiceTypeFilter
 GetTrainerTradeskillRankValues
+GetTransmogrifyCost
+GetTransmogrifySlotInfo
 GetUnitHealthModifier
 GetUnitManaRegenRateFromSpirit
 GetUnitMaxHealthModifier
@@ -1402,6 +1442,11 @@ GetVoiceCurrentSessionID
 GetVoiceSessionInfo
 GetVoiceSessionMemberInfoBySessionID
 GetVoiceStatus
+GetVoidItemHyperlinkString
+GetVoidItemInfo
+GetVoidTransferCost
+GetVoidTransferDepositInfo
+GetVoidTransferWithdrawalInfo
 GetWarGameQueueStatus
 GetWarGameTypeInfo
 GetWatchedFactionInfo
@@ -1432,10 +1477,12 @@ GuildDisband
 GuildInfo
 GuildInvite
 GuildLeave
+GuildMasterAbsent
 GuildNewsSetSticky
 GuildNewsSort
 GuildPromote
 GuildRoster
+GuildRosterSendSoR
 GuildRosterSetOfficerNote
 GuildRosterSetPublicNote
 GuildSetLeader
@@ -1446,10 +1493,12 @@ HasAction
 HasAlternateForm
 HasCompletedAnyAchievement
 HasDebugZoneMap
+HasExtraActionBar
 HasFullControl
 HasInspectHonorData
 HasKey
 HasLFGRestrictions
+HasLoadedCUFProfiles
 HasNewMail
 HasPetSpells
 HasPetUI
@@ -1470,6 +1519,7 @@ InteractUnit
 InterfaceOptionsFrame_OpenToCategory
 InterfaceOptions_AddCategory
 InviteUnit
+Is
 IsAchievementEligible
 IsActionInRange
 IsActiveBattlefieldArena
@@ -1494,6 +1544,7 @@ IsChatDND
 IsConsumableAction
 IsConsumableItem
 IsConsumableSpell
+IsContainerFiltered
 IsControlKeyDown
 IsCurrentAction
 IsCurrentItem
@@ -1509,6 +1560,7 @@ IsEquippableItem
 IsEquippedAction
 IsEquippedItem
 IsEquippedItemType
+IsEveryoneAssistant
 IsFactionInactive
 IsFalling
 IsFishingLoot
@@ -1522,7 +1574,6 @@ IsHarmfulItem
 IsHarmfulSpell
 IsHelpfulItem
 IsHelpfulSpell
-IsIPv
 IsIgnored
 IsIgnoredOrMuted
 IsInActiveWorldPVP
@@ -1607,6 +1658,7 @@ IsVehicleAimPowerAdjustable
 IsVoiceChatAllowed
 IsVoiceChatAllowedByServer
 IsVoiceChatEnabled
+IsVoidStorageReady
 IsWindowsClient
 IsXPUserDisabled
 IsZoomOutAvailable
@@ -1669,6 +1721,10 @@ LootSlot
 LootSlotIsCoin
 LootSlotIsCurrency
 LootSlotIsItem
+MacOptions_AreOSShortcutsDisabled
+MacOptions_IsUniversalAccessEnabled
+MacOptions_OpenUniversalAccess
+MacOptions_SetOSShortcutsDisabled
 MakeMinigameMove
 ModifyEquipmentSet
 MouseOverrideCinematicDisable
@@ -1842,6 +1898,7 @@ RemoveTrackedAchievement
 RenamePetition
 RepairAllItems
 ReplaceEnchant
+ReplaceGuildMaster
 ReplaceTradeEnchant
 RepopMe
 ReportBug
@@ -1923,12 +1980,14 @@ SelectTrainerService
 SendAddonMessage
 SendChatMessage
 SendMail
+SendSoRByText
 SendSystemMessage
 SendWho
 SetAbandonQuest
 SetAchievementComparisonPortrait
 SetAchievementComparisonUnit
 SetActionBarToggles
+SetActionUIButton
 SetActiveTalentGroup
 SetActiveVoiceChannel
 SetActiveVoiceChannelBySessionID
@@ -1973,6 +2032,7 @@ SetDefaultVideoOptions
 SetDungeonDifficulty
 SetDungeonMapLevel
 SetEuropeanNumbers
+SetEveryoneIsAssistant
 SetFactionActive
 SetFactionInactive
 SetFocusedAchievement
@@ -1996,6 +2056,7 @@ SetGuildRosterShowOffline
 SetGuildTradeSkillCategoryFilter
 SetGuildTradeSkillItemNameFilter
 SetInventoryPortraitTexture
+SetItemSearch
 SetLFGBootVote
 SetLFGComment
 SetLFGDungeon
@@ -2055,6 +2116,7 @@ SetSelectedFaction
 SetSelectedFriend
 SetSelectedIgnore
 SetSelectedMute
+SetSelectedScreenResolutionIndex
 SetSelectedWarGameType
 SetSendMailCOD
 SetSendMailMoney
@@ -2122,7 +2184,9 @@ SpellCanTargetGlyph
 SpellCanTargetItem
 SpellCanTargetUnit
 SpellCancelQueuedSpell
+SpellGetVisibilityInfo
 SpellHasRange
+SpellIsSelfBuff
 SpellIsTargeting
 SpellStopCasting
 SpellStopTargeting
@@ -2152,6 +2216,7 @@ StrafeLeftStop
 StrafeRightStart
 StrafeRightStop
 Stuck
+SubmitRequiredGuildRename
 SummonFriend
 SummonRandomCritter
 SwapRaidSubgroup
@@ -2184,6 +2249,7 @@ TaxiNodeName
 TaxiNodePosition
 TaxiNodeSetCurrent
 TeleportToDebugObject
+TestCreatePill
 ToggleAnimKitDisplay
 ToggleAutoRun
 ToggleCollision
@@ -2213,6 +2279,7 @@ TurnRightStop
 UnSilenceMember
 UninviteUnit
 UnitAffectingCombat
+UnitAlternatePowerCounterInfo
 UnitAlternatePowerInfo
 UnitAlternatePowerTextureInfo
 UnitArmor
@@ -2294,6 +2361,7 @@ UnitLevel
 UnitMana
 UnitManaMax
 UnitName
+UnitNumPowerBarTimers
 UnitOnTaxi
 UnitPVPName
 UnitPVPRank
@@ -2301,6 +2369,7 @@ UnitPlayerControlled
 UnitPlayerOrPetInParty
 UnitPlayerOrPetInRaid
 UnitPower
+UnitPowerBarTimerInfo
 UnitPowerMax
 UnitPowerType
 UnitRace
@@ -2324,6 +2393,8 @@ UnitVehicleSeatInfo
 UnitVehicleSkin
 UnitXP
 UnitXPMax
+UnlearnSpecialization
+UnlockVoidStorage
 UpdateAddOnCPUUsage
 UpdateAddOnMemoryUsage
 UpdateGMTicket
@@ -2338,9 +2409,11 @@ UseEquipmentSet
 UseHearthstone
 UseInventoryItem
 UseItemByName
+UseItemForTransmogrify
 UseQuestLogSpecialItem
 UseSoulstone
 ValidateTimer
+ValidateTransmogrifications
 VehicleAimDecrement
 VehicleAimDownStart
 VehicleAimDownStop
@@ -2480,6 +2553,8 @@ type
 unpack
 wipe
 xpcall
+
+
 ACHIEVEMENT_EARNED
 ACTIONBAR_HIDEGRID
 ACTIONBAR_PAGE_CHANGED
@@ -2764,6 +2839,7 @@ GUILD_RANKS_UPDATE
 GUILD_RECIPE_KNOWN_BY_MEMBERS
 GUILD_REGISTRAR_CLOSED
 GUILD_REGISTRAR_SHOW
+GUILD_RENAME_REQUIRED
 GUILD_REP_UPDATED
 GUILD_REWARDS_LIST
 GUILD_ROSTER_UPDATE
@@ -2772,6 +2848,7 @@ GUILD_XP_UPDATE
 IGNORELIST_UPDATE
 IGR_BILLING_NAG_DIALOG
 INCOMING_RESURRECT_CHANGED
+INELIGIBLE_FOR_LOOT
 INSPECT_ACHIEVEMENT_READY
 INSPECT_HONOR_UPDATE
 INSPECT_READY
@@ -2781,6 +2858,7 @@ INSTANCE_ENCOUNTER_ENGAGE_UNIT
 INSTANCE_LOCK_START
 INSTANCE_LOCK_STOP
 INSTANCE_LOCK_WARNING
+INVENTORY_SEARCH_UPDATE
 ITEM_LOCKED
 ITEM_LOCK_CHANGED
 ITEM_PUSH
@@ -2803,6 +2881,7 @@ LEARNED_SPELL_IN_TAB
 LEVEL_GRANT_PROPOSED
 LFG_BOOT_PROPOSAL_UPDATE
 LFG_COMPLETION_REWARD
+LFG_INVALID_ERROR_MESSAGE
 LFG_LOCK_INFO_RECEIVED
 LFG_OFFER_CONTINUE
 LFG_OPEN_FROM_GOSSIP
@@ -2854,6 +2933,7 @@ MINIMAP_UPDATE_ZOOM
 MIRROR_TIMER_PAUSE
 MIRROR_TIMER_START
 MIRROR_TIMER_STOP
+MISSING_OUT_ON_LOOT
 MODIFIER_STATE_CHANGED
 MOVIE_COMPRESSING_PROGRESS
 MOVIE_RECORDING_PROGRESS
@@ -2930,6 +3010,7 @@ PLAYER_PVP_RANK_CHANGED
 PLAYER_QUITING
 PLAYER_REGEN_DISABLED
 PLAYER_REGEN_ENABLED
+PLAYER_REPORT_SUBMITTED
 PLAYER_ROLES_ASSIGNED
 PLAYER_SKINNED
 PLAYER_TALENT_UPDATE
@@ -2976,6 +3057,7 @@ RECEIVED_ACHIEVEMENT_LIST
 RECEIVED_ACHIEVEMENT_MEMBER_LIST
 REPLACE_ENCHANT
 REQUEST_CEMETERY_LIST_RESPONSE
+REQUIRED_GUILD_RENAME_RESULT
 RESTRICTED_ACCOUNT_WARNING
 RESURRECT_REQUEST
 ROLE_CHANGED_INFORM
@@ -2984,11 +3066,16 @@ RUNE_POWER_UPDATE
 RUNE_TYPE_UPDATE
 SCREENSHOT_FAILED
 SCREENSHOT_SUCCEEDED
+SELF_RES_SPELL_CHANGED
 SEND_MAIL_COD_CHANGED
 SEND_MAIL_MONEY_CHANGED
 SKILL_LINES_CHANGED
+SOCKET_INFO_ACCEPT
 SOCKET_INFO_CLOSE
+SOCKET_INFO_SUCCESS
 SOCKET_INFO_UPDATE
+SOR_BY_TEXT_UPDATED
+SOR_START_EXPERIENCE_INCOMPLETE
 SOUND_DEVICE_UPDATE
 SPELLS_CHANGED
 SPELL_ACTIVATION_OVERLAY_GLOW_HIDE
@@ -3034,6 +3121,13 @@ TRAINER_CLOSED
 TRAINER_DESCRIPTION_UPDATE
 TRAINER_SHOW
 TRAINER_UPDATE
+TRANSMOGRIFY_BIND_CONFIRM
+TRANSMOGRIFY_CLOSE
+TRANSMOGRIFY_OPEN
+TRANSMOGRIFY_SUCCESS
+TRANSMOGRIFY_UPDATE
+TRIAL_CAP_REACHED_LEVEL
+TRIAL_CAP_REACHED_MONEY
 TUTORIAL_TRIGGER
 UI_ERROR_MESSAGE
 UI_INFO_MESSAGE
@@ -3074,6 +3168,8 @@ UNIT_PORTRAIT_UPDATE
 UNIT_POWER
 UNIT_POWER_BAR_HIDE
 UNIT_POWER_BAR_SHOW
+UNIT_POWER_BAR_TIMER_UPDATE
+UNIT_POWER_FREQUENT
 UNIT_QUEST_LOG_CHANGED
 UNIT_RANGEDDAMAGE
 UNIT_RANGED_ATTACK_POWER
@@ -3105,6 +3201,7 @@ UPDATE_CHAT_COLOR
 UPDATE_CHAT_COLOR_NAME_BY_CLASS
 UPDATE_CHAT_WINDOWS
 UPDATE_EXHAUSTION
+UPDATE_EXTRA_ACTIONBAR
 UPDATE_FACTION
 UPDATE_FLOATING_CHAT_WINDOWS
 UPDATE_GM_STATUS
@@ -3147,6 +3244,13 @@ VOICE_SESSIONS_UPDATE
 VOICE_START
 VOICE_STATUS_UPDATE
 VOICE_STOP
+VOID_DEPOSIT_WARNING
+VOID_STORAGE_CLOSE
+VOID_STORAGE_CONTENTS_UPDATE
+VOID_STORAGE_DEPOSIT_UPDATE
+VOID_STORAGE_OPEN
+VOID_STORAGE_UPDATE
+VOID_TRANSFER_DONE
 VOTE_KICK_REASON_NEEDED
 WARGAME_REQUESTED
 WEAR_EQUIPMENT_SET
@@ -3159,6 +3263,8 @@ WOW_MOUSE_NOT_FOUND
 ZONE_CHANGED
 ZONE_CHANGED_INDOORS
 ZONE_CHANGED_NEW_AREA
+
+
 AddDoubleLine
 AddFontStrings
 AddHistoryLine
@@ -3336,6 +3442,7 @@ GetRect
 GetRegionParent
 GetRegions
 GetReverse
+GetReverseFill
 GetRight
 GetRotatesTexture
 GetScale
@@ -3439,6 +3546,7 @@ RegisterEvent
 RegisterForClicks
 RegisterForDrag
 RemoveMessagesByAccessID
+RemoveMessagesByExtraData
 ReplaceIconTexture
 Save
 ScrollDown
@@ -3451,6 +3559,13 @@ SetAlpha
 SetAlphaGradient
 SetAltArrowKeyMode
 SetAnchorType
+SetArchBlobInsideAlpha
+SetArchBlobInsideTexture
+SetArchBlobOutsideAlpha
+SetArchBlobOutsideTexture
+SetArchBlobRingAlpha
+SetArchBlobRingScalar
+SetArchBlobRingTexture
 SetAttribute
 SetAuctionItem
 SetAuctionSellItem
@@ -3491,6 +3606,7 @@ SetCurrencyByID
 SetCurrencyToken
 SetCursorPosition
 SetCurve
+SetCustomRace
 SetDegrees
 SetDepth
 SetDesaturated
@@ -3570,6 +3686,7 @@ SetMergeThreshold
 SetMinMaxValues
 SetMinResize
 SetMinimumWidth
+SetMissingLootItem
 SetModel
 SetModelScale
 SetMotionScriptsWhileDisabled
@@ -3602,6 +3719,13 @@ SetPossession
 SetPropagateKeyboardInput
 SetPushedTextOffset
 SetPushedTexture
+SetQuestBlobInsideAlpha
+SetQuestBlobInsideTexture
+SetQuestBlobOutsideAlpha
+SetQuestBlobOutsideTexture
+SetQuestBlobRingAlpha
+SetQuestBlobRingScalar
+SetQuestBlobRingTexture
 SetQuestCurrency
 SetQuestItem
 SetQuestLogCurrency
@@ -3613,6 +3737,7 @@ SetRadians
 SetReforgeItem
 SetResizable
 SetReverse
+SetReverseFill
 SetRotatesTexture
 SetRotation
 SetScale
@@ -3652,6 +3777,7 @@ SetTradePlayerItem
 SetTradeSkillItem
 SetTradeTargetItem
 SetTrainerService
+SetTransmogrifyItem
 SetUnit
 SetUnitAura
 SetUnitBuff
@@ -3662,6 +3788,9 @@ SetValueStep
 SetVertTile
 SetVertexColor
 SetVerticalScroll
+SetVoidDepositItem
+SetVoidItem
+SetVoidWithdrawalItem
 SetWidth
 SetWordWrap
 SetZoom
@@ -3676,6 +3805,7 @@ StopMovingOrSizing
 ToggleInputLanguage
 TryOn
 Undress
+UndressSlot
 UnlockHighlight
 UnregisterAllEvents
 UnregisterEvent

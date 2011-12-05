@@ -29,6 +29,7 @@ syn keyword luaWoWAPI AddTrackedAchievement
 syn keyword luaWoWAPI AddTradeMoney
 syn keyword luaWoWAPI AppendToFile
 syn keyword luaWoWAPI ApplyBarberShopStyle
+syn keyword luaWoWAPI ApplyTransmogrifications
 syn keyword luaWoWAPI ArchaeologyGetIconInfo
 syn keyword luaWoWAPI ArchaeologyMapUpdateAll
 syn keyword luaWoWAPI ArcheologyGetVisibleBlobID
@@ -92,6 +93,7 @@ syn keyword luaWoWAPI BNRequestFOFInfo
 syn keyword luaWoWAPI BNSendConversationMessage
 syn keyword luaWoWAPI BNSendFriendInvite
 syn keyword luaWoWAPI BNSendFriendInviteByID
+syn keyword luaWoWAPI BNSendSoR
 syn keyword luaWoWAPI BNSendWhisper
 syn keyword luaWoWAPI BNSetAFK
 syn keyword luaWoWAPI BNSetBlocked
@@ -253,8 +255,10 @@ syn keyword luaWoWAPI CanMapChangeDifficulty
 syn keyword luaWoWAPI CanMerchantRepair
 syn keyword luaWoWAPI CanPartyLFGBackfill
 syn keyword luaWoWAPI CanQueueForWintergrasp
+syn keyword luaWoWAPI CanReplaceGuildMaster
 syn keyword luaWoWAPI CanResetTutorials
 syn keyword luaWoWAPI CanSendAuctionQuery
+syn keyword luaWoWAPI CanSendSoRByText
 syn keyword luaWoWAPI CanShowAchievementUI
 syn keyword luaWoWAPI CanShowResetInstances
 syn keyword luaWoWAPI CanSignPetition
@@ -262,7 +266,10 @@ syn keyword luaWoWAPI CanSolveArtifact
 syn keyword luaWoWAPI CanSummonFriend
 syn keyword luaWoWAPI CanSwitchVehicleSeat
 syn keyword luaWoWAPI CanSwitchVehicleSeats
+syn keyword luaWoWAPI CanTransmogrifyItemWithItem
+syn keyword luaWoWAPI CanUpgradeExpansion
 syn keyword luaWoWAPI CanUseEquipmentSets
+syn keyword luaWoWAPI CanUseVoidStorage
 syn keyword luaWoWAPI CanViewGuildRecipes
 syn keyword luaWoWAPI CanViewOfficerNote
 syn keyword luaWoWAPI CanWithdrawGuildBankMoney
@@ -320,6 +327,7 @@ syn keyword luaWoWAPI ClearAchievementComparisonUnit
 syn keyword luaWoWAPI ClearAllLFGDungeons
 syn keyword luaWoWAPI ClearAllTracking
 syn keyword luaWoWAPI ClearAutoAcceptQuestSound
+syn keyword luaWoWAPI ClearBattlemaster
 syn keyword luaWoWAPI ClearChannelWatch
 syn keyword luaWoWAPI ClearCursor
 syn keyword luaWoWAPI ClearFocus
@@ -330,13 +338,19 @@ syn keyword luaWoWAPI ClearPartyAssignment
 syn keyword luaWoWAPI ClearRaidMarker
 syn keyword luaWoWAPI ClearSendMail
 syn keyword luaWoWAPI ClearTarget
+syn keyword luaWoWAPI ClearTransmogrifySlot
 syn keyword luaWoWAPI ClearTutorials
+syn keyword luaWoWAPI ClearVoidTransferDepositSlot
 syn keyword luaWoWAPI ClickAuctionSellItemButton
 syn keyword luaWoWAPI ClickLandmark
 syn keyword luaWoWAPI ClickSendMailItemButton
 syn keyword luaWoWAPI ClickSocketButton
 syn keyword luaWoWAPI ClickTargetTradeButton
 syn keyword luaWoWAPI ClickTradeButton
+syn keyword luaWoWAPI ClickTransmogrifySlot
+syn keyword luaWoWAPI ClickVoidStorageSlot
+syn keyword luaWoWAPI ClickVoidTransferDepositSlot
+syn keyword luaWoWAPI ClickVoidTransferWithdrawalSlot
 syn keyword luaWoWAPI CloseArenaTeamRoster
 syn keyword luaWoWAPI CloseAuctionHouse
 syn keyword luaWoWAPI CloseBankFrame
@@ -359,6 +373,8 @@ syn keyword luaWoWAPI CloseTaxiMap
 syn keyword luaWoWAPI CloseTrade
 syn keyword luaWoWAPI CloseTradeSkill
 syn keyword luaWoWAPI CloseTrainer
+syn keyword luaWoWAPI CloseTransmogrifyFrame
+syn keyword luaWoWAPI CloseVoidStorageFrame
 syn keyword luaWoWAPI CollapseAllFactionHeaders
 syn keyword luaWoWAPI CollapseChannelHeader
 syn keyword luaWoWAPI CollapseFactionHeader
@@ -485,8 +501,10 @@ syn keyword luaWoWAPI DropItemOnUnit
 syn keyword luaWoWAPI DungeonUsesTerrainMap
 syn keyword luaWoWAPI EJ_ClearSearch
 syn keyword luaWoWAPI EJ_GetAvailableClasses
+syn keyword luaWoWAPI EJ_GetClassFilter
 syn keyword luaWoWAPI EJ_GetCreatureInfo
 syn keyword luaWoWAPI EJ_GetCurrentInstance
+syn keyword luaWoWAPI EJ_GetDifficulty
 syn keyword luaWoWAPI EJ_GetEncounterInfo
 syn keyword luaWoWAPI EJ_GetEncounterInfoByIndex
 syn keyword luaWoWAPI EJ_GetInstanceByIndex
@@ -502,12 +520,12 @@ syn keyword luaWoWAPI EJ_GetSectionPath
 syn keyword luaWoWAPI EJ_GetTierInfo
 syn keyword luaWoWAPI EJ_HandleLinkPath
 syn keyword luaWoWAPI EJ_InstanceIsRaid
+syn keyword luaWoWAPI EJ_IsValidInstanceDifficulty
 syn keyword luaWoWAPI EJ_SelectEncounter
 syn keyword luaWoWAPI EJ_SelectInstance
 syn keyword luaWoWAPI EJ_SelectTier
 syn keyword luaWoWAPI EJ_SetClassLootFilter
 syn keyword luaWoWAPI EJ_SetDifficulty
-syn keyword luaWoWAPI EJ_SetDifficultyByMask
 syn keyword luaWoWAPI EJ_SetSearch
 syn keyword luaWoWAPI EditMacro
 syn keyword luaWoWAPI EjectPassengerFromSeat
@@ -527,6 +545,7 @@ syn keyword luaWoWAPI EquipmentManagerIsSlotIgnoredForSave
 syn keyword luaWoWAPI EquipmentManagerUnignoreSlotForSave
 syn keyword luaWoWAPI EquipmentManager_UnpackLocation
 syn keyword luaWoWAPI EquipmentSetContainsLockedItems
+syn keyword luaWoWAPI ExecuteVoidTransfer
 syn keyword luaWoWAPI ExpandAllFactionHeaders
 syn keyword luaWoWAPI ExpandChannelHeader
 syn keyword luaWoWAPI ExpandCurrencyList
@@ -590,6 +609,7 @@ syn keyword luaWoWAPI GetAddOnMemoryUsage
 syn keyword luaWoWAPI GetAddOnMetadata
 syn keyword luaWoWAPI GetAddOnOptionalDependencies
 syn keyword luaWoWAPI GetAllowLowLevelRaid
+syn keyword luaWoWAPI GetAlternatePowerInfoByID
 syn keyword luaWoWAPI GetArchaeologyInfo
 syn keyword luaWoWAPI GetArchaeologyRaceInfo
 syn keyword luaWoWAPI GetAreaSpiritHealerTime
@@ -644,6 +664,7 @@ syn keyword luaWoWAPI GetBattlefieldTimeWaited
 syn keyword luaWoWAPI GetBattlefieldVehicleInfo
 syn keyword luaWoWAPI GetBattlefieldWinner
 syn keyword luaWoWAPI GetBattlegroundInfo
+syn keyword luaWoWAPI GetBestRFChoice
 syn keyword luaWoWAPI GetBidderAuctionItems
 syn keyword luaWoWAPI GetBillingTimeRested
 syn keyword luaWoWAPI GetBindLocation
@@ -723,6 +744,7 @@ syn keyword luaWoWAPI GetCurrentLevelSpells
 syn keyword luaWoWAPI GetCurrentMapAreaID
 syn keyword luaWoWAPI GetCurrentMapContinent
 syn keyword luaWoWAPI GetCurrentMapDungeonLevel
+syn keyword luaWoWAPI GetCurrentMapLevelRange
 syn keyword luaWoWAPI GetCurrentMapZone
 syn keyword luaWoWAPI GetCurrentMultisampleFormat
 syn keyword luaWoWAPI GetCurrentRaidDifficulty
@@ -743,6 +765,7 @@ syn keyword luaWoWAPI GetDefaultRaidDifficulty
 syn keyword luaWoWAPI GetDefaultVideoOptions
 syn keyword luaWoWAPI GetDemotionRank
 syn keyword luaWoWAPI GetDestinationReforgeStats
+syn keyword luaWoWAPI GetDetailColumnString
 syn keyword luaWoWAPI GetDistanceSqToQuest
 syn keyword luaWoWAPI GetDodgeChance
 syn keyword luaWoWAPI GetDownloadedPercentage
@@ -762,6 +785,7 @@ syn keyword luaWoWAPI GetExpansionLevel
 syn keyword luaWoWAPI GetExpertise
 syn keyword luaWoWAPI GetExpertisePercent
 syn keyword luaWoWAPI GetExtendedItemInfo
+syn keyword luaWoWAPI GetExtraBarOffset
 syn keyword luaWoWAPI GetFacialHairCustomization
 syn keyword luaWoWAPI GetFactionInfo
 syn keyword luaWoWAPI GetFactionInfoByID
@@ -832,6 +856,7 @@ syn keyword luaWoWAPI GetGuildRecipeInfoPostQuery
 syn keyword luaWoWAPI GetGuildRecipeMember
 syn keyword luaWoWAPI GetGuildRecruitmentComment
 syn keyword luaWoWAPI GetGuildRecruitmentSettings
+syn keyword luaWoWAPI GetGuildRenameRequired
 syn keyword luaWoWAPI GetGuildRewardInfo
 syn keyword luaWoWAPI GetGuildRosterContribution
 syn keyword luaWoWAPI GetGuildRosterInfo
@@ -884,10 +909,10 @@ syn keyword luaWoWAPI GetItemQualityColor
 syn keyword luaWoWAPI GetItemSpell
 syn keyword luaWoWAPI GetItemStatDelta
 syn keyword luaWoWAPI GetItemStats
+syn keyword luaWoWAPI GetItemTransmogrifyInfo
 syn keyword luaWoWAPI GetItemUniqueness
 syn keyword luaWoWAPI GetLFDChoiceCollapseState
 syn keyword luaWoWAPI GetLFDChoiceEnabledState
-syn keyword luaWoWAPI GetLFDChoiceInfo
 syn keyword luaWoWAPI GetLFDChoiceLockedState
 syn keyword luaWoWAPI GetLFDChoiceOrder
 syn keyword luaWoWAPI GetLFDLockInfo
@@ -896,7 +921,9 @@ syn keyword luaWoWAPI GetLFGBootProposal
 syn keyword luaWoWAPI GetLFGCompletionReward
 syn keyword luaWoWAPI GetLFGCompletionRewardItem
 syn keyword luaWoWAPI GetLFGDeserterExpiration
+syn keyword luaWoWAPI GetLFGDungeonEncounterInfo
 syn keyword luaWoWAPI GetLFGDungeonInfo
+syn keyword luaWoWAPI GetLFGDungeonNumEncounters
 syn keyword luaWoWAPI GetLFGDungeonRewardCapBarInfo
 syn keyword luaWoWAPI GetLFGDungeonRewardCapInfo
 syn keyword luaWoWAPI GetLFGDungeonRewardInfo
@@ -939,11 +966,11 @@ syn keyword luaWoWAPI GetLootSlotInfo
 syn keyword luaWoWAPI GetLootSlotLink
 syn keyword luaWoWAPI GetLootThreshold
 syn keyword luaWoWAPI GetMacroBody
-syn keyword luaWoWAPI GetMacroIconInfo
+syn keyword luaWoWAPI GetMacroIcons
 syn keyword luaWoWAPI GetMacroIndexByName
 syn keyword luaWoWAPI GetMacroInfo
 syn keyword luaWoWAPI GetMacroItem
-syn keyword luaWoWAPI GetMacroItemIconInfo
+syn keyword luaWoWAPI GetMacroItemIcons
 syn keyword luaWoWAPI GetMacroSpell
 syn keyword luaWoWAPI GetMajorTalentTreeBonuses
 syn keyword luaWoWAPI GetManaRegen
@@ -958,8 +985,10 @@ syn keyword luaWoWAPI GetMasterLootCandidate
 syn keyword luaWoWAPI GetMastery
 syn keyword luaWoWAPI GetMaxAnimFramerate
 syn keyword luaWoWAPI GetMaxArenaCurrency
+syn keyword luaWoWAPI GetMaxBattlefieldID
 syn keyword luaWoWAPI GetMaxCombatRatingBonus
 syn keyword luaWoWAPI GetMaxDailyQuests
+syn keyword luaWoWAPI GetMaxMultisampleFormatOnCvar
 syn keyword luaWoWAPI GetMaxNumCUFProfiles
 syn keyword luaWoWAPI GetMaxPlayerLevel
 syn keyword luaWoWAPI GetMaxSpellStartRecoveryOffset
@@ -977,6 +1006,8 @@ syn keyword luaWoWAPI GetMinimapZoneText
 syn keyword luaWoWAPI GetMinorTalentTreeBonuses
 syn keyword luaWoWAPI GetMirrorTimerInfo
 syn keyword luaWoWAPI GetMirrorTimerProgress
+syn keyword luaWoWAPI GetMissingLootItemInfo
+syn keyword luaWoWAPI GetMissingLootItemLink
 syn keyword luaWoWAPI GetModifiedClick
 syn keyword luaWoWAPI GetModifiedClickAction
 syn keyword luaWoWAPI GetMoney
@@ -1053,13 +1084,12 @@ syn keyword luaWoWAPI GetNumGuildTradeSkill
 syn keyword luaWoWAPI GetNumIgnores
 syn keyword luaWoWAPI GetNumLanguages
 syn keyword luaWoWAPI GetNumLootItems
-syn keyword luaWoWAPI GetNumMacroIcons
-syn keyword luaWoWAPI GetNumMacroItemIcons
 syn keyword luaWoWAPI GetNumMacros
 syn keyword luaWoWAPI GetNumMapDebugObjects
 syn keyword luaWoWAPI GetNumMapLandmarks
 syn keyword luaWoWAPI GetNumMapOverlays
 syn keyword luaWoWAPI GetNumMembersInRank
+syn keyword luaWoWAPI GetNumMissingLootItems
 syn keyword luaWoWAPI GetNumModifiedClickActions
 syn keyword luaWoWAPI GetNumMutes
 syn keyword luaWoWAPI GetNumNamePlateMotionTypes
@@ -1078,6 +1108,7 @@ syn keyword luaWoWAPI GetNumQuestLogRewardFactions
 syn keyword luaWoWAPI GetNumQuestLogRewards
 syn keyword luaWoWAPI GetNumQuestRewards
 syn keyword luaWoWAPI GetNumQuestWatches
+syn keyword luaWoWAPI GetNumRFDungeons
 syn keyword luaWoWAPI GetNumRaidMembers
 syn keyword luaWoWAPI GetNumRaidProfiles
 syn keyword luaWoWAPI GetNumRandomDungeons
@@ -1101,6 +1132,8 @@ syn keyword luaWoWAPI GetNumTradeSkills
 syn keyword luaWoWAPI GetNumTrainerServices
 syn keyword luaWoWAPI GetNumVoiceSessionMembersBySessionID
 syn keyword luaWoWAPI GetNumVoiceSessions
+syn keyword luaWoWAPI GetNumVoidTransferDeposit
+syn keyword luaWoWAPI GetNumVoidTransferWithdrawal
 syn keyword luaWoWAPI GetNumWarGameTypes
 syn keyword luaWoWAPI GetNumWhoResults
 syn keyword luaWoWAPI GetNumWorldPVPAreas
@@ -1110,6 +1143,7 @@ syn keyword luaWoWAPI GetOSLocale
 syn keyword luaWoWAPI GetObjectiveText
 syn keyword luaWoWAPI GetOptOutOfLoot
 syn keyword luaWoWAPI GetOutdoorPVPWaitTime
+syn keyword luaWoWAPI GetOverrideSpellPowerByAP
 syn keyword luaWoWAPI GetOwnerAuctionItems
 syn keyword luaWoWAPI GetPVPDesired
 syn keyword luaWoWAPI GetPVPLifetimeStats
@@ -1123,6 +1157,7 @@ syn keyword luaWoWAPI GetPackageInfo
 syn keyword luaWoWAPI GetParryChance
 syn keyword luaWoWAPI GetPartyAssignment
 syn keyword luaWoWAPI GetPartyLFGBackfillInfo
+syn keyword luaWoWAPI GetPartyLFGID
 syn keyword luaWoWAPI GetPartyLeaderIndex
 syn keyword luaWoWAPI GetPartyMember
 syn keyword luaWoWAPI GetPersonalRatedArenaInfo
@@ -1209,6 +1244,7 @@ syn keyword luaWoWAPI GetQuestTimers
 syn keyword luaWoWAPI GetQuestWatchIndex
 syn keyword luaWoWAPI GetQuestWorldMapAreaID
 syn keyword luaWoWAPI GetQuestsCompleted
+syn keyword luaWoWAPI GetRFDungeonInfo
 syn keyword luaWoWAPI GetRaidDifficulty
 syn keyword luaWoWAPI GetRaidProfileFlattenedOptions
 syn keyword luaWoWAPI GetRaidProfileName
@@ -1284,6 +1320,7 @@ syn keyword luaWoWAPI GetShapeshiftForm
 syn keyword luaWoWAPI GetShapeshiftFormCooldown
 syn keyword luaWoWAPI GetShapeshiftFormID
 syn keyword luaWoWAPI GetShapeshiftFormInfo
+syn keyword luaWoWAPI GetSheathState
 syn keyword luaWoWAPI GetShieldBlock
 syn keyword luaWoWAPI GetSocketItemBoundTradeable
 syn keyword luaWoWAPI GetSocketItemInfo
@@ -1292,6 +1329,7 @@ syn keyword luaWoWAPI GetSocketTypes
 syn keyword luaWoWAPI GetSourceReforgeStats
 syn keyword luaWoWAPI GetSpellAutocast
 syn keyword luaWoWAPI GetSpellAvailableLevel
+syn keyword luaWoWAPI GetSpellBaseCooldown
 syn keyword luaWoWAPI GetSpellBonusDamage
 syn keyword luaWoWAPI GetSpellBonusHealing
 syn keyword luaWoWAPI GetSpellBookItemInfo
@@ -1386,6 +1424,8 @@ syn keyword luaWoWAPI GetTrainerServiceSkillReq
 syn keyword luaWoWAPI GetTrainerServiceStepIndex
 syn keyword luaWoWAPI GetTrainerServiceTypeFilter
 syn keyword luaWoWAPI GetTrainerTradeskillRankValues
+syn keyword luaWoWAPI GetTransmogrifyCost
+syn keyword luaWoWAPI GetTransmogrifySlotInfo
 syn keyword luaWoWAPI GetUnitHealthModifier
 syn keyword luaWoWAPI GetUnitManaRegenRateFromSpirit
 syn keyword luaWoWAPI GetUnitMaxHealthModifier
@@ -1402,6 +1442,11 @@ syn keyword luaWoWAPI GetVoiceCurrentSessionID
 syn keyword luaWoWAPI GetVoiceSessionInfo
 syn keyword luaWoWAPI GetVoiceSessionMemberInfoBySessionID
 syn keyword luaWoWAPI GetVoiceStatus
+syn keyword luaWoWAPI GetVoidItemHyperlinkString
+syn keyword luaWoWAPI GetVoidItemInfo
+syn keyword luaWoWAPI GetVoidTransferCost
+syn keyword luaWoWAPI GetVoidTransferDepositInfo
+syn keyword luaWoWAPI GetVoidTransferWithdrawalInfo
 syn keyword luaWoWAPI GetWarGameQueueStatus
 syn keyword luaWoWAPI GetWarGameTypeInfo
 syn keyword luaWoWAPI GetWatchedFactionInfo
@@ -1432,10 +1477,12 @@ syn keyword luaWoWAPI GuildDisband
 syn keyword luaWoWAPI GuildInfo
 syn keyword luaWoWAPI GuildInvite
 syn keyword luaWoWAPI GuildLeave
+syn keyword luaWoWAPI GuildMasterAbsent
 syn keyword luaWoWAPI GuildNewsSetSticky
 syn keyword luaWoWAPI GuildNewsSort
 syn keyword luaWoWAPI GuildPromote
 syn keyword luaWoWAPI GuildRoster
+syn keyword luaWoWAPI GuildRosterSendSoR
 syn keyword luaWoWAPI GuildRosterSetOfficerNote
 syn keyword luaWoWAPI GuildRosterSetPublicNote
 syn keyword luaWoWAPI GuildSetLeader
@@ -1446,10 +1493,12 @@ syn keyword luaWoWAPI HasAction
 syn keyword luaWoWAPI HasAlternateForm
 syn keyword luaWoWAPI HasCompletedAnyAchievement
 syn keyword luaWoWAPI HasDebugZoneMap
+syn keyword luaWoWAPI HasExtraActionBar
 syn keyword luaWoWAPI HasFullControl
 syn keyword luaWoWAPI HasInspectHonorData
 syn keyword luaWoWAPI HasKey
 syn keyword luaWoWAPI HasLFGRestrictions
+syn keyword luaWoWAPI HasLoadedCUFProfiles
 syn keyword luaWoWAPI HasNewMail
 syn keyword luaWoWAPI HasPetSpells
 syn keyword luaWoWAPI HasPetUI
@@ -1470,6 +1519,7 @@ syn keyword luaWoWAPI InteractUnit
 syn keyword luaWoWAPI InterfaceOptionsFrame_OpenToCategory
 syn keyword luaWoWAPI InterfaceOptions_AddCategory
 syn keyword luaWoWAPI InviteUnit
+syn keyword luaWoWAPI Is
 syn keyword luaWoWAPI IsAchievementEligible
 syn keyword luaWoWAPI IsActionInRange
 syn keyword luaWoWAPI IsActiveBattlefieldArena
@@ -1494,6 +1544,7 @@ syn keyword luaWoWAPI IsChatDND
 syn keyword luaWoWAPI IsConsumableAction
 syn keyword luaWoWAPI IsConsumableItem
 syn keyword luaWoWAPI IsConsumableSpell
+syn keyword luaWoWAPI IsContainerFiltered
 syn keyword luaWoWAPI IsControlKeyDown
 syn keyword luaWoWAPI IsCurrentAction
 syn keyword luaWoWAPI IsCurrentItem
@@ -1509,6 +1560,7 @@ syn keyword luaWoWAPI IsEquippableItem
 syn keyword luaWoWAPI IsEquippedAction
 syn keyword luaWoWAPI IsEquippedItem
 syn keyword luaWoWAPI IsEquippedItemType
+syn keyword luaWoWAPI IsEveryoneAssistant
 syn keyword luaWoWAPI IsFactionInactive
 syn keyword luaWoWAPI IsFalling
 syn keyword luaWoWAPI IsFishingLoot
@@ -1522,7 +1574,6 @@ syn keyword luaWoWAPI IsHarmfulItem
 syn keyword luaWoWAPI IsHarmfulSpell
 syn keyword luaWoWAPI IsHelpfulItem
 syn keyword luaWoWAPI IsHelpfulSpell
-syn keyword luaWoWAPI IsIPv
 syn keyword luaWoWAPI IsIgnored
 syn keyword luaWoWAPI IsIgnoredOrMuted
 syn keyword luaWoWAPI IsInActiveWorldPVP
@@ -1607,6 +1658,7 @@ syn keyword luaWoWAPI IsVehicleAimPowerAdjustable
 syn keyword luaWoWAPI IsVoiceChatAllowed
 syn keyword luaWoWAPI IsVoiceChatAllowedByServer
 syn keyword luaWoWAPI IsVoiceChatEnabled
+syn keyword luaWoWAPI IsVoidStorageReady
 syn keyword luaWoWAPI IsWindowsClient
 syn keyword luaWoWAPI IsXPUserDisabled
 syn keyword luaWoWAPI IsZoomOutAvailable
@@ -1669,6 +1721,10 @@ syn keyword luaWoWAPI LootSlot
 syn keyword luaWoWAPI LootSlotIsCoin
 syn keyword luaWoWAPI LootSlotIsCurrency
 syn keyword luaWoWAPI LootSlotIsItem
+syn keyword luaWoWAPI MacOptions_AreOSShortcutsDisabled
+syn keyword luaWoWAPI MacOptions_IsUniversalAccessEnabled
+syn keyword luaWoWAPI MacOptions_OpenUniversalAccess
+syn keyword luaWoWAPI MacOptions_SetOSShortcutsDisabled
 syn keyword luaWoWAPI MakeMinigameMove
 syn keyword luaWoWAPI ModifyEquipmentSet
 syn keyword luaWoWAPI MouseOverrideCinematicDisable
@@ -1842,6 +1898,7 @@ syn keyword luaWoWAPI RemoveTrackedAchievement
 syn keyword luaWoWAPI RenamePetition
 syn keyword luaWoWAPI RepairAllItems
 syn keyword luaWoWAPI ReplaceEnchant
+syn keyword luaWoWAPI ReplaceGuildMaster
 syn keyword luaWoWAPI ReplaceTradeEnchant
 syn keyword luaWoWAPI RepopMe
 syn keyword luaWoWAPI ReportBug
@@ -1923,12 +1980,14 @@ syn keyword luaWoWAPI SelectTrainerService
 syn keyword luaWoWAPI SendAddonMessage
 syn keyword luaWoWAPI SendChatMessage
 syn keyword luaWoWAPI SendMail
+syn keyword luaWoWAPI SendSoRByText
 syn keyword luaWoWAPI SendSystemMessage
 syn keyword luaWoWAPI SendWho
 syn keyword luaWoWAPI SetAbandonQuest
 syn keyword luaWoWAPI SetAchievementComparisonPortrait
 syn keyword luaWoWAPI SetAchievementComparisonUnit
 syn keyword luaWoWAPI SetActionBarToggles
+syn keyword luaWoWAPI SetActionUIButton
 syn keyword luaWoWAPI SetActiveTalentGroup
 syn keyword luaWoWAPI SetActiveVoiceChannel
 syn keyword luaWoWAPI SetActiveVoiceChannelBySessionID
@@ -1973,6 +2032,7 @@ syn keyword luaWoWAPI SetDefaultVideoOptions
 syn keyword luaWoWAPI SetDungeonDifficulty
 syn keyword luaWoWAPI SetDungeonMapLevel
 syn keyword luaWoWAPI SetEuropeanNumbers
+syn keyword luaWoWAPI SetEveryoneIsAssistant
 syn keyword luaWoWAPI SetFactionActive
 syn keyword luaWoWAPI SetFactionInactive
 syn keyword luaWoWAPI SetFocusedAchievement
@@ -1996,6 +2056,7 @@ syn keyword luaWoWAPI SetGuildRosterShowOffline
 syn keyword luaWoWAPI SetGuildTradeSkillCategoryFilter
 syn keyword luaWoWAPI SetGuildTradeSkillItemNameFilter
 syn keyword luaWoWAPI SetInventoryPortraitTexture
+syn keyword luaWoWAPI SetItemSearch
 syn keyword luaWoWAPI SetLFGBootVote
 syn keyword luaWoWAPI SetLFGComment
 syn keyword luaWoWAPI SetLFGDungeon
@@ -2055,6 +2116,7 @@ syn keyword luaWoWAPI SetSelectedFaction
 syn keyword luaWoWAPI SetSelectedFriend
 syn keyword luaWoWAPI SetSelectedIgnore
 syn keyword luaWoWAPI SetSelectedMute
+syn keyword luaWoWAPI SetSelectedScreenResolutionIndex
 syn keyword luaWoWAPI SetSelectedWarGameType
 syn keyword luaWoWAPI SetSendMailCOD
 syn keyword luaWoWAPI SetSendMailMoney
@@ -2122,7 +2184,9 @@ syn keyword luaWoWAPI SpellCanTargetGlyph
 syn keyword luaWoWAPI SpellCanTargetItem
 syn keyword luaWoWAPI SpellCanTargetUnit
 syn keyword luaWoWAPI SpellCancelQueuedSpell
+syn keyword luaWoWAPI SpellGetVisibilityInfo
 syn keyword luaWoWAPI SpellHasRange
+syn keyword luaWoWAPI SpellIsSelfBuff
 syn keyword luaWoWAPI SpellIsTargeting
 syn keyword luaWoWAPI SpellStopCasting
 syn keyword luaWoWAPI SpellStopTargeting
@@ -2152,6 +2216,7 @@ syn keyword luaWoWAPI StrafeLeftStop
 syn keyword luaWoWAPI StrafeRightStart
 syn keyword luaWoWAPI StrafeRightStop
 syn keyword luaWoWAPI Stuck
+syn keyword luaWoWAPI SubmitRequiredGuildRename
 syn keyword luaWoWAPI SummonFriend
 syn keyword luaWoWAPI SummonRandomCritter
 syn keyword luaWoWAPI SwapRaidSubgroup
@@ -2184,6 +2249,7 @@ syn keyword luaWoWAPI TaxiNodeName
 syn keyword luaWoWAPI TaxiNodePosition
 syn keyword luaWoWAPI TaxiNodeSetCurrent
 syn keyword luaWoWAPI TeleportToDebugObject
+syn keyword luaWoWAPI TestCreatePill
 syn keyword luaWoWAPI ToggleAnimKitDisplay
 syn keyword luaWoWAPI ToggleAutoRun
 syn keyword luaWoWAPI ToggleCollision
@@ -2213,6 +2279,7 @@ syn keyword luaWoWAPI TurnRightStop
 syn keyword luaWoWAPI UnSilenceMember
 syn keyword luaWoWAPI UninviteUnit
 syn keyword luaWoWAPI UnitAffectingCombat
+syn keyword luaWoWAPI UnitAlternatePowerCounterInfo
 syn keyword luaWoWAPI UnitAlternatePowerInfo
 syn keyword luaWoWAPI UnitAlternatePowerTextureInfo
 syn keyword luaWoWAPI UnitArmor
@@ -2294,6 +2361,7 @@ syn keyword luaWoWAPI UnitLevel
 syn keyword luaWoWAPI UnitMana
 syn keyword luaWoWAPI UnitManaMax
 syn keyword luaWoWAPI UnitName
+syn keyword luaWoWAPI UnitNumPowerBarTimers
 syn keyword luaWoWAPI UnitOnTaxi
 syn keyword luaWoWAPI UnitPVPName
 syn keyword luaWoWAPI UnitPVPRank
@@ -2301,6 +2369,7 @@ syn keyword luaWoWAPI UnitPlayerControlled
 syn keyword luaWoWAPI UnitPlayerOrPetInParty
 syn keyword luaWoWAPI UnitPlayerOrPetInRaid
 syn keyword luaWoWAPI UnitPower
+syn keyword luaWoWAPI UnitPowerBarTimerInfo
 syn keyword luaWoWAPI UnitPowerMax
 syn keyword luaWoWAPI UnitPowerType
 syn keyword luaWoWAPI UnitRace
@@ -2324,6 +2393,8 @@ syn keyword luaWoWAPI UnitVehicleSeatInfo
 syn keyword luaWoWAPI UnitVehicleSkin
 syn keyword luaWoWAPI UnitXP
 syn keyword luaWoWAPI UnitXPMax
+syn keyword luaWoWAPI UnlearnSpecialization
+syn keyword luaWoWAPI UnlockVoidStorage
 syn keyword luaWoWAPI UpdateAddOnCPUUsage
 syn keyword luaWoWAPI UpdateAddOnMemoryUsage
 syn keyword luaWoWAPI UpdateGMTicket
@@ -2338,9 +2409,11 @@ syn keyword luaWoWAPI UseEquipmentSet
 syn keyword luaWoWAPI UseHearthstone
 syn keyword luaWoWAPI UseInventoryItem
 syn keyword luaWoWAPI UseItemByName
+syn keyword luaWoWAPI UseItemForTransmogrify
 syn keyword luaWoWAPI UseQuestLogSpecialItem
 syn keyword luaWoWAPI UseSoulstone
 syn keyword luaWoWAPI ValidateTimer
+syn keyword luaWoWAPI ValidateTransmogrifications
 syn keyword luaWoWAPI VehicleAimDecrement
 syn keyword luaWoWAPI VehicleAimDownStart
 syn keyword luaWoWAPI VehicleAimDownStop
@@ -2765,6 +2838,7 @@ syn keyword luaWoWEvent GUILD_RANKS_UPDATE
 syn keyword luaWoWEvent GUILD_RECIPE_KNOWN_BY_MEMBERS
 syn keyword luaWoWEvent GUILD_REGISTRAR_CLOSED
 syn keyword luaWoWEvent GUILD_REGISTRAR_SHOW
+syn keyword luaWoWEvent GUILD_RENAME_REQUIRED
 syn keyword luaWoWEvent GUILD_REP_UPDATED
 syn keyword luaWoWEvent GUILD_REWARDS_LIST
 syn keyword luaWoWEvent GUILD_ROSTER_UPDATE
@@ -2773,6 +2847,7 @@ syn keyword luaWoWEvent GUILD_XP_UPDATE
 syn keyword luaWoWEvent IGNORELIST_UPDATE
 syn keyword luaWoWEvent IGR_BILLING_NAG_DIALOG
 syn keyword luaWoWEvent INCOMING_RESURRECT_CHANGED
+syn keyword luaWoWEvent INELIGIBLE_FOR_LOOT
 syn keyword luaWoWEvent INSPECT_ACHIEVEMENT_READY
 syn keyword luaWoWEvent INSPECT_HONOR_UPDATE
 syn keyword luaWoWEvent INSPECT_READY
@@ -2782,6 +2857,7 @@ syn keyword luaWoWEvent INSTANCE_ENCOUNTER_ENGAGE_UNIT
 syn keyword luaWoWEvent INSTANCE_LOCK_START
 syn keyword luaWoWEvent INSTANCE_LOCK_STOP
 syn keyword luaWoWEvent INSTANCE_LOCK_WARNING
+syn keyword luaWoWEvent INVENTORY_SEARCH_UPDATE
 syn keyword luaWoWEvent ITEM_LOCKED
 syn keyword luaWoWEvent ITEM_LOCK_CHANGED
 syn keyword luaWoWEvent ITEM_PUSH
@@ -2804,6 +2880,7 @@ syn keyword luaWoWEvent LEARNED_SPELL_IN_TAB
 syn keyword luaWoWEvent LEVEL_GRANT_PROPOSED
 syn keyword luaWoWEvent LFG_BOOT_PROPOSAL_UPDATE
 syn keyword luaWoWEvent LFG_COMPLETION_REWARD
+syn keyword luaWoWEvent LFG_INVALID_ERROR_MESSAGE
 syn keyword luaWoWEvent LFG_LOCK_INFO_RECEIVED
 syn keyword luaWoWEvent LFG_OFFER_CONTINUE
 syn keyword luaWoWEvent LFG_OPEN_FROM_GOSSIP
@@ -2855,6 +2932,7 @@ syn keyword luaWoWEvent MINIMAP_UPDATE_ZOOM
 syn keyword luaWoWEvent MIRROR_TIMER_PAUSE
 syn keyword luaWoWEvent MIRROR_TIMER_START
 syn keyword luaWoWEvent MIRROR_TIMER_STOP
+syn keyword luaWoWEvent MISSING_OUT_ON_LOOT
 syn keyword luaWoWEvent MODIFIER_STATE_CHANGED
 syn keyword luaWoWEvent MOVIE_COMPRESSING_PROGRESS
 syn keyword luaWoWEvent MOVIE_RECORDING_PROGRESS
@@ -2931,6 +3009,7 @@ syn keyword luaWoWEvent PLAYER_PVP_RANK_CHANGED
 syn keyword luaWoWEvent PLAYER_QUITING
 syn keyword luaWoWEvent PLAYER_REGEN_DISABLED
 syn keyword luaWoWEvent PLAYER_REGEN_ENABLED
+syn keyword luaWoWEvent PLAYER_REPORT_SUBMITTED
 syn keyword luaWoWEvent PLAYER_ROLES_ASSIGNED
 syn keyword luaWoWEvent PLAYER_SKINNED
 syn keyword luaWoWEvent PLAYER_TALENT_UPDATE
@@ -2977,6 +3056,7 @@ syn keyword luaWoWEvent RECEIVED_ACHIEVEMENT_LIST
 syn keyword luaWoWEvent RECEIVED_ACHIEVEMENT_MEMBER_LIST
 syn keyword luaWoWEvent REPLACE_ENCHANT
 syn keyword luaWoWEvent REQUEST_CEMETERY_LIST_RESPONSE
+syn keyword luaWoWEvent REQUIRED_GUILD_RENAME_RESULT
 syn keyword luaWoWEvent RESTRICTED_ACCOUNT_WARNING
 syn keyword luaWoWEvent RESURRECT_REQUEST
 syn keyword luaWoWEvent ROLE_CHANGED_INFORM
@@ -2985,11 +3065,16 @@ syn keyword luaWoWEvent RUNE_POWER_UPDATE
 syn keyword luaWoWEvent RUNE_TYPE_UPDATE
 syn keyword luaWoWEvent SCREENSHOT_FAILED
 syn keyword luaWoWEvent SCREENSHOT_SUCCEEDED
+syn keyword luaWoWEvent SELF_RES_SPELL_CHANGED
 syn keyword luaWoWEvent SEND_MAIL_COD_CHANGED
 syn keyword luaWoWEvent SEND_MAIL_MONEY_CHANGED
 syn keyword luaWoWEvent SKILL_LINES_CHANGED
+syn keyword luaWoWEvent SOCKET_INFO_ACCEPT
 syn keyword luaWoWEvent SOCKET_INFO_CLOSE
+syn keyword luaWoWEvent SOCKET_INFO_SUCCESS
 syn keyword luaWoWEvent SOCKET_INFO_UPDATE
+syn keyword luaWoWEvent SOR_BY_TEXT_UPDATED
+syn keyword luaWoWEvent SOR_START_EXPERIENCE_INCOMPLETE
 syn keyword luaWoWEvent SOUND_DEVICE_UPDATE
 syn keyword luaWoWEvent SPELLS_CHANGED
 syn keyword luaWoWEvent SPELL_ACTIVATION_OVERLAY_GLOW_HIDE
@@ -3035,6 +3120,13 @@ syn keyword luaWoWEvent TRAINER_CLOSED
 syn keyword luaWoWEvent TRAINER_DESCRIPTION_UPDATE
 syn keyword luaWoWEvent TRAINER_SHOW
 syn keyword luaWoWEvent TRAINER_UPDATE
+syn keyword luaWoWEvent TRANSMOGRIFY_BIND_CONFIRM
+syn keyword luaWoWEvent TRANSMOGRIFY_CLOSE
+syn keyword luaWoWEvent TRANSMOGRIFY_OPEN
+syn keyword luaWoWEvent TRANSMOGRIFY_SUCCESS
+syn keyword luaWoWEvent TRANSMOGRIFY_UPDATE
+syn keyword luaWoWEvent TRIAL_CAP_REACHED_LEVEL
+syn keyword luaWoWEvent TRIAL_CAP_REACHED_MONEY
 syn keyword luaWoWEvent TUTORIAL_TRIGGER
 syn keyword luaWoWEvent UI_ERROR_MESSAGE
 syn keyword luaWoWEvent UI_INFO_MESSAGE
@@ -3075,6 +3167,8 @@ syn keyword luaWoWEvent UNIT_PORTRAIT_UPDATE
 syn keyword luaWoWEvent UNIT_POWER
 syn keyword luaWoWEvent UNIT_POWER_BAR_HIDE
 syn keyword luaWoWEvent UNIT_POWER_BAR_SHOW
+syn keyword luaWoWEvent UNIT_POWER_BAR_TIMER_UPDATE
+syn keyword luaWoWEvent UNIT_POWER_FREQUENT
 syn keyword luaWoWEvent UNIT_QUEST_LOG_CHANGED
 syn keyword luaWoWEvent UNIT_RANGEDDAMAGE
 syn keyword luaWoWEvent UNIT_RANGED_ATTACK_POWER
@@ -3106,6 +3200,7 @@ syn keyword luaWoWEvent UPDATE_CHAT_COLOR
 syn keyword luaWoWEvent UPDATE_CHAT_COLOR_NAME_BY_CLASS
 syn keyword luaWoWEvent UPDATE_CHAT_WINDOWS
 syn keyword luaWoWEvent UPDATE_EXHAUSTION
+syn keyword luaWoWEvent UPDATE_EXTRA_ACTIONBAR
 syn keyword luaWoWEvent UPDATE_FACTION
 syn keyword luaWoWEvent UPDATE_FLOATING_CHAT_WINDOWS
 syn keyword luaWoWEvent UPDATE_GM_STATUS
@@ -3148,6 +3243,13 @@ syn keyword luaWoWEvent VOICE_SESSIONS_UPDATE
 syn keyword luaWoWEvent VOICE_START
 syn keyword luaWoWEvent VOICE_STATUS_UPDATE
 syn keyword luaWoWEvent VOICE_STOP
+syn keyword luaWoWEvent VOID_DEPOSIT_WARNING
+syn keyword luaWoWEvent VOID_STORAGE_CLOSE
+syn keyword luaWoWEvent VOID_STORAGE_CONTENTS_UPDATE
+syn keyword luaWoWEvent VOID_STORAGE_DEPOSIT_UPDATE
+syn keyword luaWoWEvent VOID_STORAGE_OPEN
+syn keyword luaWoWEvent VOID_STORAGE_UPDATE
+syn keyword luaWoWEvent VOID_TRANSFER_DONE
 syn keyword luaWoWEvent VOTE_KICK_REASON_NEEDED
 syn keyword luaWoWEvent WARGAME_REQUESTED
 syn keyword luaWoWEvent WEAR_EQUIPMENT_SET
@@ -3338,6 +3440,7 @@ syn keyword luaWoWWidget GetRect
 syn keyword luaWoWWidget GetRegionParent
 syn keyword luaWoWWidget GetRegions
 syn keyword luaWoWWidget GetReverse
+syn keyword luaWoWWidget GetReverseFill
 syn keyword luaWoWWidget GetRight
 syn keyword luaWoWWidget GetRotatesTexture
 syn keyword luaWoWWidget GetScale
@@ -3441,6 +3544,7 @@ syn keyword luaWoWWidget RegisterEvent
 syn keyword luaWoWWidget RegisterForClicks
 syn keyword luaWoWWidget RegisterForDrag
 syn keyword luaWoWWidget RemoveMessagesByAccessID
+syn keyword luaWoWWidget RemoveMessagesByExtraData
 syn keyword luaWoWWidget ReplaceIconTexture
 syn keyword luaWoWWidget Save
 syn keyword luaWoWWidget ScrollDown
@@ -3453,6 +3557,13 @@ syn keyword luaWoWWidget SetAlpha
 syn keyword luaWoWWidget SetAlphaGradient
 syn keyword luaWoWWidget SetAltArrowKeyMode
 syn keyword luaWoWWidget SetAnchorType
+syn keyword luaWoWWidget SetArchBlobInsideAlpha
+syn keyword luaWoWWidget SetArchBlobInsideTexture
+syn keyword luaWoWWidget SetArchBlobOutsideAlpha
+syn keyword luaWoWWidget SetArchBlobOutsideTexture
+syn keyword luaWoWWidget SetArchBlobRingAlpha
+syn keyword luaWoWWidget SetArchBlobRingScalar
+syn keyword luaWoWWidget SetArchBlobRingTexture
 syn keyword luaWoWWidget SetAttribute
 syn keyword luaWoWWidget SetAuctionItem
 syn keyword luaWoWWidget SetAuctionSellItem
@@ -3493,6 +3604,7 @@ syn keyword luaWoWWidget SetCurrencyByID
 syn keyword luaWoWWidget SetCurrencyToken
 syn keyword luaWoWWidget SetCursorPosition
 syn keyword luaWoWWidget SetCurve
+syn keyword luaWoWWidget SetCustomRace
 syn keyword luaWoWWidget SetDegrees
 syn keyword luaWoWWidget SetDepth
 syn keyword luaWoWWidget SetDesaturated
@@ -3572,6 +3684,7 @@ syn keyword luaWoWWidget SetMergeThreshold
 syn keyword luaWoWWidget SetMinMaxValues
 syn keyword luaWoWWidget SetMinResize
 syn keyword luaWoWWidget SetMinimumWidth
+syn keyword luaWoWWidget SetMissingLootItem
 syn keyword luaWoWWidget SetModel
 syn keyword luaWoWWidget SetModelScale
 syn keyword luaWoWWidget SetMotionScriptsWhileDisabled
@@ -3604,6 +3717,13 @@ syn keyword luaWoWWidget SetPossession
 syn keyword luaWoWWidget SetPropagateKeyboardInput
 syn keyword luaWoWWidget SetPushedTextOffset
 syn keyword luaWoWWidget SetPushedTexture
+syn keyword luaWoWWidget SetQuestBlobInsideAlpha
+syn keyword luaWoWWidget SetQuestBlobInsideTexture
+syn keyword luaWoWWidget SetQuestBlobOutsideAlpha
+syn keyword luaWoWWidget SetQuestBlobOutsideTexture
+syn keyword luaWoWWidget SetQuestBlobRingAlpha
+syn keyword luaWoWWidget SetQuestBlobRingScalar
+syn keyword luaWoWWidget SetQuestBlobRingTexture
 syn keyword luaWoWWidget SetQuestCurrency
 syn keyword luaWoWWidget SetQuestItem
 syn keyword luaWoWWidget SetQuestLogCurrency
@@ -3615,6 +3735,7 @@ syn keyword luaWoWWidget SetRadians
 syn keyword luaWoWWidget SetReforgeItem
 syn keyword luaWoWWidget SetResizable
 syn keyword luaWoWWidget SetReverse
+syn keyword luaWoWWidget SetReverseFill
 syn keyword luaWoWWidget SetRotatesTexture
 syn keyword luaWoWWidget SetRotation
 syn keyword luaWoWWidget SetScale
@@ -3654,6 +3775,7 @@ syn keyword luaWoWWidget SetTradePlayerItem
 syn keyword luaWoWWidget SetTradeSkillItem
 syn keyword luaWoWWidget SetTradeTargetItem
 syn keyword luaWoWWidget SetTrainerService
+syn keyword luaWoWWidget SetTransmogrifyItem
 syn keyword luaWoWWidget SetUnit
 syn keyword luaWoWWidget SetUnitAura
 syn keyword luaWoWWidget SetUnitBuff
@@ -3664,6 +3786,9 @@ syn keyword luaWoWWidget SetValueStep
 syn keyword luaWoWWidget SetVertTile
 syn keyword luaWoWWidget SetVertexColor
 syn keyword luaWoWWidget SetVerticalScroll
+syn keyword luaWoWWidget SetVoidDepositItem
+syn keyword luaWoWWidget SetVoidItem
+syn keyword luaWoWWidget SetVoidWithdrawalItem
 syn keyword luaWoWWidget SetWidth
 syn keyword luaWoWWidget SetWordWrap
 syn keyword luaWoWWidget SetZoom
@@ -3678,6 +3803,7 @@ syn keyword luaWoWWidget StopMovingOrSizing
 syn keyword luaWoWWidget ToggleInputLanguage
 syn keyword luaWoWWidget TryOn
 syn keyword luaWoWWidget Undress
+syn keyword luaWoWWidget UndressSlot
 syn keyword luaWoWWidget UnlockHighlight
 syn keyword luaWoWWidget UnregisterAllEvents
 syn keyword luaWoWWidget UnregisterEvent
