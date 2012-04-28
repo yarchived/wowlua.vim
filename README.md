@@ -28,7 +28,7 @@ put `lua.vim` in $VIMRUNTIME/syntax
 
 # notepad++
 
-see `lang.xml` and `chunk.xml`
+see `lang.xml` and `notepad++.xml`
 
 # something's missing?
 
