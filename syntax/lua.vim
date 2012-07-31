@@ -445,6 +445,8 @@ syn keyword luaWoWAPI ChannelVoiceOn
 syn keyword luaWoWAPI ChatFrame_AddMessageEventFilter
 syn keyword luaWoWAPI ChatFrame_GetMessageEventFilters
 syn keyword luaWoWAPI ChatFrame_RemoveMessageEventFilter
+syn keyword luaWoWAPI ChatHistory_GetAccessID
+syn keyword luaWoWAPI ChatHistory_GetChatType
 syn keyword luaWoWAPI CheckBinderDist
 syn keyword luaWoWAPI CheckInbox
 syn keyword luaWoWAPI CheckInteractDistance
@@ -557,7 +559,6 @@ syn keyword luaWoWAPI CommentatorUpdateMapInfo
 syn keyword luaWoWAPI CommentatorUpdatePlayerInfo
 syn keyword luaWoWAPI CommentatorZoomIn
 syn keyword luaWoWAPI CommentatorZoomOut
-syn keyword luaWoWAPI ComplainChat
 syn keyword luaWoWAPI ComplainInboxItem
 syn keyword luaWoWAPI CompleteLFGRoleCheck
 syn keyword luaWoWAPI CompleteQuest
@@ -692,10 +693,15 @@ syn keyword luaWoWAPI ForceGossip
 syn keyword luaWoWAPI ForceLogout
 syn keyword luaWoWAPI ForceQuit
 syn keyword luaWoWAPI FrameXML_Debug
+syn keyword luaWoWAPI GMItemRestorationButtonEnabled
+syn keyword luaWoWAPI GMQuickTicketSystemEnabled
+syn keyword luaWoWAPI GMQuickTicketSystemThrottled
 syn keyword luaWoWAPI GMReportLag
 syn keyword luaWoWAPI GMRequestPlayerInfo
 syn keyword luaWoWAPI GMResponseNeedMoreHelp
 syn keyword luaWoWAPI GMResponseResolve
+syn keyword luaWoWAPI GMSubmitBug
+syn keyword luaWoWAPI GMSubmitSuggestion
 syn keyword luaWoWAPI GMSurveyAnswer
 syn keyword luaWoWAPI GMSurveyAnswerSubmit
 syn keyword luaWoWAPI GMSurveyCommentSubmit
@@ -1245,6 +1251,7 @@ syn keyword luaWoWAPI GetNumRewardCurrencies
 syn keyword luaWoWAPI GetNumRoutes
 syn keyword luaWoWAPI GetNumSavedInstances
 syn keyword luaWoWAPI GetNumShapeshiftForms
+syn keyword luaWoWAPI GetNumSoRRemaining
 syn keyword luaWoWAPI GetNumSockets
 syn keyword luaWoWAPI GetNumSpellTabs
 syn keyword luaWoWAPI GetNumStationeries
@@ -1428,6 +1435,7 @@ syn keyword luaWoWAPI GetScreenHeight
 syn keyword luaWoWAPI GetScreenResolutions
 syn keyword luaWoWAPI GetScreenWidth
 syn keyword luaWoWAPI GetScriptCPUUsage
+syn keyword luaWoWAPI GetSecondsUntilParentalControlsKick
 syn keyword luaWoWAPI GetSelectedArtifactInfo
 syn keyword luaWoWAPI GetSelectedAuctionItem
 syn keyword luaWoWAPI GetSelectedDisplayChannel
@@ -1443,6 +1451,7 @@ syn keyword luaWoWAPI GetSendMailItem
 syn keyword luaWoWAPI GetSendMailItemLink
 syn keyword luaWoWAPI GetSendMailMoney
 syn keyword luaWoWAPI GetSendMailPrice
+syn keyword luaWoWAPI GetSessionTime
 syn keyword luaWoWAPI GetShapeshiftForm
 syn keyword luaWoWAPI GetShapeshiftFormCooldown
 syn keyword luaWoWAPI GetShapeshiftFormID
@@ -2029,6 +2038,7 @@ syn keyword luaWoWAPI ReplaceGuildMaster
 syn keyword luaWoWAPI ReplaceTradeEnchant
 syn keyword luaWoWAPI RepopMe
 syn keyword luaWoWAPI ReportBug
+syn keyword luaWoWAPI ReportPlayer
 syn keyword luaWoWAPI ReportPlayerIsPVPAFK
 syn keyword luaWoWAPI ReportSuggestion
 syn keyword luaWoWAPI RequestArtifactCompletionHistory
@@ -2218,6 +2228,7 @@ syn keyword luaWoWAPI SetPOIIconOverlapDistance
 syn keyword luaWoWAPI SetPOIIconOverlapPushDistance
 syn keyword luaWoWAPI SetPVP
 syn keyword luaWoWAPI SetPartyAssignment
+syn keyword luaWoWAPI SetPendingReportTarget
 syn keyword luaWoWAPI SetPetSlot
 syn keyword luaWoWAPI SetPetStablePaperdoll
 syn keyword luaWoWAPI SetPortraitTexture
@@ -2988,6 +2999,7 @@ syn keyword luaWoWEvent INVENTORY_SEARCH_UPDATE
 syn keyword luaWoWEvent ITEM_LOCKED
 syn keyword luaWoWEvent ITEM_LOCK_CHANGED
 syn keyword luaWoWEvent ITEM_PUSH
+syn keyword luaWoWEvent ITEM_RESTORATION_BUTTON_STATUS
 syn keyword luaWoWEvent ITEM_TEXT_BEGIN
 syn keyword luaWoWEvent ITEM_TEXT_CLOSED
 syn keyword luaWoWEvent ITEM_TEXT_READY
@@ -3170,6 +3182,8 @@ syn keyword luaWoWEvent QUEST_POI_UPDATE
 syn keyword luaWoWEvent QUEST_PROGRESS
 syn keyword luaWoWEvent QUEST_QUERY_COMPLETE
 syn keyword luaWoWEvent QUEST_WATCH_UPDATE
+syn keyword luaWoWEvent QUICK_TICKET_SYSTEM_STATUS
+syn keyword luaWoWEvent QUICK_TICKET_THROTTLE_CHANGED
 syn keyword luaWoWEvent RAID_BOSS_EMOTE
 syn keyword luaWoWEvent RAID_BOSS_WHISPER
 syn keyword luaWoWEvent RAID_INSTANCE_WELCOME
@@ -3195,12 +3209,14 @@ syn keyword luaWoWEvent SCREENSHOT_SUCCEEDED
 syn keyword luaWoWEvent SELF_RES_SPELL_CHANGED
 syn keyword luaWoWEvent SEND_MAIL_COD_CHANGED
 syn keyword luaWoWEvent SEND_MAIL_MONEY_CHANGED
+syn keyword luaWoWEvent SESSION_TIME_ALERT
 syn keyword luaWoWEvent SKILL_LINES_CHANGED
 syn keyword luaWoWEvent SOCKET_INFO_ACCEPT
 syn keyword luaWoWEvent SOCKET_INFO_CLOSE
 syn keyword luaWoWEvent SOCKET_INFO_SUCCESS
 syn keyword luaWoWEvent SOCKET_INFO_UPDATE
 syn keyword luaWoWEvent SOR_BY_TEXT_UPDATED
+syn keyword luaWoWEvent SOR_COUNTS_UPDATED
 syn keyword luaWoWEvent SOR_START_EXPERIENCE_INCOMPLETE
 syn keyword luaWoWEvent SOUND_DEVICE_UPDATE
 syn keyword luaWoWEvent SPELLS_CHANGED
@@ -3938,6 +3954,8 @@ syn keyword luaWoWWidget UpdateBlips
 syn keyword luaWoWWidget UpdateColorByID
 syn keyword luaWoWWidget UpdateMouseOverTooltip
 syn keyword luaWoWWidget UpdateScrollChildRect
+
+
 
 
 if lua_version == 4
