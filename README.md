@@ -1,6 +1,6 @@
 # WTF ?
 
-lua syntax for WoW lua dev
+lua syntax for WoW AddOn dev
 
 # Insall
 
