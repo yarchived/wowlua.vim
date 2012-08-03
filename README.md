@@ -1,11 +1,6 @@
-# WTF is this?
+# WTF ?
 
-
-[wowlua.dict] dict that contains wow lua APIs, event names and widget apis
-
-[lua.vim] vim syntax file that highlights apis in wow lua
-
-[chunk.xml] notepad++ syntax
+lua syntax for WoW lua dev
 
 # Insall
 
@@ -15,12 +10,12 @@
 
 ## pathogen
 
-    cd $HOME/.vim/bundle; git clone git://github.com/yaroot/wowlua.vim.git
+    cd $HOME/.vim/bundle
+    git clone git://github.com/yaroot/wowlua.vim.git
 
 ## or
 
 put `lua.vim` in $VIMRUNTIME/syntax
-
 
 # dict usage
 
@@ -28,7 +23,7 @@ put `lua.vim` in $VIMRUNTIME/syntax
 
 # notepad++
 
-see `lang.xml` and `notepad++.xml`
+open `lang.xml` in your npp install replace the lua section with `extra/notepadplusplus.xml` 
 
 # something's missing?
 
