@@ -13,9 +13,8 @@ local function valid(str)
     return str and str~='' and str~=' '
 end
 
-local parseRaw = function(filename, re)
+local parseRaw = function(filename, re, removed_file)
     local kw = {}
-
 
     open(filename, 'r', function(f)
         for line in f:lines() do
@@ -27,6 +26,24 @@ local parseRaw = function(filename, re)
             end
         end
     end)
+
+    local removed = {}
+    if(removed_file) then
+        open(removed_file, 'r', function(f)
+            for line in f:lines() do
+                if(valid(line)) then
+                    local str = line:match(re)
+                    if(valid(str)) then
+                        removed[str] = true
+                    end
+                end
+            end
+        end)
+    end
+
+    for k in next, removed do
+        kw[k] = nil
+    end
 
     local ret = {}
     local tinsert = table.insert
@@ -41,16 +58,20 @@ end
 
 local function main()
     local apis = {
-         api = parseRaw('raw_api', '^([a-z,A-Z_]+)'),
-         event = parseRaw('raw_event', '^([A-Z_]+)'),
-         widget = parseRaw('raw_widget', ':(%w+)%('),
+         api = parseRaw('raw_api', '^([a-z,A-Z_.]+)', 'removed_api'),
+         event = parseRaw('raw_event', '^([A-Z_]+)', 'removed_event'),
+         widget = parseRaw('raw_widget', ':(%w+)%(', 'removed_widget'),
     }
 
     -- vim
     do
         local printSyntax = function(apis, kw)
             for i, v in ipairs(apis) do
-                io.stdout:write(('syn keyword %s %s\n'):format(v, kw))
+                if(v:find'%.') then
+                    io.stdout:write(('syn match %s /\\<%s\\>/\n'):format(kw, v))
+                else
+                    io.stdout:write(('syn keyword %s %s\n'):format(kw, v))
+                end
             end
 
             io.stdout:write'\n'
