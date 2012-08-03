@@ -1,86 +1,64 @@
 #!/usr/bin/env lua
---[[
-NAME
-    wowlua.vim - generate vim syntax file for wow lua apis
 
-SYNOPSIS
-    lua process.lua
 
-    This file is now hereby placed in the Public Domain
---]]
-
---{{{
-local function open(path, mode)
+local function open(path, mode, func)
     local f = io.open(path, mode or 'r')
-    if(not f ) then
-        error('Cannot open file ' .. path or '')
-    else
-        return f
+    if(f) then
+        func(f)
     end
+    return f:close()
 end
 
 local function valid(str)
     return str and str~='' and str~=' '
 end
 
-local function findDuplicate(t, s)
-    for i, v in ipairs(t) do
-        if(v) == s then
-            return true
-        end
-    end
+local parseRaw = function(filename, re)
+    local kw = {}
 
-    return false
-end
 
-local function parse(filename, re)
-    local res = {}
-
-    local file = open(filename)
-    for line in file:lines() do
-        if(valid(line)) then
-            local str = line:match(re)
-            if(valid(str) and not findDuplicate(res, str)) then
-                table.insert(res, str)
+    open(filename, 'r', function(f)
+        for line in f:lines() do
+            if(valid(line)) then
+                local str = line:match(re)
+                if(valid(str)) then
+                    kw[str] = true
+                end
             end
         end
+    end)
+
+    local ret = {}
+    local tinsert = table.insert
+    for k in next, kw do
+        tinsert(ret, k)
     end
-    file:close()
 
-    table.sort(res)
-    return res
+    table.sort(ret)
+    return ret
 end
---}}}
 
---{{{
+
 local function main()
     local apis = {
-         api = parse('raw_api', '^([a-z,A-Z_]+)'),
-         event = parse('raw_event', '^([A-Z_]+)'),
-         widget = parse('raw_widget', ':(%w+)%('),
+         api = parseRaw('raw_api', '^([a-z,A-Z_]+)'),
+         event = parseRaw('raw_event', '^([A-Z_]+)'),
+         widget = parseRaw('raw_widget', ':(%w+)%('),
     }
 
-    do -- vim
-
-        local function fmt(t1, t2, tt)
-            t2 = t2 or {}
-
-
-            for i, v in ipairs(t1) do
-                table.insert(t2, string.format('syn keyword %s %s', tt, v))
+    -- vim
+    do
+        local printSyntax = function(apis, kw)
+            for i, v in ipairs(apis) do
+                io.stdout:write(('syn keyword %s %s\n'):format(v, kw))
             end
-            table.insert(t2, '')
 
-            return t2
+            io.stdout:write'\n'
         end
 
-        local tmp = fmt(apis.api, nil, 'luaWoWAPI')
-                    fmt(apis.event, tmp, 'luaWoWEvent')
-                    fmt(apis.widget, tmp, 'luaWoWWidget')
-
-        for i, v in ipairs(tmp) do
-            print(v)
-        end
+        printSyntax(apis.api, 'luaWoWAPI')
+        printSyntax(apis.event, 'luaWoWEvent')
+        printSyntax(apis.widget, 'luaWoWWidget')
     end
 
     print'\n\n'
@@ -88,11 +66,12 @@ local function main()
     print'\n\n'
 
     do
-        local dump_words = function(list)
-            for _, wrd in next, list do
-                print(wrd)
+        local dump_words = function(apis)
+            for i, v in ipairs(apis) do
+                io.stdout:write(v)
+                io.stdout:write'\n'
             end
-            print'\n'
+            io.stdout:write'\n'
         end
 
         dump_words(apis.api)
@@ -105,13 +84,14 @@ local function main()
     print'\n\n'
 
     do
-        local function joinString(t)
-            local s
+        local joinPrint = function(t, sep)
+            local len = #t
             for i, v in ipairs(t) do
-                s = s and (s..' '..v) or v
+                io.stdout:write(v)
+                if(i ~= len) then
+                    io.stdout:write' '
+                end
             end
-
-            return s
         end
 
 
@@ -122,16 +102,18 @@ local function main()
 ]==]
 
         print'    <Keywords name="type1">'
-        print(joinString(apis.api) .. ' ' .. joinString(apis.widget))
+        joinPrint(apis.api , ' ')
+        print' '
+        joinPrint(apis.widget, ' ')
         print'</Keywords>\n'
 
         print'    <Keywords name="type2">'
-        print(joinString(apis.event))
+        joinPrint(apis.event, ' ')
         print'</Keywords>\n</Language>\n'
     end
 
 end
 
 main()
---}}}
+
 
