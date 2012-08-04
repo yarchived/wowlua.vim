@@ -4416,7 +4416,7 @@ elseif lua_version == 5
   syn match   luaFunc /\<math\.log10\>/
   syn match   luaFunc /\<math\.max\>/
   syn match   luaFunc /\<math\.min\>/
-  if lua_subversion == \<0
+  if lua_subversion == 0
     syn match luaFunc /\<math\.mod\>/
   elseif lua_subversion == 1
     syn match luaFunc /\<math\.fmod\>/
