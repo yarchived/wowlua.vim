@@ -71,7 +71,7 @@ end
 
 local function main()
     local apis = {
-         api = parseRaw('raw_api', '^([a-z,A-Z_.]+)%(', 'removed_api'),
+         api = parseRaw('raw_api', '^([a-z,A-Z_.]+)', 'removed_api'),
          event = parseRaw('raw_event', '^([A-Z_]+)', 'removed_event', filter_event),
          widget = parseRaw('raw_widget', ':(%w+)%(', 'removed_widget'),
     }
