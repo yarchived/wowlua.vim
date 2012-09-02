@@ -5,22 +5,30 @@ local function open(path, mode, func)
     local f = io.open(path, mode or 'r')
     if(f) then
         func(f)
+        return f:close()
     end
-    return f:close()
 end
 
-local function valid(str)
+local function not_empty(str)
     return str and str~='' and str~=' '
 end
 
-local parseRaw = function(filename, re, removed_file)
+local check_filter = function(str, filterFunc)
+    if(filterFunc) then
+        return filterFunc(str)
+    end
+    return true
+end
+
+local parseRaw = function(filename, re, removed_file, filterFunc)
     local kw = {}
 
     open(filename, 'r', function(f)
         for line in f:lines() do
-            if(valid(line)) then
+            if(not_empty(line)) then
                 local str = line:match(re)
-                if(valid(str)) then
+                if(not_empty(str) and
+                    check_filter(str, filterFunc)) then
                     kw[str] = true
                 end
             end
@@ -31,9 +39,10 @@ local parseRaw = function(filename, re, removed_file)
     if(removed_file) then
         open(removed_file, 'r', function(f)
             for line in f:lines() do
-                if(valid(line)) then
+                if(not_empty(line)) then
                     local str = line:match(re)
-                    if(valid(str)) then
+                    if(not_empty(str) and
+                        check_filter(str, filterFunc)) then
                         removed[str] = true
                     end
                 end
@@ -55,11 +64,15 @@ local parseRaw = function(filename, re, removed_file)
     return ret
 end
 
+local filter_event = function(str)
+    if(str:find'_') then return true
+    else return false end
+end
 
 local function main()
     local apis = {
-         api = parseRaw('raw_api', '^([a-z,A-Z_.]+)', 'removed_api'),
-         event = parseRaw('raw_event', '^([A-Z_]+)', 'removed_event'),
+         api = parseRaw('raw_api', '^([a-z,A-Z_.]+)%(', 'removed_api'),
+         event = parseRaw('raw_event', '^([A-Z_]+)', 'removed_event', filter_event),
          widget = parseRaw('raw_widget', ':(%w+)%(', 'removed_widget'),
     }
 
