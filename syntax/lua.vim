@@ -128,7 +128,6 @@ syn keyword luaConstant self
 
 
 
-
 syn keyword luaWoWAPI AbandonQuest
 syn keyword luaWoWAPI AbandonSkill
 syn keyword luaWoWAPI AcceptAreaSpiritHeal
@@ -1870,7 +1869,7 @@ syn keyword luaWoWAPI InteractUnit
 syn keyword luaWoWAPI InterfaceOptionsFrame_OpenToCategory
 syn keyword luaWoWAPI InterfaceOptions_AddCategory
 syn keyword luaWoWAPI InviteUnit
-syn keyword luaWoWAPI Is
+syn keyword luaWoWAPI Is64BitClient
 syn keyword luaWoWAPI IsAchievementEligible
 syn keyword luaWoWAPI IsActionInRange
 syn keyword luaWoWAPI IsActiveBattlefieldArena
@@ -2840,6 +2839,7 @@ syn keyword luaWoWAPI acos
 syn keyword luaWoWAPI asin
 syn keyword luaWoWAPI assert
 syn keyword luaWoWAPI atan
+syn keyword luaWoWAPI atan2
 syn keyword luaWoWAPI ceil
 syn keyword luaWoWAPI collectgarbage
 syn keyword luaWoWAPI cos
@@ -2881,6 +2881,7 @@ syn keyword luaWoWAPI issecurevariable
 syn keyword luaWoWAPI ldexp
 syn keyword luaWoWAPI loadstring
 syn keyword luaWoWAPI log
+syn keyword luaWoWAPI log10
 syn keyword luaWoWAPI max
 syn keyword luaWoWAPI message
 syn keyword luaWoWAPI min
@@ -2912,7 +2913,7 @@ syn keyword luaWoWAPI strconcat
 syn keyword luaWoWAPI strfind
 syn keyword luaWoWAPI strjoin
 syn keyword luaWoWAPI strlen
-syn keyword luaWoWAPI strlenutf
+syn keyword luaWoWAPI strlenutf8
 syn keyword luaWoWAPI strlower
 syn keyword luaWoWAPI strmatch
 syn keyword luaWoWAPI strrep
@@ -4301,7 +4302,6 @@ syn keyword luaWoWWidget UpdateBlips
 syn keyword luaWoWWidget UpdateColorByID
 syn keyword luaWoWWidget UpdateMouseOverTooltip
 syn keyword luaWoWWidget UpdateScrollChildRect
-
 
 
 

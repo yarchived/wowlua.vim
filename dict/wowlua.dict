@@ -1739,7 +1739,7 @@ InteractUnit
 InterfaceOptionsFrame_OpenToCategory
 InterfaceOptions_AddCategory
 InviteUnit
-Is
+Is64BitClient
 IsAchievementEligible
 IsActionInRange
 IsActiveBattlefieldArena
@@ -2709,6 +2709,7 @@ acos
 asin
 assert
 atan
+atan2
 ceil
 collectgarbage
 cos
@@ -2750,6 +2751,7 @@ issecurevariable
 ldexp
 loadstring
 log
+log10
 max
 message
 min
@@ -2781,7 +2783,7 @@ strconcat
 strfind
 strjoin
 strlen
-strlenutf
+strlenutf8
 strlower
 strmatch
 strrep
