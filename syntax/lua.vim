@@ -126,8 +126,6 @@ syn keyword luaConstant self
 
 
 
-
-
 syn keyword luaWoWAPI AbandonQuest
 syn keyword luaWoWAPI AbandonSkill
 syn keyword luaWoWAPI AcceptAreaSpiritHeal
@@ -269,6 +267,8 @@ syn match luaWoWAPI /\<C_LootHistory.GetNumItems\>/
 syn match luaWoWAPI /\<C_LootHistory.GetPlayerInfo\>/
 syn match luaWoWAPI /\<C_LootHistory.GiveMasterLoot\>/
 syn match luaWoWAPI /\<C_LootHistory.SetExpiration\>/
+syn match luaWoWAPI /\<C_LossOfControl.GetEventInfo\>/
+syn match luaWoWAPI /\<C_LossOfControl.GetNumEvents\>/
 syn match luaWoWAPI /\<C_PetBattles.AcceptPVPDuel\>/
 syn match luaWoWAPI /\<C_PetBattles.AcceptQueuedPVPMatch\>/
 syn match luaWoWAPI /\<C_PetBattles.CanActivePetSwapOut\>/
@@ -329,18 +329,23 @@ syn match luaWoWAPI /\<C_PetJournal.CagePetByID\>/
 syn match luaWoWAPI /\<C_PetJournal.ClearAllPetSourcesFilter\>/
 syn match luaWoWAPI /\<C_PetJournal.ClearAllPetTypesFilter\>/
 syn match luaWoWAPI /\<C_PetJournal.ClearSearchFilter\>/
+syn match luaWoWAPI /\<C_PetJournal.FindPetIDByName\>/
 syn match luaWoWAPI /\<C_PetJournal.GetBattlePetLink\>/
+syn match luaWoWAPI /\<C_PetJournal.GetNumCollectedInfo\>/
 syn match luaWoWAPI /\<C_PetJournal.GetNumPetSources\>/
 syn match luaWoWAPI /\<C_PetJournal.GetNumPetTypes\>/
 syn match luaWoWAPI /\<C_PetJournal.GetNumPets\>/
+syn match luaWoWAPI /\<C_PetJournal.GetOwnedBattlePetString\>/
 syn match luaWoWAPI /\<C_PetJournal.GetPetAbilityInfo\>/
 syn match luaWoWAPI /\<C_PetJournal.GetPetAbilityList\>/
 syn match luaWoWAPI /\<C_PetJournal.GetPetInfoByIndex\>/
 syn match luaWoWAPI /\<C_PetJournal.GetPetInfoByPetID\>/
 syn match luaWoWAPI /\<C_PetJournal.GetPetInfoBySpeciesID\>/
 syn match luaWoWAPI /\<C_PetJournal.GetPetLoadOutInfo\>/
+syn match luaWoWAPI /\<C_PetJournal.GetPetSortParameter\>/
 syn match luaWoWAPI /\<C_PetJournal.GetPetStats\>/
-syn match luaWoWAPI /\<C_PetJournal.GetSummonedPetID\>/
+syn match luaWoWAPI /\<C_PetJournal.GetPetTeamAverageLevel\>/
+syn match luaWoWAPI /\<C_PetJournal.GetSummonedPetGUID\>/
 syn match luaWoWAPI /\<C_PetJournal.IsFindBattleEnabled\>/
 syn match luaWoWAPI /\<C_PetJournal.IsFlagFiltered\>/
 syn match luaWoWAPI /\<C_PetJournal.IsJournalReadOnly\>/
@@ -363,10 +368,12 @@ syn match luaWoWAPI /\<C_PetJournal.SetCustomName\>/
 syn match luaWoWAPI /\<C_PetJournal.SetFavorite\>/
 syn match luaWoWAPI /\<C_PetJournal.SetFlagFilter\>/
 syn match luaWoWAPI /\<C_PetJournal.SetPetLoadOutInfo\>/
+syn match luaWoWAPI /\<C_PetJournal.SetPetSortParameter\>/
 syn match luaWoWAPI /\<C_PetJournal.SetPetSourceFilter\>/
 syn match luaWoWAPI /\<C_PetJournal.SetPetTypeFilter\>/
 syn match luaWoWAPI /\<C_PetJournal.SetSearchFilter\>/
-syn match luaWoWAPI /\<C_PetJournal.SummonPetByID\>/
+syn match luaWoWAPI /\<C_PetJournal.SummonPetByGUID\>/
+syn match luaWoWAPI /\<C_PetJournal.SummonRandomPet\>/
 syn match luaWoWAPI /\<C_Scenario.GetCriteriaInfo\>/
 syn match luaWoWAPI /\<C_Scenario.GetInfo\>/
 syn match luaWoWAPI /\<C_Scenario.GetScenarioIconInfo\>/
@@ -838,6 +845,7 @@ syn keyword luaWoWAPI FillLocalizedClassList
 syn keyword luaWoWAPI FindSpellBookSlotBySpellID
 syn keyword luaWoWAPI FlagTutorial
 syn keyword luaWoWAPI FlipCameraYaw
+syn keyword luaWoWAPI FlyoutHasSpell
 syn keyword luaWoWAPI FocusUnit
 syn keyword luaWoWAPI FollowUnit
 syn keyword luaWoWAPI ForceGossip
@@ -880,6 +888,7 @@ syn keyword luaWoWAPI GetActionCharges
 syn keyword luaWoWAPI GetActionCooldown
 syn keyword luaWoWAPI GetActionCount
 syn keyword luaWoWAPI GetActionInfo
+syn keyword luaWoWAPI GetActionLossOfControlCooldown
 syn keyword luaWoWAPI GetActionText
 syn keyword luaWoWAPI GetActionTexture
 syn keyword luaWoWAPI GetActiveArtifactByRace
@@ -1107,7 +1116,7 @@ syn keyword luaWoWAPI GetFramerate
 syn keyword luaWoWAPI GetFramesRegisteredForEvent
 syn keyword luaWoWAPI GetFriendInfo
 syn keyword luaWoWAPI GetFriendshipReputation
-syn keyword luaWoWAPI GetFriendshipReputationByID
+syn keyword luaWoWAPI GetFriendshipReputationRanks
 syn keyword luaWoWAPI GetFunctionCPUUsage
 syn keyword luaWoWAPI GetGMStatus
 syn keyword luaWoWAPI GetGMTicket
@@ -1181,6 +1190,7 @@ syn keyword luaWoWAPI GetGuildTradeSkillInfo
 syn keyword luaWoWAPI GetHairCustomization
 syn keyword luaWoWAPI GetHitModifier
 syn keyword luaWoWAPI GetHolidayBGHonorCurrencyBonuses
+syn keyword luaWoWAPI GetHomePartyInfo
 syn keyword luaWoWAPI GetIgnoreName
 syn keyword luaWoWAPI GetInboxHeaderInfo
 syn keyword luaWoWAPI GetInboxInvoiceInfo
@@ -1517,6 +1527,8 @@ syn keyword luaWoWAPI GetProfessionInfo
 syn keyword luaWoWAPI GetProfessions
 syn keyword luaWoWAPI GetProgressText
 syn keyword luaWoWAPI GetPromotionRank
+syn keyword luaWoWAPI GetPvpPowerDamage
+syn keyword luaWoWAPI GetPvpPowerHealing
 syn keyword luaWoWAPI GetQuestBackgroundMaterial
 syn keyword luaWoWAPI GetQuestCurrencyInfo
 syn keyword luaWoWAPI GetQuestDifficultyColor
@@ -1857,6 +1869,7 @@ syn keyword luaWoWAPI HasVehicleActionBar
 syn keyword luaWoWAPI HasWandEquipped
 syn keyword luaWoWAPI HearthAndResurrectFromArea
 syn keyword luaWoWAPI HideRepairCursor
+syn keyword luaWoWAPI InActiveBattlefield
 syn keyword luaWoWAPI InCinematic
 syn keyword luaWoWAPI InCombatLockdown
 syn keyword luaWoWAPI InGuildParty
@@ -1945,6 +1958,7 @@ syn keyword luaWoWAPI IsIndoors
 syn keyword luaWoWAPI IsInventoryItemLocked
 syn keyword luaWoWAPI IsItemAction
 syn keyword luaWoWAPI IsItemInRange
+syn keyword luaWoWAPI IsLFGComplete
 syn keyword luaWoWAPI IsLFGDungeonJoinable
 syn keyword luaWoWAPI IsLeftAltKeyDown
 syn keyword luaWoWAPI IsLeftControlKeyDown
@@ -2007,6 +2021,7 @@ syn keyword luaWoWAPI IsTitleKnown
 syn keyword luaWoWAPI IsTrackedAchievement
 syn keyword luaWoWAPI IsTradeSkillGuild
 syn keyword luaWoWAPI IsTradeSkillLinked
+syn keyword luaWoWAPI IsTradeSkillRepeating
 syn keyword luaWoWAPI IsTradeskillTrainer
 syn keyword luaWoWAPI IsTrialAccount
 syn keyword luaWoWAPI IsTutorialFlagged
@@ -2177,6 +2192,7 @@ syn keyword luaWoWAPI PickupItem
 syn keyword luaWoWAPI PickupMacro
 syn keyword luaWoWAPI PickupMerchantItem
 syn keyword luaWoWAPI PickupPetAction
+syn keyword luaWoWAPI PickupPetSpell
 syn keyword luaWoWAPI PickupPlayerMoney
 syn keyword luaWoWAPI PickupSpell
 syn keyword luaWoWAPI PickupSpellBookItem
@@ -2502,6 +2518,7 @@ syn keyword luaWoWAPI SetTradeSkillCategoryFilter
 syn keyword luaWoWAPI SetTradeSkillInvSlotFilter
 syn keyword luaWoWAPI SetTradeSkillItemLevelFilter
 syn keyword luaWoWAPI SetTradeSkillItemNameFilter
+syn keyword luaWoWAPI SetTradeSkillRepeatCount
 syn keyword luaWoWAPI SetTrainerServiceTypeFilter
 syn keyword luaWoWAPI SetUIVisibility
 syn keyword luaWoWAPI SetView
@@ -2657,6 +2674,7 @@ syn keyword luaWoWAPI UnitAttackPower
 syn keyword luaWoWAPI UnitAttackSpeed
 syn keyword luaWoWAPI UnitAura
 syn keyword luaWoWAPI UnitBattlePetLevel
+syn keyword luaWoWAPI UnitBattlePetSpeciesID
 syn keyword luaWoWAPI UnitBattlePetType
 syn keyword luaWoWAPI UnitBuff
 syn keyword luaWoWAPI UnitCanAssist
@@ -2702,6 +2720,7 @@ syn keyword luaWoWAPI UnitInVehicle
 syn keyword luaWoWAPI UnitInVehicleControlSeat
 syn keyword luaWoWAPI UnitInVehicleHidesPetFrame
 syn keyword luaWoWAPI UnitIsAFK
+syn keyword luaWoWAPI UnitIsBattlePet
 syn keyword luaWoWAPI UnitIsBattlePetCompanion
 syn keyword luaWoWAPI UnitIsCharmed
 syn keyword luaWoWAPI UnitIsConnected
@@ -3075,8 +3094,6 @@ syn keyword luaWoWEvent CHARACTER_POINTS_CHANGED
 syn keyword luaWoWEvent CHAT_MSG_ACHIEVEMENT
 syn keyword luaWoWEvent CHAT_MSG_ADDON
 syn keyword luaWoWEvent CHAT_MSG_AFK
-syn keyword luaWoWEvent CHAT_MSG_BATTLEGROUND
-syn keyword luaWoWEvent CHAT_MSG_BATTLEGROUND_LEADER
 syn keyword luaWoWEvent CHAT_MSG_BG_SYSTEM_ALLIANCE
 syn keyword luaWoWEvent CHAT_MSG_BG_SYSTEM_HORDE
 syn keyword luaWoWEvent CHAT_MSG_BG_SYSTEM_NEUTRAL
@@ -3108,6 +3125,8 @@ syn keyword luaWoWEvent CHAT_MSG_FILTERED
 syn keyword luaWoWEvent CHAT_MSG_GUILD
 syn keyword luaWoWEvent CHAT_MSG_GUILD_ACHIEVEMENT
 syn keyword luaWoWEvent CHAT_MSG_IGNORED
+syn keyword luaWoWEvent CHAT_MSG_INSTANCE_CHAT
+syn keyword luaWoWEvent CHAT_MSG_INSTANCE_CHAT_LEADER
 syn keyword luaWoWEvent CHAT_MSG_LOOT
 syn keyword luaWoWEvent CHAT_MSG_MONEY
 syn keyword luaWoWEvent CHAT_MSG_MONSTER_EMOTE
@@ -3219,6 +3238,7 @@ syn keyword luaWoWEvent GOSSIP_CONFIRM
 syn keyword luaWoWEvent GOSSIP_CONFIRM_CANCEL
 syn keyword luaWoWEvent GOSSIP_ENTER_CODE
 syn keyword luaWoWEvent GOSSIP_SHOW
+syn keyword luaWoWEvent GROUP_JOINED
 syn keyword luaWoWEvent GROUP_ROSTER_UPDATE
 syn keyword luaWoWEvent GUILDBANKBAGSLOTS_CHANGED
 syn keyword luaWoWEvent GUILDBANKFRAME_CLOSED
@@ -3327,6 +3347,8 @@ syn keyword luaWoWEvent LOOT_OPENED
 syn keyword luaWoWEvent LOOT_ROLLS_COMPLETE
 syn keyword luaWoWEvent LOOT_SLOT_CHANGED
 syn keyword luaWoWEvent LOOT_SLOT_CLEARED
+syn keyword luaWoWEvent LOSS_OF_CONTROL_ADDED
+syn keyword luaWoWEvent LOSS_OF_CONTROL_UPDATE
 syn keyword luaWoWEvent MACRO_ACTION_BLOCKED
 syn keyword luaWoWEvent MACRO_ACTION_FORBIDDEN
 syn keyword luaWoWEvent MAIL_CLOSED
@@ -3397,6 +3419,7 @@ syn keyword luaWoWEvent PET_BATTLE_CLOSE
 syn keyword luaWoWEvent PET_BATTLE_FINAL_ROUND
 syn keyword luaWoWEvent PET_BATTLE_HEALTH_CHANGED
 syn keyword luaWoWEvent PET_BATTLE_LEVEL_CHANGED
+syn keyword luaWoWEvent PET_BATTLE_LOOT_RECEIVED
 syn keyword luaWoWEvent PET_BATTLE_MAX_HEALTH_CHANGED
 syn keyword luaWoWEvent PET_BATTLE_OPENING_DONE
 syn keyword luaWoWEvent PET_BATTLE_OPENING_START
@@ -4163,6 +4186,7 @@ syn keyword luaWoWWidget SetLooping
 syn keyword luaWoWWidget SetLootCurrency
 syn keyword luaWoWWidget SetLootItem
 syn keyword luaWoWWidget SetLootRollItem
+syn keyword luaWoWWidget SetLossOfControlCooldown
 syn keyword luaWoWWidget SetMaskTexture
 syn keyword luaWoWWidget SetMaxBytes
 syn keyword luaWoWWidget SetMaxLetters
@@ -4271,6 +4295,7 @@ syn keyword luaWoWWidget SetUnit
 syn keyword luaWoWWidget SetUnitAura
 syn keyword luaWoWWidget SetUnitBuff
 syn keyword luaWoWWidget SetUnitDebuff
+syn keyword luaWoWWidget SetUpgradeItem
 syn keyword luaWoWWidget SetUserPlaced
 syn keyword luaWoWWidget SetValue
 syn keyword luaWoWWidget SetValueStep
@@ -4302,6 +4327,7 @@ syn keyword luaWoWWidget UpdateBlips
 syn keyword luaWoWWidget UpdateColorByID
 syn keyword luaWoWWidget UpdateMouseOverTooltip
 syn keyword luaWoWWidget UpdateScrollChildRect
+
 
 
 

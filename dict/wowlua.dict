@@ -139,6 +139,8 @@ C_LootHistory.GetNumItems
 C_LootHistory.GetPlayerInfo
 C_LootHistory.GiveMasterLoot
 C_LootHistory.SetExpiration
+C_LossOfControl.GetEventInfo
+C_LossOfControl.GetNumEvents
 C_PetBattles.AcceptPVPDuel
 C_PetBattles.AcceptQueuedPVPMatch
 C_PetBattles.CanActivePetSwapOut
@@ -199,18 +201,23 @@ C_PetJournal.CagePetByID
 C_PetJournal.ClearAllPetSourcesFilter
 C_PetJournal.ClearAllPetTypesFilter
 C_PetJournal.ClearSearchFilter
+C_PetJournal.FindPetIDByName
 C_PetJournal.GetBattlePetLink
+C_PetJournal.GetNumCollectedInfo
 C_PetJournal.GetNumPetSources
 C_PetJournal.GetNumPetTypes
 C_PetJournal.GetNumPets
+C_PetJournal.GetOwnedBattlePetString
 C_PetJournal.GetPetAbilityInfo
 C_PetJournal.GetPetAbilityList
 C_PetJournal.GetPetInfoByIndex
 C_PetJournal.GetPetInfoByPetID
 C_PetJournal.GetPetInfoBySpeciesID
 C_PetJournal.GetPetLoadOutInfo
+C_PetJournal.GetPetSortParameter
 C_PetJournal.GetPetStats
-C_PetJournal.GetSummonedPetID
+C_PetJournal.GetPetTeamAverageLevel
+C_PetJournal.GetSummonedPetGUID
 C_PetJournal.IsFindBattleEnabled
 C_PetJournal.IsFlagFiltered
 C_PetJournal.IsJournalReadOnly
@@ -233,10 +240,12 @@ C_PetJournal.SetCustomName
 C_PetJournal.SetFavorite
 C_PetJournal.SetFlagFilter
 C_PetJournal.SetPetLoadOutInfo
+C_PetJournal.SetPetSortParameter
 C_PetJournal.SetPetSourceFilter
 C_PetJournal.SetPetTypeFilter
 C_PetJournal.SetSearchFilter
-C_PetJournal.SummonPetByID
+C_PetJournal.SummonPetByGUID
+C_PetJournal.SummonRandomPet
 C_Scenario.GetCriteriaInfo
 C_Scenario.GetInfo
 C_Scenario.GetScenarioIconInfo
@@ -708,6 +717,7 @@ FillLocalizedClassList
 FindSpellBookSlotBySpellID
 FlagTutorial
 FlipCameraYaw
+FlyoutHasSpell
 FocusUnit
 FollowUnit
 ForceGossip
@@ -750,6 +760,7 @@ GetActionCharges
 GetActionCooldown
 GetActionCount
 GetActionInfo
+GetActionLossOfControlCooldown
 GetActionText
 GetActionTexture
 GetActiveArtifactByRace
@@ -977,7 +988,7 @@ GetFramerate
 GetFramesRegisteredForEvent
 GetFriendInfo
 GetFriendshipReputation
-GetFriendshipReputationByID
+GetFriendshipReputationRanks
 GetFunctionCPUUsage
 GetGMStatus
 GetGMTicket
@@ -1051,6 +1062,7 @@ GetGuildTradeSkillInfo
 GetHairCustomization
 GetHitModifier
 GetHolidayBGHonorCurrencyBonuses
+GetHomePartyInfo
 GetIgnoreName
 GetInboxHeaderInfo
 GetInboxInvoiceInfo
@@ -1387,6 +1399,8 @@ GetProfessionInfo
 GetProfessions
 GetProgressText
 GetPromotionRank
+GetPvpPowerDamage
+GetPvpPowerHealing
 GetQuestBackgroundMaterial
 GetQuestCurrencyInfo
 GetQuestDifficultyColor
@@ -1727,6 +1741,7 @@ HasVehicleActionBar
 HasWandEquipped
 HearthAndResurrectFromArea
 HideRepairCursor
+InActiveBattlefield
 InCinematic
 InCombatLockdown
 InGuildParty
@@ -1815,6 +1830,7 @@ IsIndoors
 IsInventoryItemLocked
 IsItemAction
 IsItemInRange
+IsLFGComplete
 IsLFGDungeonJoinable
 IsLeftAltKeyDown
 IsLeftControlKeyDown
@@ -1877,6 +1893,7 @@ IsTitleKnown
 IsTrackedAchievement
 IsTradeSkillGuild
 IsTradeSkillLinked
+IsTradeSkillRepeating
 IsTradeskillTrainer
 IsTrialAccount
 IsTutorialFlagged
@@ -2047,6 +2064,7 @@ PickupItem
 PickupMacro
 PickupMerchantItem
 PickupPetAction
+PickupPetSpell
 PickupPlayerMoney
 PickupSpell
 PickupSpellBookItem
@@ -2372,6 +2390,7 @@ SetTradeSkillCategoryFilter
 SetTradeSkillInvSlotFilter
 SetTradeSkillItemLevelFilter
 SetTradeSkillItemNameFilter
+SetTradeSkillRepeatCount
 SetTrainerServiceTypeFilter
 SetUIVisibility
 SetView
@@ -2527,6 +2546,7 @@ UnitAttackPower
 UnitAttackSpeed
 UnitAura
 UnitBattlePetLevel
+UnitBattlePetSpeciesID
 UnitBattlePetType
 UnitBuff
 UnitCanAssist
@@ -2572,6 +2592,7 @@ UnitInVehicle
 UnitInVehicleControlSeat
 UnitInVehicleHidesPetFrame
 UnitIsAFK
+UnitIsBattlePet
 UnitIsBattlePetCompanion
 UnitIsCharmed
 UnitIsConnected
@@ -2805,7 +2826,6 @@ type
 unpack
 wipe
 xpcall
-
 ACHIEVEMENT_EARNED
 ACTIONBAR_HIDEGRID
 ACTIONBAR_PAGE_CHANGED
@@ -2945,8 +2965,6 @@ CHARACTER_POINTS_CHANGED
 CHAT_MSG_ACHIEVEMENT
 CHAT_MSG_ADDON
 CHAT_MSG_AFK
-CHAT_MSG_BATTLEGROUND
-CHAT_MSG_BATTLEGROUND_LEADER
 CHAT_MSG_BG_SYSTEM_ALLIANCE
 CHAT_MSG_BG_SYSTEM_HORDE
 CHAT_MSG_BG_SYSTEM_NEUTRAL
@@ -2978,6 +2996,8 @@ CHAT_MSG_FILTERED
 CHAT_MSG_GUILD
 CHAT_MSG_GUILD_ACHIEVEMENT
 CHAT_MSG_IGNORED
+CHAT_MSG_INSTANCE_CHAT
+CHAT_MSG_INSTANCE_CHAT_LEADER
 CHAT_MSG_LOOT
 CHAT_MSG_MONEY
 CHAT_MSG_MONSTER_EMOTE
@@ -3089,6 +3109,7 @@ GOSSIP_CONFIRM
 GOSSIP_CONFIRM_CANCEL
 GOSSIP_ENTER_CODE
 GOSSIP_SHOW
+GROUP_JOINED
 GROUP_ROSTER_UPDATE
 GUILDBANKBAGSLOTS_CHANGED
 GUILDBANKFRAME_CLOSED
@@ -3197,6 +3218,8 @@ LOOT_OPENED
 LOOT_ROLLS_COMPLETE
 LOOT_SLOT_CHANGED
 LOOT_SLOT_CLEARED
+LOSS_OF_CONTROL_ADDED
+LOSS_OF_CONTROL_UPDATE
 MACRO_ACTION_BLOCKED
 MACRO_ACTION_FORBIDDEN
 MAIL_CLOSED
@@ -3267,6 +3290,7 @@ PET_BATTLE_CLOSE
 PET_BATTLE_FINAL_ROUND
 PET_BATTLE_HEALTH_CHANGED
 PET_BATTLE_LEVEL_CHANGED
+PET_BATTLE_LOOT_RECEIVED
 PET_BATTLE_MAX_HEALTH_CHANGED
 PET_BATTLE_OPENING_DONE
 PET_BATTLE_OPENING_START
@@ -3606,7 +3630,6 @@ WOW_MOUSE_NOT_FOUND
 ZONE_CHANGED
 ZONE_CHANGED_INDOORS
 ZONE_CHANGED_NEW_AREA
-
 AddDoubleLine
 AddFontStrings
 AddHistoryLine
@@ -4033,6 +4056,7 @@ SetLooping
 SetLootCurrency
 SetLootItem
 SetLootRollItem
+SetLossOfControlCooldown
 SetMaskTexture
 SetMaxBytes
 SetMaxLetters
@@ -4141,6 +4165,7 @@ SetUnit
 SetUnitAura
 SetUnitBuff
 SetUnitDebuff
+SetUpgradeItem
 SetUserPlaced
 SetValue
 SetValueStep
